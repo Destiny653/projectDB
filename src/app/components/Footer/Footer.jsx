@@ -3,11 +3,11 @@ import './footer.css'
 
 export default function Footer() {
     return (
-        <div className='mt-[30px] px-[2%] border-t box-border pt-[50px] bg-[#8d5f0b56]'>
+        <div className='t-[30px] px-[2%] border-t box-border pt-[50px] text-[white] bg-[#010111]'>
             <section className='flex justify-between items-cente h-[300px]'>
                 <ul className='footer-links-p flex justify-evenly gap-[9px]'>
-                    <li className='font-[600] text-[#8d600bb9]'>Information
-                        <ul className=' font-[400] text-black text-[14px] pt-3'>
+                    <li className='font-[600]'><span className='text-[#eccd94]'>Information</span>
+                        <ul className=' font-[400] text-[14px] pt-3'>
                             <li className='my-[10%]'>
                                 <a href='#'>About Us</a>
                             </li>
@@ -19,8 +19,8 @@ export default function Footer() {
                             </li>
                         </ul>
                     </li>
-                    <li className='font-[600] text-[#8d600bb9]'>My Account
-                        <ul className=' font-[400] text-[14px] text-black pt-3'>
+                    <li className='font-[600]'><span className='text-[#eccd94]'>My Account</span>
+                        <ul className=' font-[400] text-[14px]  pt-3'>
                             <li className='my-[10%]'>
                                 <a href='#'>Orders</a>
                             </li>
@@ -32,8 +32,8 @@ export default function Footer() {
                             </li>
                         </ul>
                     </li>
-                    <li className='font-[600] text-[#8d600bb9]'>Categories
-                        <ul className=' font-[400] text-[14px] text-black pt-3'>
+                    <li className='font-[600] '><span className='text-[#eccd94]'>Categories</span>
+                        <ul className=' font-[400] text-[14px] pt-3'>
                             <li className='my-[10%]'>
                                 <a href='#'>Feeding Gadgets</a>
                             </li>
@@ -47,9 +47,9 @@ export default function Footer() {
                     </li>
                 </ul>
                 <div>
-                    <h1 className='text-[27px] text-[#8d600bb9]'>GENI~I</h1>
+                    <h1 className='text-[27px] text-[#eccd94]'>GENI~I</h1>
                     <p className='font-[400] text-[14px] my-[6%]'>+880 1234 567890</p>
-                    <p className='font-[400] text-[14px] my-[6%] text-[#8d600bb9]'>geni-i@gmail.com</p>
+                    <p className='font-[400] text-[14px] my-[6%] text-[#eccd94]'>geni-i@gmail.com</p>
                     <p className='font-[400] text-[14px] my-[6%]'>Tuesday - Saturday: 8:00am - 5:00pm</p>
                 </div>
             </section>

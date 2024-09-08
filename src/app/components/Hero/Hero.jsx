@@ -1,13 +1,152 @@
  'use client'
- import React from 'react';
+ import React, { useEffect } from 'react';
 import './hero.css';
 import Image from 'next/image';
 import Geolocation from '../Geolocation/Geolocation';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Hero() {
   
+  const sliderSettings ={
+    // dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 5,
+    centerPadding: '60px',
+    centerMode: true,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: 'linear',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          // dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
+
+  const slideSettings2 = {
+    // dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 2,
+    centerMode: true,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: 'linear',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
+
+  const imgCollection = [
+    {
+      img:"/image/geni1-removebg-preview.png"
+    },
+    {
+      img:"/image/geni2-removebg-preview.png"
+    },
+    {
+      img:"/image/geni7.png"
+    },
+    {
+      img:"/image/geni4.png"
+    },
+    {
+      img:"https://i.pinimg.com/236x/51/49/77/514977b47170524aa96d3e4dc765e590.jpg"
+    },
+    {
+      img:"/image/geni8.png"
+    },
+    {
+      img:"/image/geni6.png"
+    },
+    {
+      img:"/image/geni7.png"
+    }
+  ]
+
+  const premium = [
+    {
+      img:"/image/prem.png"
+    },
+    {
+      img:"/image/prem2.png"
+    },
+    {
+      img:"/image/prem3.png"
+    }, 
+    {
+      img:"/image/prem5.png"
+    },
+    {
+      img:"/image/prem6.png"
+    },
+    {
+      img:"/image/prem7.png"
+    },
+    {
+      img:"/image/prem8.png"
+    },
+    {
+      img:"/image/prem9.png"
+    },
+    {
+      img:"/image/prem10.png"
+    },
+  ]
+  
+   
+
   return (
-    <div className='flex flex-col gap-3'>
+    <div className='flex flex-col gap-[100px]'>
       <section className='hero-p w-full h-[90vh] bg-[#c9811552] mt-[4px] flex flex-col justify-center items-center box-border px-[15%]'>
         <h1 className='text-center text-[30px] font-[600] edu_au_vic_wa_nt_handregular'>
           Welcome to Geni-I By-your gateway to the future of parenting. Discover cutting-edge baby gadgets designed to make your little one’s world smarter,
@@ -20,45 +159,40 @@ export default function Hero() {
       </div>
       <section className=' box-border px-[2%]'>
         <h1 className=' text-center text-[25px] font-[600] py-[8px]'>Popular Categories</h1>
-        <div className='category-con'>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-          <section className="category-i"></section>
-        </div>
+        {/* add carousel here */}
+        <Slider {...sliderSettings} className='category-con flex gap-3'>
+          {
+            premium.map((item, index)=>(
+              <section className="category-i" key={index}>
+              <Image className='w-[100%] h-full' src={item.img} alt='premium' width={500} height={500}/>
+              </section>
+            ))
+          }
+        </Slider>
       </section>
       <section>
         <h1 className='text-center text-[25px] font-[600] py-[8px]'>Top Product</h1>
-        <div className='top-pro-c'>
-          <section className="top-pro-i"><div className='top-pro-ic'></div></section>
-          <section className="top-pro-i"><div className='top-pro-ic'></div></section>
-          <section className="top-pro-i"><div className='top-pro-ic'></div></section>
-          <section className="top-pro-i"><div className='top-pro-ic'></div></section>
-          <section className="top-pro-i"><div className='top-pro-ic'></div></section>
-          <section className="top-pro-i"><div className='top-pro-ic'></div></section>
-          <section className="top-pro-i"><div className='top-pro-ic'></div></section>
-          <section className="top-pro-i"><div className='top-pro-ic'></div></section>
+        <div className='top-pro-c box-border mx-[50px] my-[40px]'>
+          {
+            imgCollection.map((item, index)=>(
+              <section className='top-pro-i' key={index}>
+                <div className='box-border top-pro-ic overflow-hidden'>
+                  <div className='h-[300px] box-border p-[px]'>
+                    <Image className='w-full h-full' src={item.img} alt='product' width={800} height={800}/>
+                  </div>
+                  <h1>Fashion Wear</h1>
+                  <p>Discover latest fashion trends and for your little one.</p>
+                  <p>$650</p>
+                </div>
+              </section>
+            ))
+          }
+   
         </div>
       </section>
-      <section>
+      <section className='bottom-slide'>
         <p className='font-[500] text-center py-[12px] pt-[30px]'>Discover the latest outfit ideas, fashion tips, and inspiration for your little one.</p>
-        <div className='outfit-c'>
+        <Slider {...slideSettings2} className='outfit-c'>
           <section className="outfit-i">
             <Image src={"https://www.shutterstock.com/image-photo/basket-baby-stuff-accessories-newborn-260nw-2303894967.jpg"} alt="baby and mom" width={5000} height={5000} className=' w-full h-full' />
           </section>
@@ -86,7 +220,7 @@ export default function Hero() {
           <section className="outfit-i">
             <Image src={"https://www.shutterstock.com/shutterstock/photos/1573236859/display_1500/stock-photo-colorful-baby-shoes-on-bright-yellow-background-in-child-s-room-1573236859.jpg"} alt="baby and mom" width={1000} height={1000} className=' w-full h-full' />
           </section>
-        </div>
+        </Slider>
       </section>
       <section className='customer-tips flex justify-between items-center box-border px-[15%]'>
         <ul className='flex flex-col gap-10'>
@@ -119,7 +253,9 @@ export default function Hero() {
         </ul>
       </section>
       <section>
-        <div className='w-full h-[300px] bg-[#0080006e]'></div>
+        <div className='w-full h-[300px] bg-[#0080006e]'>
+          <Image src={'https://media.istockphoto.com/id/1133350536/photo/water-drop-impact.jpg?s=612x612&w=0&k=20&c=r1-DbY1-uzuP8ChpmQCqiUFeopGsyBTqAkauaTQT3WQ='} alt='beautiful background image' width={600} height={600} className='w-full h-full'/>
+        </div>
       </section>
       <section className='comments'>
         <div>

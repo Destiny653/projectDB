@@ -11,19 +11,57 @@
 .category-con {
     width: 100%;
     display: flex;
-    gap: 1%;
+    gap: 20%;
     overflow-x: scroll;
     box-sizing: border-box;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 6%;
 }
 .category-con::-webkit-scrollbar {
     height: 2px;
 }
+
+.category-con .slick-track {
+    display: flex;
+    gap: 0.15%;
+}
+.bottom-slide{
+    position: relative;
+}
+.bottom-slide .slick-track {
+    display: flex;
+    gap: 0.15%;
+}
+.bottom-slide .slick-arrow {
+    /* background-color: red; */
+    /* width: 300px; */
+}
+.bottom-slide .slick-next {
+    background-color: rgba(255, 0, 0, 0.384);
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    z-index: 10;
+}
+.bottom-slide .slick-prev {
+    background-color: rgba(255, 0, 0, 0.459);
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 15px;
+    z-index: 10;
+}
+
 .category-i {
     width: 15.83%;
     height: 270px;
-    background-color: aquamarine;
+    background-color: rgba(202, 196, 112, 0.829);
     flex-shrink: 0;
     border-radius: 10px;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+    overflow: hidden;
 }
 .top-pro-c {
     display: grid;
@@ -60,6 +98,9 @@
     display: flex;
     gap: 2%;
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 3.5%;
+    scroll-behavior: smooth;
 }
 .outfit-c::-webkit-scrollbar {
     height: 1px;
@@ -72,6 +113,7 @@
     border: 2px solid antiquewhite;
     flex-shrink: 0;
     overflow: hidden;
+    scroll-snap-align: start;
 }
 .customer-tips h1 {
     font-weight: 600;

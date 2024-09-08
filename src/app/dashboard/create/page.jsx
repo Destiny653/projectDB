@@ -46,7 +46,7 @@ export default function Page() {
   }
 
   return (
-    <div className='w-full flex justify-evenly box-border py-[1%] bg-[#d4b95f3b] h-[80vh] text-[#000]'>
+    <div className='w-full flex justify-evenly box-border py-[2%] bg-[#9e7f193b] h-[80vh] text-[#000]'>
       <section className='w-[16%] relative bg-[#ffffff] rounded-[15px]'>
         <ul className='flex flex-col box-border p-[6%]'>
           <Link className='flex gap-2 items-center my-[4%] text-[15px]' href={'/'}>

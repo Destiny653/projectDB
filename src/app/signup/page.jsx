@@ -13,8 +13,8 @@ export default function Page() {
 
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
-  const [url, setUrl] = useState("");
   const [password, setPassword] = useState("")
+  const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
   const [phone, setPhone] = useState("")
 
@@ -31,42 +31,8 @@ export default function Page() {
   }
 
   return (
-    <div className='flex justify-evenly h-[80vh] box-border py-[1%] bg-[#d4b95f3b]'>
-      <section className='w-[16%] relative bg-[#ffffff] rounded-[15px]'>
-        <ul className='flex flex-col box-border p-[6%]'>
-          <Link className='flex gap-2 items-center my-[4%] text-[15px]' href={'/'}>
-            <TfiHome size={20} className='text-[#000000]' />
-            <li>Home</li>
-          </Link>
-          <Link className='flex gap-2 items-center my-[4%] text-[15px]' href={'/dashboard/create'}>
-            <IoCreateOutline size={20} className='text-[#000000]' />
-            <li>Create post</li>
-          </Link>
-          <Link className='flex gap-2 items-center my-[4%] text-[15px]' href={'#'}>
-            <VscGitPullRequestGoToChanges size={20} className='text-[#000000]' />
-            <li>Orders</li>
-          </Link>
-          <Link className='flex gap-2 items-center my-[4%] text-[15px]' href={'/dashboard/posts'}>
-            <MdOutlineAddchart size={20} className='text-[#000000]' />
-            <li>Posts</li>
-          </Link>
-          <Link className='flex gap-2 items-center my-[4%] text-[15px]' href={'#'}>
-            <CiUser size={22} className='text-[#000000]' />
-            <li>Clients</li>
-          </Link>
-          <Link className='flex gap-2 items-center my-[4%] text-[15px]' href={'#'}>
-            <IoIosLogIn size={22} className='text-[#000000]' />
-            <li>Login</li>
-          </Link>
-          <li className='absolute bottom-[5%] left-[4%] w-[50%] h-[7%]'>
-            <button className='flex items-center justify-center text-[15px] w-[100%] h-[100%] text-[#ffffff] rounded-[10px] bg-[#000000]'>
-              <GoSignOut size={20} className='text-[#ffffff]' />
-              Logout
-            </button>
-          </li>
-        </ul>
-      </section>
-      <section className='w-[80%] flex flex-col justify-around items-center bg-[#ffffff] rounded-[15px]'>
+    <div className='flex justify-evenly h-[80vh] box-border py-[3%] bg-[#d4b95f3b]'>
+      <section className='w-[80%] flex flex-col justify-evenly items-center bg-[#ffffff] rounded-[15px]'>
         <div className='g-[red] w-full box-border px-[8%]'>
           <h1 className='text-[27px] font-bold text-[#000000]'>Basic Information</h1>
           <p className='font-[300]'>Update some personal Information. Your address will never be publicly available.</p>
@@ -92,8 +58,14 @@ export default function Page() {
               <input value={phone} onChange={e => setPhone(e.target.value)} className=' outline-[0] border-[1px] border-[#6d471648] rounded[20px] w-[100%] py-[6px] px-[20px]' type="text" id="phone" name="phone" placeholder='Enter phone number' required />
             </label>
           </section>
-
+         <div className='flex items-center gap-[2%]'>
           <button type='submit' className='bg-[#000] py-[9px] px-[30px] text-[#fff] w-fit rounded-[12px] my-[10px]'>Submit</button>
+          <span className='text-[14px] hover:text-[#0000ffc7] cursor-pointer'>Already have an account?  
+            <Link href={'/signin'}>
+            <strong> sign in.</strong> 
+            </Link>
+            </span>
+         </div>
         </form>
       </section>
     </div>
