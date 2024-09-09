@@ -7,6 +7,7 @@
     /* color: #8d5f0b56; */
     text-align: center;
     width: 100%;
+    box-shadow: inset 1px -50px 0px #ffffff;
 }
 .category-con {
     width: 100%;
@@ -23,7 +24,7 @@
 
 .category-con .slick-track {
     display: flex;
-    gap: 0.15%;
+    gap: 0.4%;
 }
 .bottom-slide{
     position: relative;
@@ -55,13 +56,17 @@
 
 .category-i {
     width: 15.83%;
-    height: 270px;
-    background-color: rgba(202, 196, 112, 0.829);
+    height: 350px;
+    background-color: rgba(240, 198, 61, 0.226);
     flex-shrink: 0;
     border-radius: 10px;
     scroll-snap-align: start;
     scroll-behavior: smooth;
     overflow: hidden;
+}
+ 
+.category-i:nth-child(2){
+    background-color: rgba(78, 201, 22, 0.534);
 }
 .top-pro-c {
     display: grid;
@@ -73,10 +78,11 @@
 .top-pro-i {
     height: 430px;
     border-radius: 15px;
+    word-spacing: 2px;
 }
 .top-pro-ic {
     height: 430px;
-    border: 2px solid antiquewhite;
+    border: 2px solid rgba(173, 172, 171, 0.418);
     border-radius: 15px;
     transition: all 0.3s linear;
     /* transition: box-shadow 1s ease; */
@@ -84,7 +90,8 @@
 }
  
 .top-pro-i:hover .top-pro-ic {
-    border-color: rgba(0, 195, 255, 0.247);
+    background-color: rgba(202, 196, 112, 0.829);
+    border: 2px solid rgba(240, 61, 210, 0.226);
     background: #fff;
     height: 470px;
     z-index: 2;
@@ -125,10 +132,40 @@
     align-items: center;
     gap: 6%;
     box-sizing: border-box;
-    padding: 0 2%;
+    padding: 5% 2%;
 }
 .comments h1 {
     font-weight: 600;
+}
+
+.cart-btn{
+    position: absolute;
+    left: 10px;
+    opacity: 0;
+    border-radius: 10px;
+    transition: all 1s ease;
+    bottom: 25px;
+    overflow: hidden;
+}
+.cart-i{
+    position: absolute;
+    right: 20px;
+    border-radius: 7px 7px 24px 7px;
+    opacity: 0;
+    transition: all 1s ease;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+}
+
+.top-pro-i:hover .cart-btn,
+.top-pro-i:hover .cart-i {
+    opacity: 1;
+    bottom: -28px;
+}
+.cart-i:hover{
+    border-radius: 7px;
+    background-color: #e99f16f6;
 }
 
 /* Carousel */
