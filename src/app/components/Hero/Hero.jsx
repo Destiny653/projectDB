@@ -237,20 +237,20 @@ export default function Hero() {
 
         </div>
       </section>
-      <section className='flex justify-center gap-[5%]'>
-        <div className='h-[560px] w-[40%] bg-[#fff] rounded-[20px] box-border flex items-center justify-center overflow-hidden'>
-          <Image className=' w-full h-full' src={'https://i.pinimg.com/564x/29/e8/09/29e80906b92e02611193f822d16a842b.jpg'} alt='diapar park' width={500} height={500} />
+      <section className='category-sec'>
+        <div className='category-sec1'>
+          <Image className='cate1-img ' src={'https://i.pinimg.com/736x/6a/79/d4/6a79d4f6f8da46dc66d7836eb6e54ebf.jpg'} alt='diapar park' width={500} height={500} />
         </div>
-        <div className='flex flex-col gap-[20px] w-[40%]'>
-          <section className='flex items-center gap-[3%] box-border p-[5px] text-white h-[270px] w-[100%] bg-[#d1a74b] rounded-[20px]'>
-            <div className='bg-[#fff] box-border rounded-[10px] p-[5px] h-full w-[100%]'>
+        <div className='category-sec2'>
+          <section className='cate-sec-child'>
+            <div className='cate-img-box'>
               <Image className='w-[100%] h-full rounded-[20px]' src={'https://i.pinimg.com/564x/7a/3c/35/7a3c3565172dd1ee2847a1e98295bd4a.jpg'} alt='diaper' width={500} height={500} />
             </div>
             <span>What keeps baby's skin healthy? A diaper that doesn't leave skin wet. That's why pampers swddlers are made to provide up to 100% leakproof skin protection.</span>
           </section>
-          <section className=' flex items-center gap-[3%] text-white box-border p-[5px] h-[270px] w-[100%] bg-[#d1a74b] rounded-[20px]'>
-            <div className='bg-[#fff] box-border rounded-[10px] p-[5px] h-full w-[100%]'>
-              <Image className=' w-[100%] h-full' src={'https://i.pinimg.com/564x/29/e8/09/29e80906b92e02611193f822d16a842b.jpg'} alt='diaper' width={500} height={500} />
+          <section className='cate-sec-child'>
+            <div className='cate-img-box'>
+              <Image className=' w-full h-full' src={'https://i.pinimg.com/736x/6a/79/d4/6a79d4f6f8da46dc66d7836eb6e54ebf.jpg'} alt='diaper' width={500} height={500} />
             </div>
             <span>Pampers is the first line of defense for your baby's skin. It's a blend of creams, lotions, and body wash that helps maintain healthy skin, reduces irritation, and protects your baby's skin from sun, UV rays, and chemicals.</span>
           </section>

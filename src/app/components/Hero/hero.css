@@ -15,38 +15,117 @@
 
 .circle-d {
     display: grid;
-    grid-template-columns: 30% 67%;
+    grid-template-columns: 30% 67%; 
     justify-content: center;
     gap: 3%;
-    align-items: center;
-    height: 100%;
+    align-items: center; 
     transition: all 1s ease;
     overflow: hidden;
-    background-color: #f8b45c33;
+    /* background-color: #cbfd1333; */
     /* border: 1px solid gray; */
     box-sizing: border-box;
+    /* linear gradient */
+    background: linear-gradient(to left, #cbfd1333, #f2f2f2a9);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     padding: 0 10px;
-    border-radius: 30%;
+    border-radius: 5%;  
+}
+
+.body-care-p {
+    display: grid;
+    grid-template-columns:  30% 35% 30%; 
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%; 
+    box-sizing: border-box;
+    padding: 70px 10px; 
+    background-color: #c4c4c43a;
+    box-shadow: inset 0px 0px 30px 20px  rgb(255, 255, 255);
+}
+.category-sec{
+    display: grid;
+    grid-template-columns:  45% 54%;
+    gap: 20px;
+    padding: 50px 40px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    box-shadow: inset 0px 0px 30px 15px  rgb(255, 255, 255);
+}
+.category-sec1{ 
+    height: 500px;
+    width: 100%; 
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden; 
+    background: linear-gradient(to left, #cbfd1333, #76adffa9);
+    border-radius: 17px;
+}
+.category-sec1 img{  
+    transition: all 0.3s ease-out;
+    transform: scale(1.01);
+}
+.category-sec1 img:hover{
+    transform: scale(1.2);
+}
+.category-sec2 { 
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+.cate-sec-child {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 240px;
+    overflow: hidden;
+    background: linear-gradient(to left, #cbfd1333, #76adffa9);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.cate-img-box{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* padding: 20px; */
+    border-radius: 10px;
+}
+.cate-img-box img {
+    width: 100%;
+    height: 100%; 
+    transform: scale(1.01);
+}
+.cate1-img{
+    transform: scale(1.06);
+    height: 100%;
+    width: 100%;
+    border-radius: 7%;
 }
 .circle-img-c{
     width: 100%;
     height: 100%;
     /* background-image: url("https://www.shutterstock.com/image-photo/love-mother-baby-family-home-260nw-1518712694.jpg"); */
     background-size: cover;
-    border-radius: 30%;
-    /* border: 1px solid gray;iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii */
+    border-radius: 100%; 
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-.body-care-p {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+
+.circle-img-c img{
     width: 100%;
-    height: 500px; 
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%; 
     box-sizing: border-box;
-    padding: 10px 10px; 
-    background-color: #c4c4c41c;
+    transition: all .2s ease-in-out;
+}
+
+.circle-img-c img:hover{
+    transform: scale(1.3);
 }
 
 .circle-d-p {
