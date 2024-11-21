@@ -63,7 +63,27 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
+  body { 
+    background-color: #000;
   }
+}
+
+.theme-panel{
+  height: 0;
+  overflow: hidden;
+  width: 130px;
+  transition: height 0.5s ease;
+}
+
+.theme-panel-p:hover .theme-panel{
+  height: 100%;
+}
+
+.light {
+  background-color: #fff;
+  color: #000;
+} 
+.dark {
+  background-color:#0e111bf1;
+  color: #fff;
 }

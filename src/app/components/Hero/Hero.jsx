@@ -148,8 +148,8 @@ export default function Hero() {
 
   return (
     <div className='flex flex-col gap-[100px]'>
-      <section className='hero-p w-full h-[90vh] bg-[#c9811552] mt-[4px] flex flex-col justify-center items-center box-border px-[15%]'>
-        <h1 className='text-center text-[50px] font-[700] '>
+      <section className='hero-p w-full h-[90vh]  mt-[4px] flex flex-col justify-center items-center box-border px-[15%]'>
+        <h1 className='text-center '>
           Welcome to Geni-I By-your gateway to the future of parenting. Discover cutting-edge baby gadgets designed to make your little one’s world smarter,
           safer, and more connected. Geni-I By-where the future of baby care begins.
         </h1>
@@ -220,9 +220,9 @@ export default function Hero() {
                     <Image className='w-[90%] h-full' src={item.img} alt='product' width={800} height={800} />
                   </div>
                   <div className='grid gap-2 box-border p-[6px]'>
-                    <h1 className='font-[600] text-[#c07d18d2]'>Fashion Wear</h1>
-                    <p className='font-[600]'>Discover latest fashion trends and for your little one.</p>
-                    <p className='font-[600] text-[#109146]'>$650</p>
+                    <h1 className='font-[500] text-[#c07d18d2]'>Fashion Wear</h1>
+                    <p className=' '>Discover latest fashion trends and for your little one.</p>
+                    <p className='font-[500] text-[#32c971]'>$650</p>
                   </div>
                   <section className='flex'>
                     <div className='cart-btn border w-fit'>
@@ -257,7 +257,7 @@ export default function Hero() {
         </div>
       </section>
       <section className='bottom-slide'>
-        <p className='font-[500] text-center py-[12px] pt-[30px] text-[30px] pb-[3%] text-[#ca9546d2]'>Discover the latest outfit ideas, fashion tips, and inspiration for your little one.</p>
+        <p className='font-[500] text-center py-[12px]  pt-[30px] text-[30px] pb-[3%] text-[#ca9546d2]'>Discover the latest outfit ideas, fashion tips, and inspiration for your little one.</p>
         <Slider {...slideSettings2} className='outfit-c'>
           <section className="outfit-i">
             <Image src={"https://www.shutterstock.com/image-photo/basket-baby-stuff-accessories-newborn-260nw-2303894967.jpg"} alt="baby and mom" width={5000} height={5000} className=' w-full h-full' />

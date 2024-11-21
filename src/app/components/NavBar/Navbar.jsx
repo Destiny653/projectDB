@@ -1,11 +1,15 @@
-import React from 'react';
+'use client'
+import React, { useContext } from 'react';
 import './navbar.css';
 import { CiShoppingCart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { SlHeart } from "react-icons/sl";
 import { VscSearch } from "react-icons/vsc";
+import Theme from '../Theme/Theme';
+import { ThemeContext } from '../../../../context/ThemeContext';
 
 export default function Navbar() {
+    const { theme } = useContext(ThemeContext);
     return (
         <div className='nav-p box-border my-1'>
              <section className='nav-menu w-full box-border b-[#40abdd4d]'>
@@ -18,8 +22,8 @@ export default function Navbar() {
                     <h1 className='text-[27px] font-[600]'>GENI~I</h1>
                 </section>
                 <section className=' flex justify-center relative box-border'>
-                    <input className='border w-[80%] py-[12px] px-[20px] rounded-lg placeholder:text-[14px] ' type="text" placeholder='Search products...'  />
-                    <VscSearch className='absolute box-border p-[5px] right-[11%] top-[15%] h-[30px] w-[30px] text-[#000] text-[30px] rounded-full bg-[#8d5f0b56]' />
+                    <input style={theme == 'black' ? { color: 'black' } : { color: 'black' }} className='border w-[80%] py-[12px] px-[35px] rounded-lg placeholder:text-[14px] ' type="search" placeholder='Search products...'  />
+                    <VscSearch className='absolute box-border p-[4px] left-[11%] top-[20%] h-[25px] w-[25px] text-[#000] text-[30px] rounded-full bg-[#8d5f0b56]' />
                 </section>
                 <section className='flex justify-between '>
                     <div className='flex justify-center items-center gap-[4px]'>
@@ -52,6 +56,9 @@ export default function Navbar() {
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="/dashboard/create">Dashboard</a></li>
+                        <li className='theme-panel-p relative'>Theme
+                            <Theme/>
+                        </li>
                     </ul>
                     <p className='text-[#8d600bb9]'>+237-675-456-389</p>
                 </nav>

@@ -1,13 +1,14 @@
 .hero-p {
-    box-shadow: inset 0px 2px 1.5px #fff;
+    /* box-shadow: inset 0px 2px 1.5px #fff; */
     background-image: url("https://www.shutterstock.com/image-photo/love-mother-baby-family-home-260nw-1518712694.jpg");
     background-size: cover;
     /* background-position: center; */
     padding: 0 30px 40px 30px;
-    color: #ac7729f5;
+    font-size: 27px;
+    color: #70db31c7;
     text-align: center;
     width: 100%;
-    box-shadow: inset 1px -50px 0px #ffffff;
+    /* box-shadow: inset 1px -50px 0px #ffffff; */
 }
 
 .circle-formation {
@@ -25,7 +26,7 @@
     /* border: 1px solid gray; */
     box-sizing: border-box;
     /* linear gradient */
-    background: linear-gradient(to left, #cbfd1333, #f2f2f2a9);
+    background: linear-gradient(to left, #cbfd1333, #f2f2f236);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     padding: 0 10px;
     border-radius: 5%;  
@@ -39,17 +40,17 @@
     width: 100%; 
     box-sizing: border-box;
     padding: 70px 10px; 
-    background-color: #c4c4c43a;
-    box-shadow: inset 0px 0px 30px 20px  rgb(255, 255, 255);
+    background-color: #aaa9a925;
+    /* box-shadow: inset 0px 0px 30px 20px  rgb(255, 255, 255); */
 }
 .category-sec{
     display: grid;
     grid-template-columns:  45% 54%;
     gap: 20px;
     padding: 50px 40px;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
-    box-shadow: inset 0px 0px 30px 15px  rgb(255, 255, 255);
+    box-sizing: border-box; 
+    background-color: #aaa9a925;
+    /* box-shadow: inset 0px 0px 30px 5px  rgb(255, 255, 255); */
 }
 .category-sec1{ 
     height: 500px;
@@ -189,12 +190,15 @@
 .category-i {
     width: 15.83%;
     height: 350px;
-    background-color: rgba(240, 198, 61, 0.226);
+    /* background-color: rgba(240, 198, 61, 0.226); */
     flex-shrink: 0;
     border-radius: 10px;
     scroll-snap-align: start;
     scroll-behavior: smooth;
     overflow: hidden;
+    background-color: #e0e0e010; 
+    border: 1px solid rgba(128, 128, 128, 0.384);
+    outline: none;
 }
 
 .category-i:nth-child(2) {
@@ -217,17 +221,16 @@
 
 .top-pro-ic {
     height: 430px;
-    border: 2px solid rgba(173, 172, 171, 0.418);
+    border: 1px solid rgba(150, 144, 144, 0.514);
     border-radius: 15px;
     transition: all 0.3s linear;
+    color: #fff;
     /* transition: box-shadow 1s ease; */
-    width: 100%;
+    width: 100%; 
+    background-color: #7a829425;
 }
 
-.top-pro-i:hover .top-pro-ic {
-    background-color: rgba(202, 196, 112, 0.829);
-    border: 2px solid rgba(240, 61, 210, 0.226);
-    background: #fff;
+.top-pro-i:hover .top-pro-ic { 
     height: 470px;
     z-index: 2;
     /* overflow: visible; */

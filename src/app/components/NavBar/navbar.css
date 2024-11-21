@@ -1,10 +1,17 @@
+.nav-p{
+    background-color: #fffbfbe1;
+    box-shadow: 0px 0px 8px #fff;
+}
 .nav-link-p{
     display: flex;
+    padding: 12px 10px;
+}
+.nav-link-p li{ 
+    padding: 6px 5px;
 }
 .nav-link-p li:hover{
     background-color: #8d5f0b56;
     color: #fff;
-    padding: 8px;
     border-radius: 10px;
 }
 .nav-link-b{
