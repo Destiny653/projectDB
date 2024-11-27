@@ -1,0 +1,71 @@
+.cloths-c {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5%;
+    box-sizing: border-box;
+    padding: 0 2%;
+}
+
+.cloths-i {
+    height: 430px;
+    border-radius: 15px;
+    word-spacing: 2px;
+}
+
+.cloths-ic {
+    height: 430px; 
+    border-radius: 15px;
+    transition: all 0.3s linear; 
+    width: 100%;  
+}
+
+.cloths-i:hover .cloths-ic { 
+    height: 470px;
+    z-index: 2; 
+    box-shadow: 0px 8px 0px #00000038;
+}
+
+.cloths-i:hover {
+    z-index: 2;
+}
+
+
+.cloths-cart-btn {
+    position: absolute;
+    left: 10px;
+    opacity: 0;
+    border-radius: 10px;
+    transition: all 1s ease;
+    bottom: 25px;
+    overflow: hidden;
+}
+
+.cloths-cart-i {
+    position: absolute;
+    right: 20px;
+    border-radius: 7px 7px 24px 7px;
+    opacity: 0;
+    transition: all 1s ease;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+}
+
+.cloths-i:hover .cloths-cart-btn,
+.cloths-i:hover .cloths-cart-i {
+    opacity: 1;
+    bottom: -28px;
+}
+
+.cloths-cart-i:hover {
+    border-radius: 7px;
+    background-color: #e99f16f6;
+}
+
+.cart-valies-p {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+    justify-content: space-evenly;
+    align-items: center;
+}

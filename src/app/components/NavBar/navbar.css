@@ -1,6 +1,8 @@
 .nav-p{
-    background-color: #fffbfbe1;
-    box-shadow: 0px 0px 8px #fff;
+    background-color: #fffbfb7e;
+    /* box-shadow: 0px 0px 8px #fff; */
+        background: linear-gradient(to top, #fc69c36b, #2d86cf57);
+
 }
 .nav-link-p{
     display: flex;

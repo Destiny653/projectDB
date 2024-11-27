@@ -52,10 +52,9 @@ export default function Navbar() {
                     <ul className='nav-link-p flex gap-[20px] items-center box-border py-[10px]'>
                         <button className='bg-[#8d5f0b56] text-white rounded-md px-[20px] py-[12px]'>All Categories</button>
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li> 
                         <li><a href="#">Contact</a></li>
-                        <li><a href="/dashboard/create">Dashboard</a></li>
+                        <li><a href="/dashboard/create">Login</a></li>
                         <li className='theme-panel-p relative'>Theme
                             <Theme/>
                         </li>
