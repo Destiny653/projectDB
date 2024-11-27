@@ -178,7 +178,7 @@ export default function Hero() {
   useEffect(() => {
     const intervalid = setInterval(() => {
       setCurrentInterval(prevIndex => (prevIndex + 1) % images.length)
-    }, 5000)
+    }, 1500)
     return () => clearInterval(intervalid)
   }, [currentInterval])
 
@@ -203,7 +203,7 @@ export default function Hero() {
           <h1>We are Geni-I local to modern day parenting</h1>
           <p>
             Welcome to Geni-I By-your gateway to the future of parenting. Discover cutting-edge baby gadgets designed to make your little one’s world smarter,
-            safer, and more connected. Geni-I By-where the future of baby care begins.
+            safer, and more connected.
           </p>
           {/* <button onClick={e => { console.log(e); }} className='z-10 bg-[#d4d4d4] mt-[10px] px-[23px] py-[8px] rounded-md text-white'>Shop Now</button> */}
         </div>
@@ -276,31 +276,6 @@ export default function Hero() {
             <li onClick={() => setContentV(Valies)}>Valies</li>
           </ul>
         </div>
-        {/* <div className='top-pro-c box-border mx-[10px] my-[20px]'>
-          {
-            imgCollection.map((item, index) => (
-              <section className='relative top-pro-i' key={index}>
-                <div className='top-pro-ic box-border overflow-hidden'>
-                  <div className='box-border px-[30px] p-[16px] h-[300px]'>
-                    <Image className='w-[90%] h-full' src={item.img} alt='product' width={800} height={800} />
-                  </div>
-                  <div className='box-border gap-2 grid p-[6px]'>
-                    <h1 className='text-[#ccb582]'>Fashion Wear</h1>
-                    <p className=' '>Discover latest fashion trends and for your little one.</p>
-                    <p className='text-[#ccb582]'>$650</p>
-                  </div>
-                  <section className='flex'>
-                    <div className='border w-fit cart-btn'>
-                      <button className='hover:bg-[#e99f16f6] px-[15px] py-[6px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[15px] py-[9px]'>2</span><button className='hover:bg-[#e99f16f6] px-[15px] py-[6px] border-l font-[600]'>+</button>
-                    </div>
-                    <div className='flex justify-center items-center bg-[#66666633] cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                  </section>
-                </div>
-              </section>
-            ))
-          }
-
-        </div> */}
         {contentV}
       </section>
       <section className='category-sec'>
@@ -326,31 +301,31 @@ export default function Hero() {
         <p className='py-[12px] pt-[30px] pb-[3%] font-[500] text-[30px] text-center'>Discover the latest outfit ideas, fashion tips, and inspiration for your little one.</p>
         <Slider {...slideSettings2} className='outfit-c'>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/image-photo/basket-baby-stuff-accessories-newborn-260nw-2303894967.jpg"} alt="baby and mom" width={5000} height={5000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/736x/17/2b/64/172b64fe98f5c5d0f1f592ceb8c2e233.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/shutterstock/photos/1259678854/display_1500/stock-photo-wish-list-or-shopping-overview-for-pregnancy-and-baby-shower-view-from-above-white-wooden-older-1259678854.jpg"} alt="baby and mom" width={1000} height={1000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/236x/1d/0d/8d/1d0d8dbea1be6ff5979b9fe9d99fe1f2.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/shutterstock/photos/1981341200/display_1500/stock-photo-gift-basket-with-gender-neutral-baby-garment-and-accessories-care-box-of-organic-newborn-cotton-1981341200.jpg"} alt="baby and mom" width={1000} height={1000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/736x/52/01/74/520174c62b32a80a010b9da859dd0ede.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/shutterstock/photos/734402929/display_1500/stock-photo-wicker-basket-with-baby-shower-gifts-indoors-734402929.jpg"} alt="baby and mom" width={1000} height={1000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/736x/56/ee/b9/56eeb9bc18ea15ca50e401f713527ab8.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/shutterstock/photos/726703393/display_1500/stock-photo-wicker-basket-with-baby-shower-gifts-on-table-against-color-background-726703393.jpg"} alt="baby and mom" width={1000} height={1000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/236x/9f/9d/07/9f9d0768f5969c3d073423ec368677ee.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/shutterstock/photos/284458796/display_1500/stock-photo-baby-accessories-on-table-on-light-background-284458796.jpg"} alt="baby and mom" width={1000} height={1000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/736x/15/70/78/157078dd8464ff669d62a36cccc47713.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/shutterstock/photos/2374521263/display_1500/stock-photo-flat-lay-with-reusable-cloth-baby-diaper-toys-and-accessories-eco-friendly-nappy-on-blue-pastel-2374521263.jpg"} alt="baby and mom" width={1000} height={1000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/236x/3f/52/3c/3f523cb15f77193fcb335305d4cdb1a0.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/shutterstock/photos/2410350613/display_1500/stock-photo-set-of-baby-girl-dress-bodysuit-with-knitted-hat-and-boots-top-view-kids-clothing-flat-lay-2410350613.jpg"} alt="baby and mom" width={1000} height={1000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/236x/d1/30/a6/d130a6704995a741ef56ed22e31f3e99.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
           <section className="outfit-i">
-            <Image src={"https://www.shutterstock.com/shutterstock/photos/1573236859/display_1500/stock-photo-colorful-baby-shoes-on-bright-yellow-background-in-child-s-room-1573236859.jpg"} alt="baby and mom" width={1000} height={1000} className='w-full h-full' />
+            <Image src={"https://i.pinimg.com/736x/4a/02/e5/4a02e554503df39e1e282a92e867c40b.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
           </section>
         </Slider>
       </section>
@@ -384,15 +359,15 @@ export default function Hero() {
           </li>
         </ul>
       </section>
-      <section className='comments' >
-        <div className='comment-nar'>
+      <section className='h-comments' >
+        <div className='h-comment-nar'>
           <p className='font-[900] text-[27px]'>Here's what our happy clients our saying!</p>
         </div>
-        <div style={theme == 'dark' ? { backgroundColor: '#fff', color: '#000' } : { backgroundColor: '#000', color: '#fff' }} className='comment-child'>
-          <section className='comment-img-p'>
-            <div className='comment-img-c'>
+        <div className='h-comment-child'>
+          <section className='h-comment-img-p'>
+            <div className='h-comment-img-c'>
               <Link href={'/comment'}>
-                <Image className='' src={"https://i.pinimg.com/236x/2c/ee/44/2cee4471b0215c3d69ecbec45249d727.jpg"} alt='woman' width={1000} height={1000} />
+                <Image className='' src={"https://i.pinimg.com/236x/2c/ee/44/2cee4471b0215c3d69ecbec45249d727.jpg"} alt='woman' width={1500} height={1500} />
               </Link>
             </div>
           </section>
@@ -401,11 +376,11 @@ export default function Hero() {
             "Geni-I By-where the future of baby care begins. I have been using Geni-I for about 6 months now and I am absolutely thrilled with the results. The baby is growing so fast and I can't wait to see what else they will discover."
           </p>
         </div>
-        <div className='comment-child' style={theme == 'dark' ? { backgroundColor: '#fff', color: '#000' } : { backgroundColor: '#000', color: '#fff' }}>
-          <section className='comment-img-p'>
-            <div className='comment-img-c'>
+        <div className='h-comment-child'>
+          <section className='h-comment-img-p'>
+            <div className='h-comment-img-c'>
               <Link href={'/comment'}>
-                <Image className='' src={"https://i.pinimg.com/236x/56/17/9b/56179baaa4af59c5c78d6f87d0658e01.jpg"} alt='woman' width={1000} height={1000} />
+                <Image className='' src={"https://i.pinimg.com/236x/56/17/9b/56179baaa4af59c5c78d6f87d0658e01.jpg"} alt='woman' width={1500} height={1500} />
               </Link>
             </div>
           </section>

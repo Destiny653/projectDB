@@ -20,8 +20,8 @@
     left: 4%;
     z-index: 2;
     box-sizing: border-box;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541);
-    background:   rgba(0, 0, 0, 0.37);
+    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541); */
+    /* background:   rgba(0, 0, 0, 0.37); */
     padding: 0 14px;
     border-radius: 10px;
 }
@@ -29,12 +29,12 @@
 .hero-p-child h1{
     /* text-align: left; */
     font-size: 40px;
-    font-weight: 100;
+    font-weight: 400;
 }
 .hero-p-child p{
     text-align: left;
     font-size: 27px;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .hero-p::after{
@@ -327,7 +327,7 @@
     height: 430px; 
     border-radius: 15px;
     transition: all 0.3s linear; 
-    width: 100%;  
+    width: 100%;   
 }
 
 .top-pro-i:hover .top-pro-ic { 
@@ -360,13 +360,17 @@
     flex-shrink: 0;
     overflow: hidden;
     scroll-snap-align: start;
+    box-shadow: 0px 0px 5px #000000a4;
+    background-color: #e0e0e010;
+    outline: none; 
+    border-radius: 10px;
 }
 
 .customer-tips h1 {
     font-weight: 600;
 }
 
-.comments {
+.h-comments {
     width: 100%;
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
@@ -375,24 +379,25 @@
     padding: 5% 2%;
 }
 
-.comments h1 {
+.h-comments h1 {
     font-size: 28px;
     font-weight: 200;
 }
 
-.comments p {
+.h-comments p {
     font-size: 18px;
     font-weight: 100;
 }
-.comment-nar p {
+.h-comment-nar p {
     font-size: 30px;
     font-weight: 400; 
     text-align: center;
 }
 
-.comment-child {
+.h-comment-child {
     box-sizing: border-box;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.253); 
+    background-color: #ffffff15;
     padding: 9px;
     border-radius: 10px;
     /* height: 500px; */
@@ -405,7 +410,7 @@
     align-items: center; 
 }
 
-.comment-img-p {
+.h-comment-img-p {
     width: 100%;
     height: 250px; 
     /* overflow: hidden; */
@@ -413,7 +418,7 @@
     padding: 0px;
 }
 
-.comment-img-c {
+.h-comment-img-c {
     width: 100%;
     height: 250px; 
     overflow: hidden;
@@ -421,11 +426,11 @@
     box-sizing: border-box; 
 }
 
-.comment-img-c img { 
+.h-comment-img-c img { 
     transition: all 0.3s ease-in-out;
     transform: scale(1.3);
 }
-.comment-img-c:hover img {
+.h-comment-img-c:hover img {
     transform: scale(1);
 }
 
