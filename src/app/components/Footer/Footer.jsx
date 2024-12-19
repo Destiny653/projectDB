@@ -3,10 +3,10 @@ import './footer.css'
 
 export default function Footer() {
     return (
-        <div className='box-border bg-[#010111] px-[2%] pt-[50px] border-t text-[white] t-[30px]'>
+        <div className='box-border px-[2%] pt-[50px] border-t text-[white] footer-p t-[30px]'>
             <section className='flex justify-between items-cente h-[300px]'>
                 <ul className='flex justify-evenly gap-[9px] footer-links-p'>
-                    <li className='font-[600]'><span className='text-[#eccd94]'>Information</span>
+                    <li className='font-[600]'><span className='footer-head'>Information</span>
                         <ul className='pt-3 font-[400] text-[14px]'>
                             <li className='my-[10%]'>
                                 <a href='#'>About Us</a>
@@ -19,7 +19,7 @@ export default function Footer() {
                             </li>
                         </ul>
                     </li>
-                    <li className='font-[600]'><span className='text-[#eccd94]'>My Account</span>
+                    <li className='font-[600]'><span className='footer-head'>My Account</span>
                         <ul className='pt-3 font-[400] text-[14px]'>
                             <li className='my-[10%]'>
                                 <a href='#'>Orders</a>
@@ -32,7 +32,7 @@ export default function Footer() {
                             </li>
                         </ul>
                     </li>
-                    <li className='font-[600]'><span className='text-[#eccd94]'>Categories</span>
+                    <li className='font-[600]'><span className='footer-head'>Categories</span>
                         <ul className='pt-3 font-[400] text-[14px]'>
                             <li className='my-[10%]'>
                                 <a href='#'>Feeding Gadgets</a>
@@ -47,9 +47,9 @@ export default function Footer() {
                     </li>
                 </ul>
                 <div>
-                    <h1 className='text-[#eccd94] text-[27px]'>GENI~I</h1>
+                    <h1 className='text-[27px] footer-head'>GENI~I</h1>
                     <p className='my-[6%] font-[400] text-[14px]'>+880 1234 567890</p>
-                    <p className='my-[6%] font-[400] text-[#eccd94] text-[14px]'>geni-i@gmail.com</p>
+                    <p className='my-[6%] font-[400] text-[14px] footer-head'>geni-i@gmail.com</p>
                     <p className='my-[6%] font-[400] text-[14px]'>Tuesday - Saturday: 8:00am - 5:00pm</p>
                 </div>
             </section>

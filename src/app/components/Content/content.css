@@ -2,8 +2,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5%;
-    box-sizing: border-box;
-    padding: 0 2%;
+    box-sizing: border-box; 
+    justify-content: center;
+    align-items: center;
+    padding: 0 7%;
 }
 
 .cloths-i {
@@ -13,16 +15,19 @@
 }
 
 .cloths-ic {
-    height: 430px; 
+    /* height: 430px;  */
     border-radius: 15px;
     transition: all 0.3s linear; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
     width: 100%;  
+    font-size: 13px;
 }
 
 .cloths-i:hover .cloths-ic { 
     height: 470px;
     z-index: 2; 
     box-shadow: 0px 8px 0px #00000038;
+    box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
 .cloths-i:hover {

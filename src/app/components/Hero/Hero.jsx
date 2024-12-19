@@ -198,7 +198,7 @@ export default function Hero() {
 
   return (
     <div className='flex flex-col gap-[30px]'>
-      <section className='relative flex flex-row-reverse justify-stretch items-center w-full h-[90vh] overflow-hidden hero-p' >
+      <section className='w-full h-[90vh] hero-p' >
         <div className='hero-p-child'>
           <h1>We are Geni-I local to modern day parenting</h1>
           <p>
@@ -207,12 +207,15 @@ export default function Hero() {
           </p>
           {/* <button onClick={e => { console.log(e); }} className='z-10 bg-[#d4d4d4] mt-[10px] px-[23px] py-[8px] rounded-md text-white'>Shop Now</button> */}
         </div>
+        <div className='flex justify-center'>
+          <Image className='w-[400px] h-[]' src={'/image/gen-bg1.png'} alt='bg-image' width={6000} height={6000}/>
+        </div>
       </section>
       {/* <div>
         <Geolocation/>
       </div> */}
-      <section className='relative bottom-[100px] box-border px-[2%]'>
-        <h1 className='z-10 pb-[3%] font-[600] text-[#ffffff] text-[35px] text-center'>Popular Categories</h1>
+      <section className='relative bottom-[0px] box-border px-[2%]'>
+        <h1 className='z-10 pb-[3%] font-[600] text-[35px] text-center'>Popular Categories</h1>
         {/* add carousel here */}
         <Slider {...sliderSettings} className='flex gap-3 category-con'>
           {
@@ -266,7 +269,7 @@ export default function Hero() {
         <h1 className='py-[8px] font-[600] text-[35px] text-center'>Top Product</h1>
         <div className='flex items-center category-list-p'>
           <div className={` flex justify-center items-center ${addClass && 'bearer'}`} onClick={() => addClass ? setAddClass(false) : setAddClass(true)}>
-            <MdKeyboardDoubleArrowLeft className='category-arrow' size={50} />
+            <MdKeyboardDoubleArrowLeft className='category-arrow' size={30} />
           </div>
           <ul className='flex gap-[10px] category-list'>
             <li>Categories:</li>

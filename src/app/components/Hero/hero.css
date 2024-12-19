@@ -1,27 +1,22 @@
 .hero-p {
-    background-image: url('../../../../public/image/nmgp5sjg.png');
-    background-size: cover;  
     font-size: 27px;
-    color: #ffffffc7;
+    /* color: #6e6e6e; */
     text-align: center;
-    width: 100%; 
-    background-position: 0 0;
-    position: relative; 
-    width: 100%;
-    transition: all 3s ease;
-    background-repeat: no-repeat;
-    background-position: 0 50%;
+    width: 100%;   
+    transition: all 3s ease; 
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: #000; */
+    box-sizing: border-box;
+    padding-bottom: 100px;
 }
 
 .hero-p-child { 
-    width: 50%; 
-    position: absolute; 
-    transition: all 1s ease;
-    left: 4%;
-    z-index: 2;
-    box-sizing: border-box;
-    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541); */
-    /* background:   rgba(0, 0, 0, 0.37); */
+    /* width: 70%;   */
+    transition: all 1s ease;  
+    box-sizing: border-box; 
     padding: 0 14px;
     border-radius: 10px;
 }
@@ -29,12 +24,12 @@
 .hero-p-child h1{
     /* text-align: left; */
     font-size: 40px;
-    font-weight: 400;
+    font-weight: 500;
 }
 .hero-p-child p{
-    text-align: left;
+    /* text-align: left; */
     font-size: 27px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .hero-p::after{
@@ -57,7 +52,7 @@
     transition: all 1s ease;
     overflow: hidden; 
     box-sizing: border-box; 
-    background: linear-gradient(to right bottom, #fc69c36b, #2d86cf57);
+    /* background: linear-gradient(to right bottom, #fc69c36b, #2d86cf57); */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     padding: 0 10px;
     border-radius: 5%;  
@@ -80,7 +75,7 @@
     display: flex;
     gap: 15px; 
     overflow: hidden;
-    background-color: #3838382f;
+    /* background-color: #3838382f; */
     width: 0;   
     transition: all 0.5s ease;
     padding: 8px 0;
@@ -115,8 +110,8 @@
     color: #000;
 }
 .category-list li:nth-child(1){
-    background-color: #38383809;
-    color: #fff;
+    /* background-color: #38383809; */
+    /* color: #fff; */
 }
 .category-sec{
     display: grid;
@@ -131,8 +126,9 @@
     padding: 10px;
     box-sizing: border-box;
     overflow: hidden; 
-    background: linear-gradient(to left, #fc69c36b, #2d86cf57);
+    /* background: linear-gradient(to left, #fc69c36b, #2d86cf57); */
     border-radius: 17px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 .category-sec1 img{  
     transition: all 0.3s ease-out;
@@ -154,10 +150,11 @@
     gap: 10px;
     height: 240px;
     overflow: hidden;
-    background: linear-gradient(to left, #fc69c36b, #2d86cf57);
+    /* background: linear-gradient(to left, #fc69c36b, #2d86cf57); */
     border-radius: 10px;
     box-sizing: border-box;
     padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 .cate-img-box{
     width: 100%;
@@ -292,16 +289,14 @@
 
 .category-i {
     width: 15.83%;
-    height: 350px;
-    /* background-color: rgba(240, 198, 61, 0.226); */
+    height: 355px; 
     flex-shrink: 0;
     border-radius: 10px;
     scroll-snap-align: start;
     scroll-behavior: smooth;
-    overflow: hidden;
-    background-color: #e0e0e010; 
-    border: 1px solid rgba(128, 128, 128, 0.384);
-    background: radial-gradient(  #fc69c36b, #2d86cf57);
+    overflow: hidden; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
+    /* background: radial-gradient(  #edf9fd, #ffe8f9); */
     outline: none;
 }
 
@@ -360,7 +355,7 @@
     flex-shrink: 0;
     overflow: hidden;
     scroll-snap-align: start;
-    box-shadow: 0px 0px 5px #000000a4;
+    /* box-shadow: 0px 0px 5px #000000a4; */
     background-color: #e0e0e010;
     outline: none; 
     border-radius: 10px;
@@ -381,11 +376,11 @@
 
 .h-comments h1 {
     font-size: 28px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .h-comments p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 100;
 }
 .h-comment-nar p {
@@ -395,9 +390,8 @@
 }
 
 .h-comment-child {
-    box-sizing: border-box;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.253); 
-    background-color: #ffffff15;
+    box-sizing: border-box; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
     padding: 9px;
     border-radius: 10px;
     /* height: 500px; */
