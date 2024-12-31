@@ -32,36 +32,36 @@ export default function Page() {
         }
     ]
     return (
-        <div className='box-border flex flex-col justify-center items-center gap-[30px] px-[60px] pt-[20px] pb-[140px]'>
+        <div className='box-border flex flex-col gap-[40px] px-[60px] pt-[20px] pb-[140px]'>
             <div className='product-hero'>
                 <h1>Our Products</h1>
                 <p>Discover our diverse range of products at our store.</p>
             </div>
             <div className='product-sec-p'>
                 <section className='product-sec1-p'>
-                <section className='product-sec1'>
-                    <select name="" id="">
-                        <option value="">Select your option</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
-                    <select name="" id="">
-                        <option value="">select your option</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
-                    <section className='box-con'>
-                        <p>Shop by preference</p>
-                        <div className='product-box-p'>
-                            <section className="product-box"></section>
-                            <section className="product-box"></section>
-                            <section className="product-box"></section>
-                            <section className="product-box"></section>
-                        </div>
+                    <section className='product-sec1'>
+                        <select name="" id="">
+                            <option value="">Select your option</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">select your option</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                        <section className='box-con'>
+                            <p>Shop by preference</p>
+                            <div className='product-box-p'>
+                                <section className="product-box"></section>
+                                <section className="product-box"></section>
+                                <section className="product-box"></section>
+                                <section className="product-box"></section>
+                            </div>
+                        </section>
                     </section>
-                </section>
                 </section>
                 <section className='product-sec2'>
                     <div className='box-border product-c'>

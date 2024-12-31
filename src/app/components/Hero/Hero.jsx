@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CiShoppingBasket } from "react-icons/ci";
 import { ThemeContext } from '../../../../context/ThemeContext';
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { Cloths, Valies, Shoes, Diaper, Nightware, Bath } from '../Content/Content';
+import { Cloths, Valies, Shoes, Diaper, Nightware, Bath , Feeding} from '../Content/Content';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -17,7 +17,7 @@ export default function Hero() {
   const { theme } = useContext(ThemeContext)
   const [addClass, setAddClass] = useState(false)
   const [currentInterval, setCurrentInterval] = useState(0)
-  const [contentV, setContentV] = useState(Cloths)
+  const [contentV, setContentV] = useState(Feeding)
 
   const sliderSettings = {
     // dots: true,
@@ -267,7 +267,7 @@ export default function Hero() {
       </section>
       <section>
         <h1 className='py-[8px] font-[600] text-[35px] text-center'>Top Product</h1>
-        <div className='flex items-center category-list-p'>
+        <div className='flex items-center mb-[20px] category-list-p'>
           <div className={` flex justify-center items-center ${addClass && 'bearer'}`} onClick={() => addClass ? setAddClass(false) : setAddClass(true)}>
             <MdKeyboardDoubleArrowLeft className='category-arrow' size={30} />
           </div>
@@ -277,6 +277,7 @@ export default function Hero() {
             <li onClick={() => setContentV(Diaper)}>Diaper</li>
             <li onClick={() => setContentV(Bath)}>Bath</li>
             <li onClick={() => setContentV(Valies)}>Valies</li>
+            <li onClick={() => setContentV(Feeding)}>Feeding</li>
           </ul>
         </div>
         {contentV}

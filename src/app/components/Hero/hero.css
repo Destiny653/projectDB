@@ -103,6 +103,8 @@
 .category-list li{
     padding: 0 4px;
     border-radius: 0 10px;
+    font-size: 19px;
+    /* font-weight: 500; */
 }
 
  .category-list li:hover { 
