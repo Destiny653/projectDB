@@ -17,7 +17,7 @@ export default function Hero() {
   const { theme } = useContext(ThemeContext)
   const [addClass, setAddClass] = useState(false)
   const [currentInterval, setCurrentInterval] = useState(0)
-  const [contentV, setContentV] = useState(Feeding)
+  const [contentV, setContentV] = useState(Bath)
 
   const sliderSettings = {
     // dots: true,

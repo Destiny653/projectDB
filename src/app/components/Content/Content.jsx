@@ -4,7 +4,7 @@ import { CiShoppingBasket } from "react-icons/ci";
 import Image from 'next/image';
 
 
-const num = [1, 2, 3, 4, 5, 6, 7, 8]
+const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 const imgCollection = [
   {
@@ -46,7 +46,7 @@ const valies = [
 const Cloths = () => {
   return (
 
-    <div className='box-border mx-[10px] my-[20px] cloths-c'>
+    <div className='box-border my-[20px] cloths-c'>
       {
         imgCollection.map((item, index) => (
           <section className='relative cloths-i' key={index}>
@@ -76,18 +76,6 @@ const Cloths = () => {
 const Valies = () => {
   return (
     <div className='relative cart-valies-p'>
-      <section className='top-0 left-0 sticky cart-valies-detail'>
-        <div className='w-[100%] h-[500px]'>
-          <Image className='h-full' src={'/image/valies/v1.png'} alt='valies image' width={600} height={600} />
-        </div>
-        <div className='w-[100%] h-[190px]'>
-          <section className='text-center'>
-            <h1 className='font-[500] text-[16px]' >Premium Valies</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit expedita illo adipisci dolore error, aliquid hic magni voluptat</p>
-            <p className='font-[500]'>$600</p>
-          </section>
-        </div>
-      </section>
       <section className='cart-valies-con'>
         {
           valies.map((item, i) => (
@@ -118,155 +106,27 @@ const Shoes = () => {
   )
 }
 const Feeding = () => {
-  return (
-    <div>
-      <h1 className='py-[20px] text-[20px] text-center'>Find all your feeding gadgets on this list!</h1>
-      <section className='feed-cart-list'>
-        <ul >
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
+  return (  
+        <ul className='feed-cart-list'>
+          {
+            num.map((item, i) => (
+              <li key={i}>
+                <div>
+                  <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
+                    <h1 className='font-[500]' >$300</h1>
+                    <section className='feed-cart'>
+                      <div className='border w-fit feed-cart-btn'>
+                        <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
+                      </div>
+                      <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
+                    </section>
                   </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div className='bottom-[10px] absolute flex flex-col justify-center gap-[5px]'>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, suscipit?</p>
-                  <h1 className='font-[500]' >$300</h1>
-                <section className='feed-cart'>
-                  <div className='border w-fit feed-cart-btn'>
-                    <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
-                  </div>
-                  <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                </section>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <div className='feed-cart-detail'></div>
-      </section>
-    </div>
+                </div>
+              </li>
+            ))
+          }
+        </ul> 
   )
 }
 
@@ -284,14 +144,52 @@ const NightWare = () => {
 
 const Bath = () => {
   return (
-    <div className='cart-bath'>
-      {
-        num.map(((item, i) => (
-          <section key={i} className={`bath-item-${i}`}>{item}</section>
-        )))
-      }
+    <div className='bath-display'>
+      <div className='cart-bath'>
+        {
+          num.map(((item, i) => (
+            <section key={i} className={`bath-item-${i}`}>
+              {i == 3 || i == 6 ?
+                (<div className='bath-basin'>
+                  <section className='flex justify-between'>
+                    <div className='bg-[#333] rounded-[10px] w-[300px] h-[200px]'></div>
+                    <div className='flex flex-col gap-[10px]'>
+                      <h1 className='font-[500]'>Custom Basin</h1>
+                      <h3>$500</h3>
+                      <section className='border rounded-[6px] overflow-hidden'>
+                        <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button>
+                        <span className='bg-[#80808048] px-[14px] py-[5px]'>2</span>
+                        <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
+                      </section>
+                      <div className='flex justify-center items-center bg-[#66666633] bath-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
+                    </div>
+                  </section>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni architecto, illo quasi ratione c</p>
+                </div>)
+                :
+                <div className='flex flex-col justify-center items-center gap-[10px] bath-item'>
+                  <section className='bg-cyan-200 rounded-full w-[160px] h-[50%]'></section>
+                  <section className='relative px-[10px] text-[14px]'>
+                    <h1 className='font-[500]'>Custom Basin</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h3>$500</h3>
+                    <section className='bottom-[10px] feed-cart'>
+                      <div className='border w-fit feed-cart-btn'>
+                        <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[6px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
+                      </div>
+                      <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
+                    </section>
+                  </section>
+                </div>
+              }
+            </section>
+          )))
+        }
+      </div>
     </div>
   )
 }
+
+module.exports = { Cloths, Valies, Shoes, Diaper, NightWare, Bath, Feeding }
 
 module.exports = { Cloths, Valies, Shoes, Diaper, NightWare, Bath, Feeding }

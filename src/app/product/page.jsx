@@ -1,9 +1,13 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import './product.css'
 import Image from 'next/image';
 import { CiShoppingBasket } from "react-icons/ci";
+import { Cloths, Valies, Shoes, Diaper, Nightware, Bath, Feeding } from '../components/Content/Content';
 
 export default function Page() {
+    const [contentV, setContentV] = useState(Bath)
+
 
     const imgCollection = [
         {
@@ -32,65 +36,43 @@ export default function Page() {
         }
     ]
     return (
-        <div className='box-border flex flex-col gap-[40px] px-[60px] pt-[20px] pb-[140px]'>
+        <div className='box-border flex flex-col gap-[40px] pt-[20px] pb-[140px]'>
             <div className='product-hero'>
                 <h1>Our Products</h1>
                 <p>Discover our diverse range of products at our store.</p>
             </div>
-            <div className='product-sec-p'>
-                <section className='product-sec1-p'>
-                    <section className='product-sec1'>
-                        <select name="" id="">
-                            <option value="">Select your option</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                        <select name="" id="">
-                            <option value="">select your option</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                        <section className='box-con'>
-                            <p>Shop by preference</p>
-                            <div className='product-box-p'>
-                                <section className="product-box"></section>
-                                <section className="product-box"></section>
-                                <section className="product-box"></section>
-                                <section className="product-box"></section>
-                            </div>
-                        </section>
-                    </section>
-                </section>
-                <section className='product-sec2'>
-                    <div className='box-border product-c'>
-                        {
-                            imgCollection.map((item, index) => (
-                                <section className='relative product-i' key={index}>
-                                    <div className='box-border overflow-hidden product-ic'>
-                                        <div className='box-border px-[30px] p-[16px] h-[300px]'>
-                                            <Image className='w-[90%] h-full' src={item.img} alt='product' width={800} height={800} />
-                                        </div>
-                                        <div className='box-border gap-2 grid p-[6px]'>
-                                            <h1 className='text-[#ccb582]'>Fashion Wear</h1>
-                                            <p className=' '>Discover latest fashion trends and for your little one.</p>
-                                            <p className='text-[#ccb582]'>$650</p>
-                                        </div>
-                                        <section className='flex'>
-                                            <div className='border w-fit product-cart-btn'>
-                                                <button className='hover:bg-[#e99f16f6] px-[15px] py-[6px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[15px] py-[9px]'>2</span><button className='hover:bg-[#e99f16f6] px-[15px] py-[6px] border-l font-[600]'>+</button>
-                                            </div>
-                                            <div className='flex justify-center items-center bg-[#66666633] product-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                                        </section>
-                                    </div>
-                                </section>
-                            ))
-                        }
-
+            <ul className='flex gap-[12px] list-options'>
+                <li onClick={() => setContentV(Cloths)}>Cloths</li>
+                <li onClick={() => setContentV(Diaper)}>Diaper</li>
+                <li onClick={() => setContentV(Bath)}>Bath</li>
+                <li onClick={() => setContentV(Valies)}>Valies</li>
+                <li onClick={() => setContentV(Feeding)}>Feeding</li>
+                <li onClick={() => setContentV(Shoes)}>Shoes</li>
+                <li onClick={() => setContentV(Nightware)}>Nightware</li>
+            </ul>
+            <section className="product-content-display">
+                <div className='top-0 left-0 sticky flex flex-col gap-[8px]'>
+                    <div className='w-[80%]'>
+                        <Image className='h-full' src={'/image/valies/v1.png'} alt='valies image' width={600} height={600} />
                     </div>
-                </section>
-            </div>
+                    <div className='w-[100%]'>
+                        <section className=''>
+                            <h1 className='font-[500] text-[16px]' >Premium Valies</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit expedita illo adipisci dolore error, aliquid hic magni voluptat</p>
+                            <p className='font-[500]'>$600</p>
+                        </section>
+                    </div>
+                    <section className='feed-cart'>
+                        <div className='border w-fit feed-cart-btn'>
+                            <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'>-</button><span className='bg-[#80808048] px-[14px] py-[5px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]'>+</button>
+                        </div>
+                        <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
+                    </section>
+                </div>
+                <div>
+                    {contentV}
+                </div>
+            </section>
         </div>
     )
 }
