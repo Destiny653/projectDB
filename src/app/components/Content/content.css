@@ -1,16 +1,17 @@
 .cloths-c {
     display: grid;
     /* grid-template-columns: repeat(4, 1fr); */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
     gap: 2.5%;
     box-sizing: border-box; 
     justify-content: center;
     align-items: center;
-    padding: 0 7%;
+    /* padding: 0 7%; */
 }
 
 .cloths-i {
     height: 400px;
+    width: 270px;
     border-radius: 15px;
     word-spacing: 2px;
     transition: all 0.3s linear;  
@@ -85,14 +86,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     width: 100%;
-    gap: 13px;
+    gap: 40px;
     row-gap: 50px;
     position: relative;
     color: #000;
 }
 .cart-valies-con> div{  
     border-radius: 10px;
-    height: 360px; 
+    height: 370px; 
+    width: 280px;
     box-sizing: border-box;
     padding: 10px 15px;
     position: relative;
