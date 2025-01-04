@@ -83,7 +83,7 @@
 
 .cart-valies-con{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     width: 100%;
     gap: 13px;
     row-gap: 50px;
@@ -183,7 +183,7 @@
  
 .feed-cart-list  {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 10px;  
     width: 100%;
 }

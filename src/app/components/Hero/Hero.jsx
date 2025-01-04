@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CiShoppingBasket } from "react-icons/ci";
 import { ThemeContext } from '../../../../context/ThemeContext';
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { Cloths, Valies, Shoes, Diaper, Nightware, Bath , Feeding} from '../Content/Content';
+import { Cloths, Valies, Shoes, Diaper, Nightware, Bath, Feeding } from '../Content/Content';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -208,7 +208,7 @@ export default function Hero() {
           {/* <button onClick={e => { console.log(e); }} className='z-10 bg-[#d4d4d4] mt-[10px] px-[23px] py-[8px] rounded-md text-white'>Shop Now</button> */}
         </div>
         <div className='flex justify-center'>
-          <Image className='w-[400px] h-[]' src={'/image/gen-bg1.png'} alt='bg-image' width={6000} height={6000}/>
+          <Image className='w-[400px] h-[]' src={'/image/gen-bg1.png'} alt='bg-image' width={6000} height={6000} />
         </div>
       </section>
       {/* <div>
@@ -265,7 +265,7 @@ export default function Hero() {
           </section>
         </div>
       </section>
-      <section>
+      <section className='box-borderpx'>
         <h1 className='py-[8px] font-[600] text-[35px] text-center'>Top Product</h1>
         <div className='flex items-center mb-[20px] category-list-p'>
           <div className={` flex justify-center items-center ${addClass && 'bearer'}`} onClick={() => addClass ? setAddClass(false) : setAddClass(true)}>
@@ -280,7 +280,9 @@ export default function Hero() {
             <li onClick={() => setContentV(Feeding)}>Feeding</li>
           </ul>
         </div>
-        {contentV}
+        <div className='box-border px-[2%]'>
+          {contentV}
+        </div>
       </section>
       <section className='category-sec'>
         <div className='category-sec1'>
