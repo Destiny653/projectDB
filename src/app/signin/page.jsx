@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link';
+import styles from './singin.module.css'
 import React, { useState } from 'react'
 
 export default function page() {
@@ -20,31 +21,22 @@ export default function page() {
     }
 
     return (
-        <div className='bg-[#d4b95f3b] flex justify-center items-center box-content py-[10%]'>
-            <section className='w-[80%] flex justify-center items-center  bg-[#ffffff] rounded-[15px] box-border py-[20px]'>
-                <form className='flex flex-col w-[70%]' onSubmit={handleSubmit}>
-                    <div className='g-[red] w-full box-border py-[3%] '>
-                        <h1 className='text-[27px] font-bold text-[#000000]'>Sing in request</h1>
-                        <p className='font-[300]'>Validate some personal Information. Your info will never be publicly available.</p>
-                    </div>
-                    <label htmlFor="email" className='flex flex-col gap-[4px] w-[50%] py-[2%]'>
-                        <span className=''>Email address</span>
-                        <input value={email} onChange={e => setEmail(e.target.value)} className=' outline-[0] border-[1px] border-[#6d471648] w-[100%] py-[6px] px-[20px]' type="text" id="email" name="email" placeholder="email@gmail.com" required />
-                    </label>
-                    <label htmlFor="password" className='flex flex-col gap-[4px] w-[50%]'>
-                        <span className=''>Password</span>
-                        <input value={password} onChange={(e) => setPassword(e.target.value)} className=' outline-[0] border-[1px] border-[#6d471648] rounded-[20px] w-[100%] py-[6px] px-[20px]' type="password" id="password" name="password" placeholder="*********" required />
-                    </label>
-                    <div className='flex items-center gap-[2%]'>
-                        <button type='submit' className='bg-[#000] py-[9px] px-[30px] text-[#fff] w-fit rounded-[12px] my-[10px]'>Submit</button>
-                        <span className='text-[14px] hover:text-[#0000ffc7] cursor-pointer'> Don't have an account?
-                            <Link href={'/signup'}>
-                                <strong> sign up.</strong>
-                            </Link>
-                        </span>
-                    </div>
-                </form>
-            </section>
+        <div className={`w-full flex justify-center items-center h-[80vh]`}>
+            <form className={`${styles.signForm}`}>
+                <label htmlFor="email">
+                    <span>Email</span>
+                    <input type="email" name="email" id="" />
+                </label>
+                <label htmlFor="password">
+                    <span>Password</span>
+                    <input type="password" name="password" id="" />
+                </label>
+                <Link href={'/reset'}>
+                    <p>Forgot password.</p>
+                </Link>
+                <button type='submit'>Submit</button>
+                <p className='text-[12px] text-[blue]'>Don't have an account? <Link href={'/signup'} className='hover:text-[gray]'>Sign Up</Link></p>
+            </form>
         </div>
     )
 }

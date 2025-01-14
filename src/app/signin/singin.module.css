@@ -1,0 +1,32 @@
+.signForm{  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box; 
+    box-shadow: 0px 0px 5px #00000031;
+    background: linear-gradient(to top right, #ffffff1a 50%, #86a7d8 50%);
+    width: 30%; 
+    padding: 30px 20px;
+    border-radius: 5px;
+}
+.signForm label{ 
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+.signForm input{
+    padding: 6px 17px;
+    outline: none;
+    border-radius: 6px;
+}
+
+.signForm span{
+    font-size: 13px;
+}
+
+.signForm button {
+    background-color: #000;
+    border-radius: 6px;
+    padding: 6px 0;
+    color:#fff;
+}

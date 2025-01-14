@@ -16,8 +16,10 @@ export default function Hero() {
 
   const { theme } = useContext(ThemeContext)
   const [addClass, setAddClass] = useState(false)
+  const [bugC, setBugC] = useState(false)
   const [currentInterval, setCurrentInterval] = useState(0)
   const [contentV, setContentV] = useState(Bath)
+  const [classN, setClassN] = useState('activeProduct')
 
   const sliderSettings = {
     // dots: true,
@@ -254,7 +256,7 @@ export default function Hero() {
               <section className="circle-formation">
                 <Image className='rounded-full w-[100%] h-full' src='https://i.pinimg.com/564x/a1/c4/1c/a1c41c00f4a15c782735a2084e35a27a.jpg' alt='body care' width={500} height={500} />
               </section>
-              <span className=' '>Vasline protects and locks in moisture to help dru skin heal 100% pure petroleum jelly. Triple-purified.</span>
+              <span className=''>Vasline protects and locks in moisture to help dru skin heal 100% pure petroleum jelly. Triple-purified.</span>
             </div>
             <div className='circle-d'>
               <section className="circle-formation">
@@ -270,14 +272,39 @@ export default function Hero() {
         <div className='flex items-center mb-[20px] category-list-p'>
           <div className={` flex justify-center items-center ${addClass && 'bearer'}`} onClick={() => addClass ? setAddClass(false) : setAddClass(true)}>
             <MdKeyboardDoubleArrowLeft className='category-arrow' size={30} />
-          </div>
+          </div> 
           <ul className='flex gap-[10px] category-list'>
-            <li>Categories:</li>
-            <li onClick={() => setContentV(Cloths)}>Cloths</li>
-            <li onClick={() => setContentV(Diaper)}>Diaper</li>
-            <li onClick={() => setContentV(Bath)}>Bath</li>
-            <li onClick={() => setContentV(Valies)}>Valies</li>
-            <li onClick={() => setContentV(Feeding)}>Feeding</li>
+            {/* <li>Categories:</li> */}
+            <label htmlFor="item1">
+              <input type="radio" name="options" id="item1" />
+              <li onClick={() => setContentV(Cloths)} >
+                Cloths
+              </li>
+            </label>
+            <label htmlFor="item2">
+              <input type="radio" name="options" id="item2" />
+              <li onClick={() => setContentV(Diaper)} >
+                Diaper
+              </li>
+            </label>
+            <label htmlFor="item3">
+              <input type="radio" name="options" id="item3" />
+              <li onClick={() => setContentV(Bath)}>
+                Bath
+              </li>
+            </label>
+            <label htmlFor="item4">
+              <input type="radio" name="options" id="item4" />
+              <li onClick={() => setContentV(Valies)} >
+                Valies
+              </li>
+            </label>
+            <label htmlFor="item5">
+              <input type="radio" name="options" id="item5" />
+              <li onClick={() => setContentV(Feeding)} >
+                Feeding
+              </li>
+            </label>
           </ul>
         </div>
         <div className='box-border px-[2%]'>

@@ -152,7 +152,7 @@ const Bath = () => {
               {i == 3 || i == 6 ?
                 (<div className='bath-basin'>
                   <section className='flex justify-between'>
-                    <div className='bg-[#333] rounded-[10px] w-[300px] h-[200px]'></div>
+                    <div className='bg-[#a3a1a13a] rounded-[10px] w-[300px] h-[200px]'></div>
                     <div className='flex flex-col gap-[10px]'>
                       <h1 className='font-[500]'>Custom Basin</h1>
                       <h3>$500</h3>
@@ -168,7 +168,7 @@ const Bath = () => {
                 </div>)
                 :
                 <div className='flex flex-col justify-center items-center gap-[10px] bath-item'>
-                  <section className='bg-cyan-200 rounded-full w-[160px] h-[50%]'></section>
+                  <section className='bg-[#d3d1d141] rounded-full w-[160px] h-[50%]'></section>
                   <section className='relative px-[10px] text-[14px]'>
                     <h1 className='font-[500]'>Custom Basin</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

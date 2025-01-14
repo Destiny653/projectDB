@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-  body {  
-    background-color: #000;
-  }
 
 .theme-panel{
   height: 0;
@@ -19,8 +16,8 @@
 }
 
 .light {
+  /* background: radial-gradient(  #edf9fd, #fff4fc) ;   */
   background-color: #fff;
-  background: radial-gradient(  #edf9fd, #fff4fc) ;  
   /* background: radial-gradient(  rgba(255, 236, 240, 0.993), #edf9fd) ;   */
   color: #000;
   color: #414141;
@@ -29,4 +26,46 @@
   background-color:#1a1a20;
   color: #fff;
   /* color: #5f5f5f; */
+}
+
+.bug-category-p{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 35px;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+  height: 30px;
+}
+.bug-category-p .bug1,
+.bug-category-p .bug2,
+.bug-category-p .bug3{
+  position: absolute;
+  background-color: #000000;
+  width: 25px;
+  height: 3px;
+  transition: all 0.2s ease;
+}
+.bug-category-p .bug1{
+  bottom: 6px;
+}
+.bug-category-p .bug3{
+  top: 7px;
+}
+
+.bug-category-p.active-bug{  
+  .bug1{ 
+    transform: rotate(-35deg);
+    width: 25px;
+  }
+  .bug2{ 
+    width: 36px;
+  }
+  .bug3{ 
+    transform: rotate(35deg);
+    width: 25px;
+
+  }
 }

@@ -7,6 +7,7 @@ import { Cloths, Valies, Shoes, Diaper, Nightware, Bath, Feeding } from '../comp
 
 export default function Page() {
     const [contentV, setContentV] = useState(Bath)
+    const [bugC, setBugC] = useState(false)
 
 
     const imgCollection = [
@@ -38,17 +39,45 @@ export default function Page() {
     return (
         <div className='box-border flex flex-col gap-[40px] pt-[20px] pb-[140px]'>
             <div className='product-hero'>
-                <h1>Our Products</h1>
+                <h1 className='text-[40px]'>Our Products</h1>
                 <p>Discover our diverse range of products at our store.</p>
             </div>
-            <ul className='flex gap-[12px] list-options'>
-                <li onClick={() => setContentV(Cloths)}>Cloths</li>
-                <li onClick={() => setContentV(Diaper)}>Diaper</li>
-                <li onClick={() => setContentV(Bath)}>Bath</li>
-                <li onClick={() => setContentV(Valies)}>Valies</li>
-                <li onClick={() => setContentV(Feeding)}>Feeding</li>
-                <li onClick={() => setContentV(Shoes)}>Shoes</li>
-                <li onClick={() => setContentV(Nightware)}>Nightware</li>
+            <ul className={`box-border flex items-center gap-[10px] px-[30px] font-[500]  list-options ${!bugC && 'list-option-hide'}`}>
+                < section className={`bug-category-p ${bugC && 'active-bug'}`} onClick={()=>{ !bugC ? setBugC(true) : setBugC(false)}}>
+                    <div className='bug1'></div>
+                    <div className='bug2'></div>
+                    <div className='bug3'></div>
+                </section>
+                <label htmlFor="item1">
+                    <input type="radio" name="options" id="item1" />
+                    <li onClick={() => setContentV(Cloths)} >
+                        Cloths
+                    </li>
+                </label>
+                <label htmlFor="item2">
+                    <input type="radio" name="options" id="item2" />
+                    <li onClick={() => setContentV(Diaper)} >
+                        Diaper
+                    </li>
+                </label>
+                <label htmlFor="item3">
+                    <input type="radio" name="options" id="item3" />
+                    <li onClick={() => setContentV(Bath)}>
+                        Bath
+                    </li>
+                </label>
+                <label htmlFor="item4">
+                    <input type="radio" name="options" id="item4" />
+                    <li onClick={() => setContentV(Valies)} >
+                        Valies
+                    </li>
+                </label>
+                <label htmlFor="item5">
+                    <input type="radio" name="options" id="item5" />
+                    <li onClick={() => setContentV(Feeding)} >
+                        Feeding
+                    </li>
+                </label>
             </ul>
             <section className="product-content-display">
                 <div className='top-0 left-0 sticky flex flex-col gap-[8px]'>

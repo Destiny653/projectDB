@@ -1,7 +1,7 @@
 .hero-p {
     font-size: 27px;
     /* color: #6e6e6e; */
-    text-align: center;
+    /* text-align: center; */
     width: 100%;   
     transition: all 3s ease; 
     display: grid;
@@ -11,20 +11,21 @@
     /* background-color: #000; */
     box-sizing: border-box;
     padding-bottom: 100px;
+    padding-left: 3%;
 }
 
-.hero-p-child { 
-    /* width: 70%;   */
+.hero-p-child {  
     transition: all 1s ease;  
     box-sizing: border-box; 
     padding: 0 14px;
     border-radius: 10px;
 }
 
-.hero-p-child h1{
-    /* text-align: left; */
-    font-size: 40px;
+.hero-p-child h1{ 
+    font-size: 70px;
+    line-height: 1em;
     font-weight: 500;
+    padding-bottom: 20px;
 }
 .hero-p-child p{
     /* text-align: left; */
@@ -80,6 +81,9 @@
     transition: all 0.5s ease;
     padding: 8px 0;
     border-radius: 0 15px;
+    font-weight: 500; 
+    border-bottom: 1px solid gray;
+    /* text-transform: uppercase; */
 }
 .category-arrow{
     transition: all 0.5s ease;
@@ -100,21 +104,20 @@
     cursor: pointer;
 }
 
-.category-list li{
-    padding: 0 4px;
-    border-radius: 0 10px;
-    font-size: 19px;
-    /* font-weight: 500; */
+.category-list input[type="radio"]{
+    display: none;
 }
 
- .category-list li:hover { 
+.category-list li{
+    padding: 4px 10px;
+    border-radius: 0 10px;
+    font-size: 15px; 
+}
+
+ .category-list label input[type="radio"]:checked + li { 
     background-color: #fff;
     color: #000;
-}
-.category-list li:nth-child(1){
-    /* background-color: #38383809; */
-    /* color: #fff; */
-}
+} 
 .category-sec{
     display: grid;
     grid-template-columns:  45% 54%;
