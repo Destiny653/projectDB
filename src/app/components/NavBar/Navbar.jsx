@@ -13,7 +13,7 @@ export default function Navbar() {
     const { theme } = useContext(ThemeContext);
     return (
         <div className='nav-con'>
-            <div className='box-border my-1 nav-p'>
+            <div className='box-border nav-p'>
                 <section className='box-border w-full b-[#40abdd4d] nav-menu'>
                     <section className='flex gap-[8px]'>
                         <div className='box-border flex flex-col justify-evenly items-center py-[3px] w-[46px] h-[42px] nav-i'>

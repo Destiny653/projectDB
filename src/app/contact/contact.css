@@ -12,8 +12,7 @@
     justify-content: center; 
     box-sizing: border-box;
     padding: 0 100px;
-    gap: 40px;
-    /* align-items: center; */
+    gap: 20px; 
 }
 .form-sec2{
     display: flex; 
@@ -40,6 +39,10 @@
     justify-content: center; 
     align-items: center;
     gap: 15px;
+    box-sizing: border-box;
+    padding: 10px 13px;
+    border-radius: 8px;
+    background-color: rgba(58, 165, 160, 0.247);
 }
 label{
     position: relative;
@@ -71,7 +74,7 @@ textarea{
 .side-bar{
     background-color: rgba(58, 165, 160, 0.247);
     box-sizing: border-box;
-    padding: 10px 15px;
+    padding: 10px 14px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;

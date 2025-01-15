@@ -19,8 +19,7 @@
   /* background: radial-gradient(  #edf9fd, #fff4fc) ;   */
   background-color: #fff;
   /* background: radial-gradient(  rgba(255, 236, 240, 0.993), #edf9fd) ;   */
-  color: #000;
-  color: #414141;
+  color: #000; 
 } 
 .dark {
   background-color:#1a1a20;

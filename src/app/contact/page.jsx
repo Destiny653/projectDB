@@ -38,7 +38,7 @@ export default function Page() {
                             <span>Email</span>
                             <input type="email" />
                         </label>
-                        <input className='bg-[#000] w-full' type="submit" value="Submit Button" />
+                        <input className='bg-[#000] w-full text-[#fff]' type="submit" value="Submit Button" />
                     </div>
                 </form>
                 <section className='form-sec2'>

@@ -1,0 +1,21 @@
+.validEmail{
+    width: 400px;
+    /* height: 200px;  */
+    background-color: rgb(196, 232, 233);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+
+.validEmail form {
+    width: 100%;
+}
+.validEmail  input {
+    width: 100%;
+    padding: 7px 15px;
+    border-radius: 10px;
+    outline: none;
+}

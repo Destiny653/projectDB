@@ -1,17 +1,17 @@
-.signParent{
+.signUpParent{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(188, 238, 240);
     background: linear-gradient( to right, rgb(188, 238, 240), rgba(253, 217, 223, 0.377));;
-    width: 50%;
-    height: 500px;
+    width: 60%;
+    height: 600px;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: inset -5px 0px 10px #fff;
     position: relative;
 }
-.signImgFrame{
+.signUpImgFrame{
     background-color: #fff;
     background: url('../../../public/image/form1.jpg');
     background-repeat: no-repeat;
@@ -24,10 +24,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center; 
+    position: relative;
     box-sizing: border-box;
-    padding: 20px;
+    padding-left: 20px; 
 }
-.signForm{  
+
+/* .signUpImgFrame::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.315); 
+} */
+.signUpForm{  
     /* clip-path: polygon(45% 0, 18% 100%, 100% 86%); */
     display: flex;
     flex-direction: column;
@@ -38,28 +49,61 @@
     /* background: linear-gradient(to top right, #ffffff1a 50%, #86a7d8 50%); */
     width: 50%; 
     padding: 30px 20px;
-    /* border-radius: 5px; */
-    font-weight: 500;
+    /* border-radius: 5px; */ 
 }
-.signForm label{ 
+.signUpForm label{ 
     display: flex;
     gap: 8px;
     flex-direction: column;
 }
-.signForm input{
+.signUpForm input{
     padding: 6px 17px;
     outline: none;
     background-color: #ffffff;
     border-radius: 6px;
+    width: 100%;
 }
 
-.signForm span{
+.signUpForm span{
     font-size: 14px;
+    font-weight: 500;
 }
 
-.signForm button {
+.signUpForm button {
+    font-weight: 500;
     background-color: #000;
     border-radius: 6px;
     padding: 6px 0;
     color:#fff;
 }
+.valiBugCon{
+    position: absolute;
+    top: 40px;
+    right: 40px;  
+    width: 40px;
+    height: 40px;
+    background-color: #0000002f;
+    display:flex;
+    justify-content: center
+} 
+.valiBugCon:hover{
+    background-color: #696969de; 
+} 
+
+.valiBug1,
+.valiBug2{
+    width: 38px;
+    top: 18px;
+    height: 4px; 
+    background-color: #ffffff;
+    position: absolute;
+}  
+
+.valiBug1{  
+    transform: rotate(-45deg);
+}
+
+.valiBug2{ 
+    transform: rotate(45deg)
+}
+ 

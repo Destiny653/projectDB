@@ -209,8 +209,8 @@ export default function Hero() {
           </p>
           {/* <button onClick={e => { console.log(e); }} className='z-10 bg-[#d4d4d4] mt-[10px] px-[23px] py-[8px] rounded-md text-white'>Shop Now</button> */}
         </div>
-        <div className='flex justify-center'>
-          <Image className='w-[400px] h-[]' src={'/image/gen-bg1.png'} alt='bg-image' width={6000} height={6000} />
+        <div className='flex justify-center heroImg'>
+          <Image className='w-[100]' src={'/image/gen-bg1.png'} alt='bg-image' width={6000} height={6000} />
         </div>
       </section>
       {/* <div>

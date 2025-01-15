@@ -1,11 +1,11 @@
 .nav-p {
     position: relative;
     color: #000;
-    background-color: #ffffffe1;
+    background-color: #ffffff8a;
     z-index: 6;
     width: 100%;
     font-weight: 500;
-    box-shadow:inset 0px -5px 17px #fffffff6;
+    box-shadow:inset 0px -5px 9px 0px #ffffff;
 }
 
 .nav-con {

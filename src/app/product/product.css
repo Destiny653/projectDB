@@ -118,6 +118,7 @@
 .list-options{
     /* text-transform: uppercase; */
     font-weight: 500; 
+    /* border-bottom: 1px solid #000; */
 }
 
 .list-options input[type="radio"]{

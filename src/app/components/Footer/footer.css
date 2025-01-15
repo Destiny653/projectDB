@@ -1,8 +1,9 @@
 .footer-p {
-    background-color: #ffffffe1;
+    background-color: #ffffff8a;
     color: #000;
     font-weight: 500;
-    box-shadow:inset 0px 5px 17px #fffffff6;
+    box-shadow:inset 0px 5px 17px #ffffff8a;
+    box-shadow:inset 0px -5px 10px 5px #ffffff;
 }
 .footer-con {
     /* background-color: rgba(7, 95, 167, 0.452); */
