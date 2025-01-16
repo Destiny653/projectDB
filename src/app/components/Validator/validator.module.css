@@ -1,4 +1,4 @@
-.validEmail{
+.validEmail {
     width: 400px;
     /* height: 200px;  */
     background-color: rgb(196, 232, 233);
@@ -8,14 +8,30 @@
     align-items: center;
     box-sizing: border-box;
     padding: 10px 15px;
+    transition: all 0.4s ease; 
+    animation: trans2 0.5s ease-in-out; 
+} 
+.validatorParent .validEmail.setMail {  
+    transition: all 0.2s ease;
+    animation: trans 0.5s ease-in-out; 
+}
+
+@keyframes trans {
+    0% { transform: translateX(-300%); } 
+    100% { transform: translateX(0); }
+}
+@keyframes trans2 {
+    0% { transform: translateX(0); } 
+    100% { transform: translateX(300%); }
 }
 
 .validEmail form {
     width: 100%;
 }
-.validEmail  input {
+
+.validEmail input {
     width: 100%;
     padding: 7px 15px;
     border-radius: 10px;
     outline: none;
-}
+}  

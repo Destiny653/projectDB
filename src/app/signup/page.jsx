@@ -1,16 +1,17 @@
 'use client'
 import Link from 'next/link';
 import styles from './singup.module.css';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { ValidatorMail, ValidatorOTP } from '../components/Validator/Validator';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 export default function page() {
+
+  const {validMail , verification, setVerification, setValidMail} = useContext(ThemeContext)
  
-  const [phone, setPhone] = useState('');
-  const [verification, setVerification] = useState(true)
-  const [validMail, setValidMail] = useState(false)
+  const [phone, setPhone ] = useState('');
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -37,8 +38,9 @@ export default function page() {
       const req = await res.json()
       if (!res.ok) {
         alert(req.message)
+        return;
       }
-      aleRt(req.message)
+      alert(req.message)
     } catch (error) {
       alert("Error: " + error.message)
     }
@@ -52,7 +54,7 @@ export default function page() {
 
   return (
     <div className={`w-full flex justify-center items-center h-[100vh] relative`}>
-      <div className={`top-[0] left-[0] z-[10] fixed flex justify-center items-center bg-[#0000002a] w-full h-full`} style={{ display: !verification && "none" }}>
+      <div className={`top-[0] left-[0] z-[10] fixed flex justify-center items-center bg-[#ffffff80] w-full h-full`} style={{ display: !verification && "none" }}>
         <div className={`${styles.valiBugCon}`} onClick={() => setVerification(false)} >
           <div className={`${styles.valiBug1}`}></div>
           <div className={`${styles.valiBug2}`}></div>
@@ -68,7 +70,7 @@ export default function page() {
           <div className='z-[2] flex flex-col gap-[10px]'>
             <h1 className='font-[700] text-[35px]'>Create Free account <br /> Get secured!</h1>
             <p className='font-[600] text-[22px]'>Your credentials are private and unavailable to the public.</p>
-            <button className='bg-[#000] hover:bg-[#80808085] px-[12px] py-[5px] rounded-[5px] w-fit text-[#fff]' onClick={() => setVerification(true)}>Validate Email</button>
+            <button className='bg-[#000] hover:bg-[#80808085] px-[12px] py-[5px] rounded-[5px] w-fit text-[#fff]' onClick={() =>{setVerification(true); setValidMail(false)}}>Validate Email</button>
           </div>
         </section>
         <form className={`${styles.signUpForm}`} onSubmit={handleSubmit}>
