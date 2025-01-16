@@ -7,17 +7,32 @@ export default function page() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    })
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        const reader = new FileReader();
-        reader.readAsDataURL(phone)
-        reader.onloadend = () => {
-            console.log(reader.result);
-            return;
+        try {
+            const res =  await fetch(`http://localhost:3000/api/client/login`,{
+                method: 'POST',
+                headers: { 'Content-Type': 'apllication/json'},
+                body: JSON.stringify(formData)
+            })
+            const req = await res.json()
+            if(!res.ok){
+                alert(req.message)
+            }
+            alert(req.message)
+        } catch (error) {
+            alert('Error: '+ error.message)
         }
-        // Add your code here to save the product to the database or API
+    }
 
+    const handleInputChange = (e)=>{
+        const {name, value} = e.tartget
+        setFormData(()=>({...formData, [name]:value}))
     }
 
     return (
@@ -32,11 +47,11 @@ export default function page() {
                 <form className={`${styles.signForm}`}>
                     <label htmlFor="email">
                         <span>Email</span>
-                        <input type="email" name="email" id="" />
+                        <input type="email" name="email" id="" value={formData.name} onChange={handleInputChange} />
                     </label>
                     <label htmlFor="password">
                         <span>Password</span>
-                        <input type="password" name="password" id="" placeholder='**********' />
+                        <input type="password" name="password" id="" placeholder='**********' value={formData.name} onChange={handleInputChange} />
                     </label>
                     <Link href={'/reset'}>
                         <p className='text-[13px] text-[blue] text-center'>Forgot password.</p>

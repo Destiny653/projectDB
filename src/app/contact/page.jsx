@@ -1,7 +1,46 @@
-import React from 'react';
-import './contact.css'
+'use client';
+import React, { useState } from 'react';
+import './contact.css';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 export default function Page() {
+
+    const [phone, setPhone]= useState('')
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    })
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        formData.phone = phone
+        try {
+            const res = await fetch(`http://localhost:3000/api/client/contact`,{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            const req = await res.json()
+            if(!res.ok){
+                alert(req.message)
+                return;
+            }
+            alert(req.message)
+        } catch (error) {
+            alert("Error: " + error.message)
+        }
+    }
+
+    const handleInputChange = (e)=>{
+       const {name, value} = e.tartget
+       setFormData(()=>({...formData, [name]:value}))
+    }
+
     return (
         <div className='flex flex-col justify-center items-center'>
             <section className='relative flex justify-center items-center w-full h-[300px]'>
@@ -10,25 +49,39 @@ export default function Page() {
                 </iframe>
             </section>
             <section className='form-p'>
-                <form className='form-section'>
+                <form className='form-section' onSubmit={handleSubmit}>
                     <section className='form'>
                         <div className='flex gap-[15px]'>
                             <label htmlFor="subject">
                                 <span>Subject</span>
-                                <input type="text" />
+                                <input type="text" name='subject' value={formData.name} onChange={handleInputChange} />
                             </label>
                             <label htmlFor="phone">
                                 <span>Phone</span>
-                                <input type="text" />
+                                <PhoneInput
+                                    inputStyle={{
+                                        fontSize: '16px',
+                                        // padding: '12px 45px',
+                                        border: 'none',
+                                        outline: 'none',
+                                        color: '#000',
+                                        width: '100%',
+                                        backgroundColor: 'white',
+                                        // borderRadius: '5px',
+                                    }}
+                                    country="us"
+                                    value={phone}
+                                    onChange={setPhone}
+                                />
                             </label>
                         </div>
                         <label htmlFor='name'>
                             <span>Name</span>
-                            <input type="text" className='name' />
+                            <input type="text" name='name' className='name' value={formData.name} onChange={handleInputChange} />
                         </label>
                         <label htmlFor="message">
                             <span>Message</span>
-                            <textarea rows={4} />
+                            <textarea rows={4} name='message' value={formData.name} onChange={handleInputChange} />
                         </label>
                     </section>
                     <div className='side-bar'>
@@ -36,7 +89,7 @@ export default function Page() {
                         <p>We ensure that your information is private, and our clients are the top priority.</p>
                         <label htmlFor="email">
                             <span>Email</span>
-                            <input type="email" />
+                            <input type="email" name='email' value={formData.name} onChange={handleInputChange} />
                         </label>
                         <input className='bg-[#000] w-full text-[#fff]' type="submit" value="Submit Button" />
                     </div>

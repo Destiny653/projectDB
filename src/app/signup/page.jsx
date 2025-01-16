@@ -30,7 +30,7 @@ export default function page() {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/signup`, {
+      const res = await fetch(`http://localhost:3000/api/client/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
