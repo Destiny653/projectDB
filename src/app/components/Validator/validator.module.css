@@ -35,3 +35,11 @@
     border-radius: 10px;
     outline: none;
 }  
+
+/* RESET */
+
+.resetP{
+    height: 240px;
+    width: 300px;
+    background-color: #309bda;
+}

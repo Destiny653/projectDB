@@ -27,18 +27,13 @@
     box-sizing: border-box;
     padding: 20px;
 }
-.signForm{  
-    /* clip-path: polygon(45% 0, 18% 100%, 100% 86%); */
+.signForm{   
     display: flex;
     flex-direction: column;
     gap: 20px;
-    box-sizing: border-box; 
-    /* box-shadow: 0px 0px 8px #00000007; */
-    /* background-color: #ebf5f8; */
-    /* background: linear-gradient(to top right, #ffffff1a 50%, #86a7d8 50%); */
+    box-sizing: border-box;  
     width: 50%; 
-    padding: 30px 20px;
-    /* border-radius: 5px; */
+    padding: 30px 20px; 
     font-weight: 500;
 }
 .signForm label{ 
@@ -63,3 +58,34 @@
     padding: 6px 0;
     color:#fff;
 }
+ 
+.valiBugCon{
+    position: absolute;
+    top: 40px;
+    right: 40px;  
+    width: 40px;
+    height: 40px;
+    background-color: #0000002f;
+    display:flex;
+    justify-content: center
+    } 
+    .valiBugCon:hover{
+    background-color: #696969de; 
+    } 
+    
+    .valiBug1,
+    .valiBug2{
+    width: 38px;
+    top: 18px;
+    height: 4px; 
+    background-color: #ffffff;
+    position: absolute;
+    }  
+    
+    .valiBug1{  
+    transform: rotate(-45deg);
+    }
+    
+    .valiBug2{ 
+    transform: rotate(45deg)
+    }
