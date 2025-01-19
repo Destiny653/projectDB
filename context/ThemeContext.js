@@ -7,9 +7,12 @@ export const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
     const [theme, setTheme] = useState("light");
-  const [validMail, setValidMail] = useState(false)
+    const [validMail, setValidMail] = useState(false)
     const [verification, setVerification] = useState(true)
-    const [resetPassword, setResetPassword] = useState(false)  
+    const [resetPassword, setResetPassword] = useState(false)
+    const [authorize, setAuthorize] = useState(false)
+    const [validNum, setValidNum]= useState(0)
+
 
 
     const toggleTheme = () => {
@@ -24,7 +27,7 @@ export function ThemeProvider({ children }) {
     }, [theme])
 
     return (
-        <ThemeContext.Provider value={{ theme, validMail, verification, resetPassword, setResetPassword, setVerification, setValidMail, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme, validMail, verification, resetPassword, authorize, validNum, setValidNum, setAuthorize, setResetPassword, setVerification, setValidMail, toggleTheme }}>
             <div className={`theme-switcher ${theme}`}>
                 {children}
             </div>

@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import styles from './singup.module.css';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { ValidatorMail, ValidatorOTP } from '../components/Validator/Validator';
@@ -9,10 +9,10 @@ import { ThemeContext } from '../../../context/ThemeContext';
 
 export default function page() {
 
-  const {validMail , verification, setVerification, setValidMail} = useContext(ThemeContext)
+  const {validMail , verification, authorize, setAuthorize, setVerification, setValidMail} = useContext(ThemeContext)
  
-  const [phone, setPhone ] = useState('');
-  const [formData, setFormData] = useState({
+  const [phone, setPhone ] = useState(''); 
+  let [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -23,6 +23,11 @@ export default function page() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!authorize){
+      alert("Authorization denied, verify email first!")
+      setVerification(true)
+      return;
+    }
     formData.phone = phone
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!")
@@ -49,7 +54,7 @@ export default function page() {
   const handleInputChange = (e) => {
     e.preventDefault()
     const { name, value } = e.target;
-    setFormData(() => ({ ...formData, [name]: value }));
+    authorize && setFormData(() => ({ ...formData, [name]: value })); 
   };
 
   return (
@@ -73,7 +78,7 @@ export default function page() {
             <button className='bg-[#000] hover:bg-[#80808085] px-[12px] py-[5px] rounded-[5px] w-fit text-[#fff]' onClick={() =>{setVerification(true); setValidMail(false)}}>Validate Email</button>
           </div>
         </section>
-        <form className={`${styles.signUpForm}`} onSubmit={handleSubmit}>
+        <form className={`${styles.signUpForm}`} onSubmit={handleSubmit }>
           <div className='flex gap-[10px]'>
             <label htmlFor="firstName">
               <span>First Name</span>

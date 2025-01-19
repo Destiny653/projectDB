@@ -7,7 +7,9 @@ import { Reset, ValidatorMail, ValidatorOTP } from '../components/Validator/Vali
 
 export default function page() {
 
-    const { verification, setVerification, validMail, setValidMail } = useContext(ThemeContext)
+    const resets= [ValidatorMail, ValidatorOTP, Reset]
+
+    const { verification, setVerification, validMail, authorize, setValidMail, validNum, setValidNum } = useContext(ThemeContext)
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     const [formData, setFormData] = useState({
@@ -46,7 +48,7 @@ export default function page() {
                     <div className={`${styles.valiBug2}`}></div>
                 </div>
                 {
-                    !validMail ? <ValidatorMail /> : <ValidatorOTP />
+                   !authorize ? (!validMail ? <ValidatorMail /> : <ValidatorOTP /> ) : <Reset/>
                 }
             </div>
             <div className={`w-full flex justify-center items-center h-[100vh]`}>
