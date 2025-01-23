@@ -190,6 +190,13 @@ const Bath = () => {
   )
 }
 
-module.exports = { Cloths, Valies, Shoes, Diaper, NightWare, Bath, Feeding }
+const BtnLoad = () => {
+  return ( 
+          <div className="btn-loader-p">
+              <section className='btn-loader-i'></section>
+          </div> 
+  )
+} 
 
-module.exports = { Cloths, Valies, Shoes, Diaper, NightWare, Bath, Feeding }
+module.exports = {BtnLoad, Cloths, Valies, Shoes, Diaper, NightWare, Bath, Feeding }
+ 

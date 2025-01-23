@@ -33,6 +33,13 @@
     justify-content: center;
     /* align-items: center; */
 }
+.form-sec2 select option {
+    background-color: #000;
+}
+.form-sec2 select  {
+    background-color: #000;
+}
+
 .form{
     display: flex;
     flex-direction: column;
@@ -42,12 +49,13 @@
     box-sizing: border-box;
     padding: 10px 13px;
     border-radius: 8px;
+    color: #000;
     background-color: rgba(58, 165, 160, 0.247);
 }
-label{
+.contact-parent label{
     position: relative;
 }
-label span{
+.contact-parent label span{
     position: absolute;
     top: 10px;
     left: 10px;
@@ -56,20 +64,28 @@ label span{
     transition: all 0.3s ease;
     padding: 0 4px;
 }
-label:hover span{
+.contact-parent label span{
     color: blue;
     top: -15px;
     background-color: #fff;
     border-radius: 5px;
     cursor: pointer;
 }
-input,
-textarea{
+/* label .changed+span{
+    color: blue;
+    top: -15px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+.contact-parent input,
+.contact-parent textarea{
     padding: 8px 25px;
     outline: none;
     border-radius: 8px;
     font-size: 14px;
     min-width: 230.5px;
+    color: #000;
 }
 .side-bar{
     background-color: rgba(58, 165, 160, 0.247);
@@ -82,12 +98,12 @@ textarea{
 }
 
 .name,
-textarea{
+.contact-parent textarea{
     width: 476px;
 }
 
 .iframe-map,
-iframe{
+.contact-parent iframe{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,10 +112,10 @@ iframe{
     border-radius: 8px;
 }
 
-h1{
+.contact-parent h1{
     font-size: 16px; 
     font-weight: 500;
 }
-p{
+.contact-parent p{
     font-size: 12px;
 }

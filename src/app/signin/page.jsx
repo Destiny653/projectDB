@@ -42,8 +42,8 @@ export default function page() {
 
     return (
         <>
-            <div className={`top-[0] left-[0] z-[10] fixed flex justify-center items-center bg-[#ffffff80] w-full h-full`} style={{ display: verification ? "flex" : "none" }}>
-                <div className={`${styles.valiBugCon}`} onClick={() => setVerification(false)} >
+            <div className={`top-[0] left-[0] z-[10] fixed flex justify-center items-center bg-[#ffffff80] w-full h-full`} style={{display: verification && "none"}}>
+                <div className={`${styles.valiBugCon}`} onClick={() => setVerification(true)} >
                     <div className={`${styles.valiBug1}`}></div>
                     <div className={`${styles.valiBug2}`}></div>
                 </div>
@@ -68,7 +68,7 @@ export default function page() {
                             <span>Password</span>
                             <input type="password" name="password" id="" placeholder='**********' value={formData.name} onChange={handleInputChange} />
                         </label>
-                        <p className='text-[13px] text-[blue] text-center hover:text-[gray] cursor-pointer' onClick={() => setVerification(true)} >Forgot password.</p>
+                        <p className='text-[13px] text-[blue] text-center hover:text-[gray] cursor-pointer' onClick={() => setVerification(false)} >Forgot password.</p>
                         <button type='submit'>Submit</button>
                         <p className='text-[13px] text-[blue] text-center'>Don't have an account? <Link href={'/signup'} className='hover:text-[gray]'>Sign Up</Link></p>
                     </form>

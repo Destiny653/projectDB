@@ -406,7 +406,7 @@ export default function Hero() {
           </section>
           <h1>Jeremy Dabrie</h1>
           <p>
-            "Geni-I By-where the future of baby care begins. I have been using Geni-I for about 6 months now and I am absolutely thrilled with the results. The baby is growing so fast and I can't wait to see what else they will discover."
+            "Geni-I By-where the future of baby care begins. I have been using."
           </p>
         </div>
         <div className='h-comment-child'>
@@ -419,7 +419,7 @@ export default function Hero() {
           </section>
           <h1>Stacy Bright</h1>
           <p>
-            "I have been using Geni-I for about 3 months now and I am absolutely thrilled with the results. The baby is growing so fast and I can't wait to see what else they will discover. I highly recommend Geni-I to anyone looking to improve their baby's well-being."
+            "Accessories from Geni-I are very affordable and long lasting."
           </p>
         </div>
       </section>

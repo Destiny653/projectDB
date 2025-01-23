@@ -12,7 +12,7 @@ export default function age() {
         <>
             <section className='comments' >
                 <div className='comment-nar'>
-                    <h1 className=''>Client comments!</h1>
+                    <h1 className='comment-title'>Client comments!</h1>
                 </div>
                 <ul className='comment-sec'>
                     <li className='comment-1 comment-child'

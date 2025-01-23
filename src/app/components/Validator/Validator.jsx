@@ -80,8 +80,8 @@ export function ValidatorOTP() {
   }
 
   useEffect(() => {
+    let otp = localStorage.getItem('otp')
     const handleAuthorize = async () => {
-      let otp = localStorage.getItem(otp)
       const allowed = await fetch(`http://localhost:3000/api/client/authorized/${otp}`)
       const req = await allowed.json()
       if (req.success) {

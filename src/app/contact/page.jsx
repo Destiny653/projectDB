@@ -7,6 +7,7 @@ import 'react-phone-input-2/lib/style.css';
 export default function Page() {
 
     const [phone, setPhone]= useState('')
+    const [change, setChange] = useState(false)
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -37,37 +38,36 @@ export default function Page() {
     }
 
     const handleInputChange = (e)=>{
-       const {name, value} = e.tartget
+        setChange(true)
+       const {name, value} = e.target
        setFormData(()=>({...formData, [name]:value}))
     }
 
     return (
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-col justify-center items-center contact-parent'>
             <section className='relative flex justify-center items-center w-full h-[300px]'>
                 <h1 className='z-10 absolute font-[500] text-[#000] text-[37px]'>Contact Us</h1>
                 <iframe title="map" width="600" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.1234567890123!2d10.15167!3d5.96139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610d1234567890!2sBamenda%2C%20Cameroon!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" allowFullScreen>
                 </iframe>
             </section>
             <section className='form-p'>
-                <form className='form-section' onSubmit={handleSubmit}>
+                <form className={`form-section`} onSubmit={handleSubmit}>
                     <section className='form'>
                         <div className='flex gap-[15px]'>
                             <label htmlFor="subject">
                                 <span>Subject</span>
-                                <input type="text" name='subject' value={formData.name} onChange={handleInputChange} />
+                                <input className={`${change && 'changed'}`} type="text" name='subject' value={formData.subject} onChange={handleInputChange} />
                             </label>
                             <label htmlFor="phone">
                                 <span>Phone</span>
                                 <PhoneInput
                                     inputStyle={{
-                                        fontSize: '16px',
-                                        // padding: '12px 45px',
+                                        fontSize: '16px', 
                                         border: 'none',
                                         outline: 'none',
-                                        color: '#000',
+                                        color: 'black',
                                         width: '100%',
-                                        backgroundColor: 'white',
-                                        // borderRadius: '5px',
+                                        backgroundColor: 'white' 
                                     }}
                                     country="us"
                                     value={phone}
@@ -77,11 +77,11 @@ export default function Page() {
                         </div>
                         <label htmlFor='name'>
                             <span>Name</span>
-                            <input type="text" name='name' className='name' value={formData.name} onChange={handleInputChange} />
+                            <input type="text" name='name' className={`${change && 'changed'} name`} value={formData.name} onChange={handleInputChange} />
                         </label>
                         <label htmlFor="message">
                             <span>Message</span>
-                            <textarea rows={4} name='message' value={formData.name} onChange={handleInputChange} />
+                            <textarea className={`${change && 'changed'}`} rows={4} name='message' value={formData.message} onChange={handleInputChange} />
                         </label>
                     </section>
                     <div className='side-bar'>
@@ -89,7 +89,7 @@ export default function Page() {
                         <p>We ensure that your information is private, and our clients are the top priority.</p>
                         <label htmlFor="email">
                             <span>Email</span>
-                            <input type="email" name='email' value={formData.name} onChange={handleInputChange} />
+                            <input className={`${change && 'changed'}`} type="email" name='email' value={formData.email} onChange={handleInputChange} />
                         </label>
                         <input className='bg-[#000] w-full text-[#fff]' type="submit" value="Submit Button" />
                     </div>

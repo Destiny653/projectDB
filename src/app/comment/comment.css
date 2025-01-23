@@ -56,22 +56,22 @@
     position: relative;
     left: 20%;
  }
-li:nth-child(even) .comment-img-p{
+ .comments li:nth-child(even) .comment-img-p{
      order: 2;
  }
 
- h1{
+.comments h1{
     text-align: center; 
     font-size: 30px;
     font-weight: 500;
  }
 
- h2{ 
+.comments h2{ 
     font-size: 23px;
     font-weight: 400;
  }
 
- p{
+.comments p{
     font-size: 16px;
     font-weight: 100;
  }

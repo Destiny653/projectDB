@@ -59,7 +59,7 @@ export default function page() {
 
   return (
     <div className={`w-full flex justify-center items-center h-[100vh] relative`}>
-      <div className={`top-[0] left-[0] z-[10] fixed flex justify-center items-center bg-[#ffffff80] w-full h-full`} style={{ display: !verification && "none" }}>
+      <div className={`top-[0] left-[0] z-[10] fixed flex justify-center items-center bg-[#ffffff80] w-full h-full`} style={{ display: verification ? "flex" : "none" }}>
         <div className={`${styles.valiBugCon}`} onClick={() => setVerification(false)} >
           <div className={`${styles.valiBug1}`}></div>
           <div className={`${styles.valiBug2}`}></div>
