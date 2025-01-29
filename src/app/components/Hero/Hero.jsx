@@ -25,29 +25,45 @@ export default function Hero() {
     // dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 5,
+    slidesToShow: 4,
     // centerPadding: '60px',
     // centerMode: true,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: 'linear',
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1824,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 5,
+          slidesToScroll: 2,
           infinite: true,
-          // dots: true
+          dots: true
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
           initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 580,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
         }
       },
       {
@@ -61,27 +77,27 @@ export default function Hero() {
   }
 
   const slideSettings2 = {
-    // dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 2,
-    centerMode: true,
+    slidesToShow: 3,
+    // centerMode: true,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    dots: true,
     cssEase: 'linear',
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1000,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
           dots: true
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -200,7 +216,7 @@ export default function Hero() {
 
   return (
     <div className='flex flex-col gap-[30px]'>
-      <section className='w-full h-[90vh] hero-p' >
+      <section className='w-full hero-p' >
         <div className='hero-p-child'>
           <h1>We are Geni-I local to modern day parenting</h1>
           <p>
@@ -209,7 +225,7 @@ export default function Hero() {
           </p>
           {/* <button onClick={e => { console.log(e); }} className='z-10 bg-[#d4d4d4] mt-[10px] px-[23px] py-[8px] rounded-md text-white'>Shop Now</button> */}
         </div>
-        <div className='flex justify-center heroImg'>
+        <div className='heroImg'>
           <Image className='w-[100]' src={'/image/gen-bg1.png'} alt='bg-image' width={6000} height={6000} />
         </div>
       </section>
@@ -217,20 +233,20 @@ export default function Hero() {
         <Geolocation/>
       </div> */}
       <section className='relative bottom-[0px] box-border px-[2%]'>
-        <h1 className='z-10 pb-[3%] font-[600] text-[35px] text-center'>Popular Categories</h1>
+        <h1 className='z-10 pb-[3%] font-[600] text-center headerDetail'>Popular Categories</h1>
         {/* add carousel here */}
         <Slider {...sliderSettings} className='flex gap-3 category-con'>
           {
             premium.map((item, index) => (
               <section className="category-i" key={index}>
-                <Image className='w-[100%] h-full' src={item.img} alt='premium' width={500} height={500} />
+                <Image className='w-[100%] h-full' src={item.img} alt='premium' width={2000} height={2000} />
               </section>
             ))
           }
         </Slider>
       </section>
       <section>
-        <h1 className='mb-[50px] font-[600] text-[35px] text-center'>Body care for your little one.</h1>
+        <h1 className='mb-[50px] font-[600] text-[35px] text-center headerDetail'>Body care for your little one.</h1>
         <div className='body-care-p'>
           <section className='circle-d-p'>
             <div className='circle-d' >
@@ -247,8 +263,8 @@ export default function Hero() {
             </div>
           </section>
 
-          <section className='bg-[#8d5f0b56] circle-img-c'>
-            <Image className='rounded-full w-[100%] h-full' src='https://i.pinimg.com/564x/30/84/99/308499f70f0485de4bc51d36d78b99ac.jpg' alt='body care' width={500} height={500} />
+          <section className='bg-[#9bfd6356] circle-img-c'>
+            <Image className='rounded-full circle-img-i' src='https://i.pinimg.com/564x/30/84/99/308499f70f0485de4bc51d36d78b99ac.jpg' alt='body care' width={500} height={500} />
           </section>
 
           <section className='circle-d-p'>
@@ -268,11 +284,11 @@ export default function Hero() {
         </div>
       </section>
       <section className='box-borderpx'>
-        <h1 className='py-[8px] font-[600] text-[35px] text-center'>Top Product</h1>
+        <h1 className='py-[8px] font-[600] text-[35px] text-center headerDetail'>Top Product</h1>
         <div className='flex items-center mb-[20px] category-list-p'>
           <div className={` flex justify-center items-center ${addClass && 'bearer'}`} onClick={() => addClass ? setAddClass(false) : setAddClass(true)}>
             <MdKeyboardDoubleArrowLeft className='category-arrow' size={30} />
-          </div> 
+          </div>
           <ul className='flex gap-[10px] category-list'>
             {/* <li>Categories:</li> */}
             <label htmlFor="item1">
@@ -331,7 +347,7 @@ export default function Hero() {
         </div>
       </section>
       <section className='bottom-slide'>
-        <p className='py-[12px] pt-[30px] pb-[3%] font-[500] text-[30px] text-center'>Discover the latest outfit ideas, fashion tips, and inspiration for your little one.</p>
+        <p className='py-[12px] pt-[30px] pb-[3%] font-[500] text-[30px] text-center headerDetail'>Browse a list of items for your little one's comfort.</p>
         <Slider {...slideSettings2} className='outfit-c'>
           <section className="outfit-i">
             <Image src={"https://i.pinimg.com/736x/17/2b/64/172b64fe98f5c5d0f1f592ceb8c2e233.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
@@ -362,8 +378,9 @@ export default function Hero() {
           </section>
         </Slider>
       </section>
-      <section className='box-border flex justify-between items-center px-[15%] customer-tips'>
-        <ul className='flex flex-col gap-10'>
+      <section className='box-border flex flex-col items-center customer-tips'>
+        <h1 className='py-[12px] pt-[30px] pb-[3%] font-[500] text-[30px] text-center headerDetail'>Customer Guarantee</h1>
+        <ul className='customer-guarantee' >
           <li>
             <h1>Durability</h1>
             <p>High efficiency and long lasting.</p>
@@ -376,8 +393,6 @@ export default function Hero() {
             <h1>Efficiency</h1>
             <p>Powerful and efficient features.</p>
           </li>
-        </ul>
-        <ul className='flex flex-col gap-10'>
           <li>
             <h1>Safety</h1>
             <p>Safe and secure accessories.</p>
@@ -394,34 +409,62 @@ export default function Hero() {
       </section>
       <section className='h-comments' >
         <div className='h-comment-nar'>
-          <p className='font-[900] text-[27px]'>Here's what our happy clients our saying!</p>
+          <p className='headerDetail'>Here's what our happy clients our saying!</p>
         </div>
-        <div className='h-comment-child'>
-          <section className='h-comment-img-p'>
-            <div className='h-comment-img-c'>
-              <Link href={'/comment'}>
-                <Image className='' src={"https://i.pinimg.com/236x/2c/ee/44/2cee4471b0215c3d69ecbec45249d727.jpg"} alt='woman' width={1500} height={1500} />
-              </Link>
-            </div>
-          </section>
-          <h1>Jeremy Dabrie</h1>
-          <p>
-            "Geni-I By-where the future of baby care begins. I have been using."
-          </p>
-        </div>
-        <div className='h-comment-child'>
-          <section className='h-comment-img-p'>
-            <div className='h-comment-img-c'>
-              <Link href={'/comment'}>
-                <Image className='' src={"https://i.pinimg.com/236x/56/17/9b/56179baaa4af59c5c78d6f87d0658e01.jpg"} alt='woman' width={1500} height={1500} />
-              </Link>
-            </div>
-          </section>
-          <h1>Stacy Bright</h1>
-          <p>
-            "Accessories from Geni-I are very affordable and long lasting."
-          </p>
-        </div>
+        <section className='comment-p'>
+          <div className='h-comment-child'>
+            <section className='h-comment-img-p'>
+              <div className='h-comment-img-c'>
+                <Link href={'/comment'}>
+                  <Image className='' src={"https://i.pinimg.com/236x/2c/ee/44/2cee4471b0215c3d69ecbec45249d727.jpg"} alt='woman' width={1500} height={1500} />
+                </Link>
+              </div>
+            </section>
+            <h1>Jeremy Dabrie</h1>
+            <p>
+              "Geni-I By-where the future of baby care begins. I have been using."
+            </p>
+          </div>
+          <div className='h-comment-child'>
+            <section className='h-comment-img-p'>
+              <div className='h-comment-img-c'>
+                <Link href={'/comment'}>
+                  <Image className='' src={"https://i.pinimg.com/236x/2c/ee/44/2cee4471b0215c3d69ecbec45249d727.jpg"} alt='woman' width={1500} height={1500} />
+                </Link>
+              </div>
+            </section>
+            <h1>Jeremy Dabrie</h1>
+            <p>
+              "Geni-I By-where the future of baby care begins. I have been using."
+            </p>
+          </div>
+          <div className='h-comment-child'>
+            <section className='h-comment-img-p'>
+              <div className='h-comment-img-c'>
+                <Link href={'/comment'}>
+                  <Image className='' src={"https://i.pinimg.com/236x/56/17/9b/56179baaa4af59c5c78d6f87d0658e01.jpg"} alt='woman' width={1500} height={1500} />
+                </Link>
+              </div>
+            </section>
+            <h1>Stacy Bright</h1>
+            <p>
+              "Accessories from Geni-I are very affordable and long lasting."
+            </p>
+          </div>
+          <div className='h-comment-child'>
+            <section className='h-comment-img-p'>
+              <div className='h-comment-img-c'>
+                <Link href={'/comment'}>
+                  <Image className='' src={"https://i.pinimg.com/236x/56/17/9b/56179baaa4af59c5c78d6f87d0658e01.jpg"} alt='woman' width={1500} height={1500} />
+                </Link>
+              </div>
+            </section>
+            <h1>Stacy Bright</h1>
+            <p>
+              "Accessories from Geni-I are very affordable and long lasting."
+            </p>
+          </div>
+        </section>
       </section>
     </div>
   )

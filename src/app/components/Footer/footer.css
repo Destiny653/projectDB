@@ -27,7 +27,9 @@
 }
 
 .footer-links-p {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     justify-content: space-evenly;
     gap: 60px;
+    width: 100%;
 }

@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+/* body{
+  font-family: monospace;
+} */
 .theme-panel{
   height: 0;
   overflow: hidden;
