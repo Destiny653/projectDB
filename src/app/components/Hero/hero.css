@@ -79,6 +79,9 @@
     box-sizing: border-box;
     padding: 70px 3%;  
 }
+.body-care-p span {
+    font-size: 15px; 
+}
 .category-list-p  {     
     gap: 15px;
     left: 5%; 
@@ -390,11 +393,14 @@
 }
 
 .customer-guarantee h1 {
-    font-weight: 500;
-    font-size: 22px;
+    font-weight: 600;
+    font-size: 18px;
     font-family: Arial,  Helvetica, sans-serif;
     /* font-family: sans-serif; */
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+.customer-guarantee p {
+    font-size: 15px; 
 }
 .customer-tips p { 
     font-size: 18px;
@@ -447,12 +453,12 @@
 
 .h-comments h1 {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .comment-p p {
-    font-size: 16px;
-    font-weight: 100;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .h-comment-img-p {
@@ -514,7 +520,7 @@
 .headerDetail{
     font-size: 45px;
     font-weight: 700;
-    font-family: monospace;
+    /* font-family: monospace; */
 }
 
 /* Carousel */
@@ -588,22 +594,19 @@
 
 @media all and (max-width:800px) { 
     .hero-p-child h1{ 
-        font-size: 30px;
+        font-size: 27px;
         line-height: 1em;
         font-weight: 500;
         padding-bottom: 20px;
     }
     .headerDetail{
-        font-size: 30px; 
+        font-size: 27px; 
     }
     .hero-p-child p{
         /* text-align: left; */
-        font-size: 22px;
+        font-size: 19px;
         font-weight: 400;
-    }
-    .headerDetail{
-        font-size: 35px;
-    }
+    } 
     .heroImg{ 
         width: 290px; 
     }
@@ -637,25 +640,29 @@
         gap: 20px;
         padding: 0 4%;
     }
+    .h-comments h1 {
+        font-size: 20px; 
+    }
+    
+    .comment-p p {
+        font-size: 14px; 
+    }
     
 }
 
 @media all and (max-width:600px) { 
     .hero-p-child h1{ 
-        font-size: 26px;
+        font-size: 22px;
         line-height: 1em;
         font-weight: 500;
         padding-bottom: 20px;
     }
     .headerDetail{
-        font-size: 25px; 
-    }
-    .headerDetail{
-        font-size: 30px;
-    }
+        font-size: 22px; 
+    } 
     .hero-p-child p{
         /* text-align: left; */
-        font-size: 19px;
+        font-size: 16px;
         font-weight: 400;
     }
     .heroImg{ 

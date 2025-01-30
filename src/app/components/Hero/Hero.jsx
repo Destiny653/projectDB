@@ -215,7 +215,7 @@ export default function Hero() {
 
 
   return (
-    <div className='flex flex-col gap-[30px]'>
+    <div className='flex flex-col gap-[25px]'>
       <section className='w-full hero-p' >
         <div className='hero-p-child'>
           <h1>We are Geni-I local to modern day parenting</h1>
@@ -246,7 +246,7 @@ export default function Hero() {
         </Slider>
       </section>
       <section>
-        <h1 className='mb-[50px] font-[600] text-[35px] text-center headerDetail'>Body care for your little one.</h1>
+        <h1 className='mb-[30px] font-[600] text-[35px] text-center headerDetail'>Body care for your little one.</h1>
         <div className='body-care-p'>
           <section className='circle-d-p'>
             <div className='circle-d' >

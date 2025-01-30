@@ -46,55 +46,71 @@ export default function Footer() {
     return (
         <div className='footer-con'>
             <div className='box-border px-[2%] pt-[50px] footer-p t-[30px]'>
-                <section className='flex justify-between gap-[20px]'>
+                <section className='flex justify-between gap-[20px] footer-content'>
                     <ul className='footer-links-p'>
-                        <li className='font-[600]'><span className='footer-head'>Information</span>
-                            <ul className='pt-3 text-[14px]'>
-                                <li className='my-[10%]'>
-                                    <Link href='#'>About Us</Link>
-                                </li>
-                                <li>
-                                    <Link href='/comment'>comment</Link>
-                                </li>
-                                <li className='my-[10%]'>
-                                    <Link href='/contact'>Contact Us</Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className='font-[600]'><span className='footer-head'>Navigate</span>
-                            <ul className='pt-3 text-[14px]'>
-                                <li className='my-[10%]'>
-                                    <Link href='/'>Home</Link>
-                                </li>
-                                <li className='my-[10%]'>
-                                    <Link href='cart'>Cart</Link>
-                                </li>
-                                <li className='my-[10%]'>
-                                    <Link href='/product'>Products</Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className='font-[600]'><span className='footer-head'>Categories</span>
-                            <ul className='pt-3 text-[14px]'>
-                                <li className='my-[10%]'>
-                                    <Link href='/'>Feeding Gadgets</Link>
-                                </li>
-                                <li className='my-[10%]'>
-                                    <Link href='/'>Clothing</Link>
-                                </li>
-                                <li className='my-[10%]'>
-                                    <Link href='/'>Mother Wear</Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <div>
-                            <h1 className='footer-head'>Service Details</h1>
-                            <p className='my-[6%] text-[14px]'>+880 1234 567890</p>
-                            <p className='my-[6%] text-[14px] footer-head'>geni-i@gmail.com</p>
-                            <p className='my-[6%] text-[14px]'>Tuesday - Saturday: 8:00am - 5:00pm</p>
-                        </div>
+                        <details>
+                            <li className='font-[600]'><span className='footer-head'>Information</span>
+                                <summary>
+                                    <ul className='pt-3 text-[14px]'>
+                                        <li className='my-[10%]'>
+                                            <Link href='#'>About Us</Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/comment'>comment</Link>
+                                        </li>
+                                        <li className='my-[10%]'>
+                                            <Link href='/contact'>Contact Us</Link>
+                                        </li>
+                                    </ul>
+                                </summary>
+                            </li>
+                        </details>
+                        <details>
+                            <li className='font-[600]'><span className='footer-head'>Navigate</span>
+                                <summary>
+                                    <ul className='pt-3 text-[14px]'>
+                                        <li className='my-[10%]'>
+                                            <Link href='/'>Home</Link>
+                                        </li>
+                                        <li className='my-[10%]'>
+                                            <Link href='cart'>Cart</Link>
+                                        </li>
+                                        <li className='my-[10%]'>
+                                            <Link href='/product'>Products</Link>
+                                        </li>
+                                    </ul>
+                                </summary>
+                            </li>
+                        </details>
+                        <details>
+                            <li className='font-[600]'><span className='footer-head'>Categories</span>
+                                <summary>
+                                    <ul className='pt-3 text-[14px]'>
+                                        <li className='my-[10%]'>
+                                            <Link href='/'>Feeding Gadgets</Link>
+                                        </li>
+                                        <li className='my-[10%]'>
+                                            <Link href='/'>Clothing</Link>
+                                        </li>
+                                        <li className='my-[10%]'>
+                                            <Link href='/'>Mother Wear</Link>
+                                        </li>
+                                    </ul>
+                                </summary>
+                            </li>
+                        </details>
+                        <details>
+                            <div>
+                                <h1 className='footer-head'>Service Details</h1>
+                                <summary>
+                                    <p className='my-[6%] text-[14px]'>+880 1234 567890</p>
+                                    <p className='my-[6%] text-[14px] footer-head'>geni-i@gmail.com</p>
+                                    <p className='my-[6%] text-[14px]'>Tuesday - Saturday: 8:00am - 5:00pm</p>
+                                </summary>
+                            </div>
+                        </details>
                     </ul>
-                    <div className='w-[400px] font-[400]'>
+                    <div className='form-container w-[400px] font-[400]'>
                         <form action="" onSubmit={handleSubmit} className='flex flex-col gap-[10px] w-[100%]'>
                             <h1 className='footer-head'>Drop comments</h1>
                             <label htmlFor="email" className='flex flex-col gap-[5px]'>
