@@ -536,6 +536,9 @@
     .hero-p {
         font-size: 24px;  
     }
+    .headerDetail{
+        font-size: 40px; 
+    }
     .hero-p-child h1{ 
         font-size: 40px;
         line-height: 1em;
@@ -590,6 +593,9 @@
         font-weight: 500;
         padding-bottom: 20px;
     }
+    .headerDetail{
+        font-size: 30px; 
+    }
     .hero-p-child p{
         /* text-align: left; */
         font-size: 22px;
@@ -640,6 +646,9 @@
         line-height: 1em;
         font-weight: 500;
         padding-bottom: 20px;
+    }
+    .headerDetail{
+        font-size: 25px; 
     }
     .headerDetail{
         font-size: 30px;
