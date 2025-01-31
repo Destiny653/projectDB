@@ -111,7 +111,7 @@ export default function Footer() {
                         </details>
                     </ul>
                     <div className='form-container w-[400px] font-[400]'>
-                        <form action="" onSubmit={handleSubmit} className='flex flex-col gap-[10px] w-[100%]'>
+                        <form action="" onSubmit={handleSubmit} className='flex flex-col gap-[10px] w-[100%] comment-form'>
                             <h1 className='footer-head'>Drop comments</h1>
                             <label htmlFor="email" className='flex flex-col gap-[5px]'>
                                 <span className='text-[13px]'>email</span>
@@ -119,7 +119,7 @@ export default function Footer() {
                             </label>
                             <label htmlFor="title" className='flex flex-col gap-[5px]'>
                                 <span className='text-[13px]'>Subject</span>
-                                <select name="title" value={formData.name} onChange={handleInputChange} className='px-[15px] py-[6px] rounded-[5px] w-full outline-none' >
+                                <select name="title" value={formData.name} onChange={handleInputChange} className='px-[15px] py-[7px] rounded-[5px] w-full outline-none' >
                                     <option value="">Select Title</option>
                                     <option value="feedback">Feedback</option>
                                     <option value="suggestion">Suggestion</option>
