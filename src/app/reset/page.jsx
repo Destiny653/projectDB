@@ -36,14 +36,14 @@ export default function page() {
 
     return (
         <div className={`flex justify-center items-center`}>
-            <div className={`${styles.sig}`} >
+            <div className={``} >
                 <h1 className='top-[20px] right-[40px] absolute font-[600]` text-[#59c7e9] text-[40px]'>Sign In</h1>
                 <h1 className='top-[20px] left-[20px] z-[4] absolute font-[700] text-[40px]'>Geni-I</h1>
-                <section className={` ${styles.signI}`} >
+                <section className={``} >
                     <h1 className='font-[700] text-[40px]'>Welcome!</h1>
                     <p className='font-[600] text-[20px]'>Sign in to secure your purchase all services are redirected to you.</p>
                 </section>
-                <form className={`${styles.signF}`}>
+                <form className={``}>
                     <label htmlFor="email">
                         <span>Email</span>
                         <input type="email" name="email" id="" value={formData.name} onChange={handleInputChange} />
