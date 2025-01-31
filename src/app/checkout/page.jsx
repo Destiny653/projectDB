@@ -4,8 +4,7 @@ import './check.css';
 import { CartContext } from '../../../context/CartContext';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { Notyf } from 'notyf';
-import { Link } from 'react-feather-icon';
+import { Notyf } from 'notyf'; 
 import axios from 'axios';
 
 export default function Checkout({ amount }) {
