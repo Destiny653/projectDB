@@ -1,7 +1,8 @@
 'use client';
 import React, { useContext, useState } from 'react';
 import './check.css';
-import { CartContext } from '../../../context/CartContext'; 
+import { CartContext } from '../../../context/CartContext';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Notyf } from 'notyf'; 
 import axios from 'axios';
@@ -12,7 +13,8 @@ export default function Checkout({ amount }) {
     const [useremail, setUseremail] = useState('');
     const [loader, setLoader] = useState(false);
     const [paymentUrl, setPaymentUrl] = useState(null);
-    const navigation = useRouter(); 
+    const navigation = useRouter();
+    const { data: session } = useSession();
     const { cartItems } = useContext(CartContext);
 
     const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
