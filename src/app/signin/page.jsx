@@ -51,7 +51,7 @@ export default function page() {
                    !authorize ? (!validMail ? <ValidatorMail /> : <ValidatorOTP /> ) : <Reset/>
                 }
             </div>
-            <div className={`w-full flex justify-center items-center h-[100vh]`}>
+            <div className={`w-full flex justify-center items-center  box-border py-[100px]`}>
                 <div className={`${styles.signParent}`} >
                     <h1 className='top-[20px] right-[40px] absolute font-[600] text-[#59c7e9] text-[40px]'>Sign In</h1>
                     <h1 className='top-[20px] left-[20px] z-[4] absolute font-[700] text-[40px]'>Geni-I</h1>

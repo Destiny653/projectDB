@@ -12,15 +12,15 @@
     position: relative;
 }
 .signImgFrame{
-    background-color: #fff;
+    /* background-color: #fff; */
     background: url('../../../public/image/form1.jpg');
     background-repeat: no-repeat;
-    background-position: 0 30%;
-    background-size: contain;
+    background-position: 0 70%;
+    background-size: cover;
     width: 50%;
     box-shadow: inset 5px 0px 10px #fff;
     color: #000;
-    height: 800px; 
+    height: 100%; 
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -89,3 +89,77 @@
     .valiBug2{ 
     transform: rotate(45deg)
     }
+
+    /*
+    =====================================
+    @media 1300
+    ===================================== 
+     */
+
+     @media all and (max-width:1300px){
+        .signParent{  
+            width: 60%;
+            height: 500px; 
+        }
+     }
+
+    /*
+    =====================================
+    @media 1000
+    ===================================== 
+     */
+
+     @media all and (max-width:1000px){
+        .signParent{  
+            width: 70%;
+            height: 500px; 
+        }
+     }
+    /*
+    =====================================
+    @media 800
+    ===================================== 
+     */
+
+     @media all and (max-width:800px){
+        .signParent{  
+            width: 90%;
+            height: 500px; 
+        }
+     }
+    /*
+    =====================================
+    @media 600
+    ===================================== 
+     */
+
+     @media all and (max-width:600px){
+        .signParent{  
+            width: 98%;
+            height: 500px; 
+        }
+        .signParent h1{
+            font-weight: 600;
+            font-size: 27px;
+        }
+        .signForm span{     
+            font-size: 12px;
+        }
+     }
+    /*
+    =====================================
+    @media 500
+    ===================================== 
+     */
+
+     @media all and (max-width:570px){
+        .signParent{  
+            width: 90%; 
+        }
+        .signImgFrame{ 
+            display: none;
+        }
+        .signForm{      
+            width: 90%;  
+        }
+     } 

@@ -58,7 +58,7 @@ export default function page() {
   };
 
   return (
-    <div className={`w-full flex justify-center items-center h-[100vh] relative`}>
+    <div className={`w-full flex justify-center items-center relative box-border py-[100px]`}>
       <div className={`top-[0] left-[0] z-[10] fixed flex justify-center items-center bg-[#ffffff80] w-full h-full`} style={{ display: verification ? "flex" : "none" }}>
         <div className={`${styles.valiBugCon}`} onClick={() => setVerification(false)} >
           <div className={`${styles.valiBug1}`}></div>
@@ -68,8 +68,7 @@ export default function page() {
           !validMail ? <ValidatorMail /> : <ValidatorOTP />
         }
       </div>
-      <div className={`${styles.signUpParent}`} >
-        <h1 className='top-[20px] left-[20px] z-[4] absolute font-[700] text-[40px]'>Geni-I</h1>
+      <div className={`${styles.signUpParent}`} > 
         <h1 className='top-[20px] right-[20px] z-[4] absolute font-[600] text-[#59c7e9] text-[40px]'>Sign Up</h1>
         <section className={` ${styles.signUpImgFrame}`} >
           <div className='z-[2] flex flex-col gap-[10px]'>
