@@ -670,3 +670,9 @@
     }  
     
 }     
+@media all and (max-width:500px) { 
+    .category-i { 
+        height: 370px;  
+    } 
+    
+}     
