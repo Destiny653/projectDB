@@ -22,7 +22,6 @@ export default function Hero() {
   const [classN, setClassN] = useState('activeProduct')
 
   const sliderSettings = {
-    // dots: true,
     infinite: true,
     speed: 600,
     slidesToShow: 4,
@@ -38,8 +37,7 @@ export default function Hero() {
         settings: {
           slidesToShow: 5,
           slidesToScroll: 2,
-          infinite: true,
-          dots: true
+          infinite: true, 
         }
       },
       {
@@ -47,8 +45,7 @@ export default function Hero() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
-          infinite: true,
-          dots: true
+          infinite: true, 
         }
       },
       {
@@ -84,7 +81,6 @@ export default function Hero() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    dots: true,
     cssEase: 'linear',
     responsive: [
       {

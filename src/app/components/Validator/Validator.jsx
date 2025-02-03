@@ -4,7 +4,7 @@ import { ThemeContext } from '../../../../context/ThemeContext';
 import Link from 'next/link';
 
 export function ValidatorMail() {
-  const { validMail, setValidMail, validNum, setValidNum } = useContext(ThemeContext)
+  const { validMail, setValidMail, setAuthorize, validNum, setValidNum } = useContext(ThemeContext)
   const handleSubmit = async (e) => {
     e.preventDefault()
     const email = document.getElementById('email').value
@@ -29,8 +29,8 @@ export function ValidatorMail() {
   }
 
   return (
-    <div className={`${styles.validatorParent}`}>
-      <button className='top-[40px] left-[40px] absolute bg-[#000] px-[12px] py-[6px] rounded-[5px] text-[#fff]' onClick={() => { setValidMail(true) }} >Verify OTP</button>
+    <div className={`${styles.validatorParent} reset`}>
+      <button className='top-[40px] left-[40px] absolute bg-[#000] px-[12px] py-[6px] rounded-[5px] text-[#fff]' onClick={() => { setValidMail(true); }} >Verify OTP</button>
       <div className={`${styles.validEmail} ${!validMail && styles.setMail} `}>
         <form action="" className='flex flex-col justify-center items-center gap-[10px]' onSubmit={handleSubmit}>
           <label htmlFor="email" className='flex flex-col gap-[7px] w-full'>
@@ -51,7 +51,7 @@ export function ValidatorOTP() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const otp = document.getElementById('otp').value
+      const otp = document.getElementById('otp').value.trim('')
       const email = localStorage.getItem('otpEmail')
       if (email == 'undefined' || email == " " || !email) {
         alert("Please submit email.")
@@ -65,12 +65,12 @@ export function ValidatorOTP() {
       })
       const req = await res.json()
       if (!req.success) {
-        alert(req.message)
+        alert(req.message) 
         return;
       } else {
         localStorage.setItem('otp', otp)
         alert(req.message)
-        // setVerification(false)
+        setVerification(true)
         setAuthorize(true)
         return
       }
@@ -86,15 +86,17 @@ export function ValidatorOTP() {
       const req = await allowed.json()
       if (req.success) {
         setAuthorize(true)
+        console.log("Authorized:", 1);
+
       } else {
         setAuthorize(false)
       }
     }
-    handleAuthorize()
+    authorize && handleAuthorize()
   }, [authorize])
 
   return (
-    <div>
+    <div className='reset'>
       <button className='top-[40px] left-[40px] absolute bg-[#000] px-[12px] py-[6px] rounded-[5px] text-[#fff]' onClick={() => { setValidMail(false) }} >Verify Email</button>
       <div className={`${styles.validEmail} ${validMail && styles.setMail}`}>
         <form action="" className='flex flex-col justify-center items-center gap-[10px]' onSubmit={handleSubmit}>
@@ -111,9 +113,9 @@ export function ValidatorOTP() {
   )
 }
 
-export function Reset() {
+function Reset() {
 
-  const { setVerification, validMail, setValidMail } = useContext(ThemeContext)
+  const { setVerification, validMail, setValidMail, setAuthorize } = useContext(ThemeContext)
   const [formData, setFormData] = useState({
     password: '',
     confirmPassword: ''
@@ -149,7 +151,7 @@ export function Reset() {
   }
   return (
     <div>
-      <button className='top-[40px] left-[40px] absolute bg-[#000] px-[12px] py-[6px] rounded-[5px] text-[#fff]' onClick={() => { setValidMail(false) }} >Verify Email</button>
+      <button className='top-[40px] left-[40px] absolute bg-[#000] px-[12px] py-[6px] rounded-[5px] text-[#fff]' onClick={() => { setValidMail(false); setAuthorize(false) }} >Verify Email</button>
       <div className={`${styles.validEmail} ${validMail && styles.setMail}`}>
         <form action="" className='flex flex-col justify-center items-center gap-[10px]' onSubmit={handleSubmit}>
           <label htmlFor="password" className='flex flex-col gap-[7px] w-full'>
@@ -168,3 +170,6 @@ export function Reset() {
     </div>
   )
 }
+
+
+// module.exports = { Reset, ValidatorMail, ValidatorOTP }

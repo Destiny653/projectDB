@@ -41,10 +41,12 @@ export default function Navbar() {
                             </section>
                         </div>
                         <section className='flex gap-[10px]'>
-                            <div className='relative flex justify-center items-center w-12 h-12 nav-i'>
-                                <span className='top-[-15%] left-[60%] absolute flex justify-center items-center bg-[#7bce5bf6] rounded-full w-[45%] h-[47%] text-[#fff] text-[13px]'>15</span>
-                                <CiShoppingCart className='w-[60%] h-[60%]' color="#000" />
-                            </div>
+                            <Link href={'/cart'}>
+                                <div className='relative flex justify-center items-center w-12 h-12 nav-i'>
+                                    <span className='top-[-15%] left-[60%] absolute flex justify-center items-center bg-[#7bce5bf6] rounded-full w-[45%] h-[47%] text-[#fff] text-[13px]'>15</span>
+                                    <CiShoppingCart className='w-[60%] h-[60%]' color="#000" />
+                                </div>
+                            </Link>
                             <div className='relative flex justify-center items-center w-12 h-12 nav-i'>
                                 <span className='top-[-15%] left-[60%] absolute flex justify-center items-center bg-[red] rounded-full w-[45%] h-[47%] text-[#fff] text-[13px]'>10</span>
                                 <SlHeart className='w-[47%] h-[47%]' color="#000" />

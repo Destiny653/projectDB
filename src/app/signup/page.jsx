@@ -6,12 +6,14 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { ValidatorMail, ValidatorOTP } from '../components/Validator/Validator';
 import { ThemeContext } from '../../../context/ThemeContext';
+import { useRouter } from 'next/navigation';
 
 export default function page() {
 
-  const {validMail , verification, authorize, setAuthorize, setVerification, setValidMail} = useContext(ThemeContext)
- 
-  const [phone, setPhone ] = useState(''); 
+  const { validMail, verification, authorize, setAuthorize, setVerification, setValidMail } = useContext(ThemeContext)
+
+  const [phone, setPhone] = useState('');
+  const navigation = useRouter()
   let [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,10 +22,21 @@ export default function page() {
     password: "",
     confirmPassword: ""
   })
+  useEffect(()=>{
+    setVerification(true)
+  },[])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!authorize){
+    const emailOTP = localStorage.getItem('otpEmail')
+    console.log("emailOTP: ", emailOTP)
+    if (emailOTP !== formData.email) {
+      alert("They email provided does not match verified email, please verify new email")
+      setAuthorize(false)
+      return
+    }
+
+    if (!authorize) {
       alert("Authorization denied, verify email first!")
       setVerification(true)
       return;
@@ -42,10 +55,13 @@ export default function page() {
       })
       const req = await res.json()
       if (!res.ok) {
-        alert(req.message)
+        alert(req.message) 
+        e.target.reset();
         return;
       }
       alert(req.message)
+      e.target.reset();
+      navigation.push('/signin')
     } catch (error) {
       alert("Error: " + error.message)
     }
@@ -54,7 +70,7 @@ export default function page() {
   const handleInputChange = (e) => {
     e.preventDefault()
     const { name, value } = e.target;
-    authorize && setFormData(() => ({ ...formData, [name]: value })); 
+    authorize && setFormData(() => ({ ...formData, [name]: value }));
   };
 
   return (
@@ -68,16 +84,16 @@ export default function page() {
           !validMail ? <ValidatorMail /> : <ValidatorOTP />
         }
       </div>
-      <div className={`${styles.signUpParent}`} > 
+      <div className={`${styles.signUpParent}`} >
         <h1 className='top-[20px] right-[20px] z-[4] absolute font-[600] text-[#59c7e9] text-[40px]'>Sign Up</h1>
         <section className={` ${styles.signUpImgFrame}`} >
           <div className='z-[2] flex flex-col gap-[10px]'>
             <h1 className='font-[700] text-[35px]'>Create Free account <br /> Get secured!</h1>
             <p className='font-[600] text-[22px]'>Your credentials are private and unavailable to the public.</p>
-            <button className='bg-[#000] hover:bg-[#80808085] px-[12px] py-[5px] rounded-[5px] w-fit text-[#fff]' onClick={() =>{setVerification(true); setValidMail(false)}}>Validate Email</button>
+            <button className='bg-[#000] hover:bg-[#80808085] px-[12px] py-[5px] rounded-[5px] w-fit text-[#fff]' onClick={() => { setVerification(true); setValidMail(false) }}>Validate Email</button>
           </div>
         </section>
-        <form className={`${styles.signUpForm}`} onSubmit={handleSubmit }>
+        <form className={`${styles.signUpForm}`} onSubmit={handleSubmit}>
           <div className='flex gap-[10px]'>
             <label htmlFor="firstName">
               <span>First Name</span>
@@ -108,7 +124,7 @@ export default function page() {
               country="us"
               value={phone}
               onChange={setPhone}
-             />
+            />
           </label>
           <div className='flex gap-[10px]'>
             <label htmlFor="password">

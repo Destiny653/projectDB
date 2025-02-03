@@ -18,6 +18,7 @@ export function ThemeProvider({ children }) {
     const toggleTheme = () => {
         setTheme(theme === "light" ? "dark" : "light");
     };
+    
     useEffect(() => {
         let localTheme = typeof window !== 'undefined' && window.localStorage.getItem('theme')
         const storedTheme = localTheme;

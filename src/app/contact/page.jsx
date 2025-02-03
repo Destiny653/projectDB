@@ -6,7 +6,7 @@ import 'react-phone-input-2/lib/style.css';
 
 export default function Page() {
 
-    const [phone, setPhone]= useState('')
+    const [phone, setPhone] = useState('')
     const [change, setChange] = useState(false)
     const [formData, setFormData] = useState({
         name: '',
@@ -19,28 +19,31 @@ export default function Page() {
         e.preventDefault();
         formData.phone = phone
         try {
-            const res = await fetch(`http://localhost:3000/api/client/contact`,{
+            const res = await fetch(`http://localhost:3000/api/client/contact`, {
                 method: 'POST',
-                headers:{
+                headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
             })
             const req = await res.json()
-            if(!res.ok){
+            if (!res.ok) {
                 alert(req.message)
+                e.target.reset();
+
                 return;
             }
             alert(req.message)
+            e.target.reset();
         } catch (error) {
             alert("Error: " + error.message)
         }
     }
 
-    const handleInputChange = (e)=>{
+    const handleInputChange = (e) => {
         setChange(true)
-       const {name, value} = e.target
-       setFormData(()=>({...formData, [name]:value}))
+        const { name, value } = e.target
+        setFormData(() => ({ ...formData, [name]: value }))
     }
 
     return (
@@ -62,12 +65,12 @@ export default function Page() {
                                 <span>Phone</span>
                                 <PhoneInput
                                     inputStyle={{
-                                        fontSize: '16px', 
+                                        fontSize: '16px',
                                         border: 'none',
                                         outline: 'none',
                                         color: 'black',
                                         width: '100%',
-                                        backgroundColor: 'white' 
+                                        backgroundColor: 'white'
                                     }}
                                     country="us"
                                     value={phone}

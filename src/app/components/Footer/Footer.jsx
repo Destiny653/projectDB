@@ -27,10 +27,13 @@ export default function Footer() {
             if (!res.ok) {
                 setBtnLoader(false)
                 alert(req.message)
+                e.target.reset();
+
                 return
             }
             setBtnLoader(false)
             alert(req.message)
+            e.target.reset();
             return;
         } catch (error) {
             console.log('Error: ', error);
