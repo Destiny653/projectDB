@@ -7,10 +7,9 @@ import { CartContext } from '../../../context/CartContext';
 
 export default function Page() {
 
-    const { cartItems, handleAddToCart, emptyCart } = useContext(CartContext)
+    const { cartItems, handleAddToCart, emptyCart, fetchData } = useContext(CartContext)
 
-    const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-    const [returns, setRetruns] = useState(null)
+    const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }); 
     let totalPrice = 0;
 
     // const [ignored, forceUpdate] = useReducer(x => x + 1, 0 )
@@ -20,35 +19,6 @@ export default function Page() {
     //     console.log(cart);
 
     // }
-
-    let newCart = null
-    useEffect(() => {
-
-        const getData = async () => {
-            const apis = [
-                '/api/posts',
-                '/api/baltons',
-                '/api/wellers',
-                '/api/buffalos',
-                '/api/pappies',
-                '/api/penelopes',
-                '/api/yamazakis',
-            ];
-
-            const fetchPromises = apis.map(api => fetch(api).then(res => res.json()));
-            const results = await Promise.all(fetchPromises);
-            // setNewCart(results.flat()); 
-            newCart = results.flat()
-            setRetruns(newCart)
-            console.log(newCart);
-            return;
-        }
-        getData();
-    }, [returns])
-
-
-    console.log(returns); 
-
 
     // is client to ensure smooth running
 
@@ -78,8 +48,8 @@ export default function Page() {
                         {!cartItems == [] ?
                             cartItems?.map((item, index) => {
 
-                                let position = returns && returns?.findIndex((value) => value._id === item.product_id)
-                                let itemInCart = returns && returns[position]
+                                let position = fetchData && fetchData?.findIndex((value) => value._id === item.product_id)
+                                let itemInCart = fetchData && fetchData[position]
                                 let qtyInCart = item.quantity
                                 // console.log(item.price);
                                 let price = itemInCart?.price

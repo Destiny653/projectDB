@@ -12,6 +12,7 @@ export function ThemeProvider({ children }) {
     const [resetPassword, setResetPassword] = useState(false)
     const [authorize, setAuthorize] = useState(false)
     const [validNum, setValidNum]= useState(0)
+    const [userLog, setUserLog] = useState({})
 
 
 
@@ -28,7 +29,7 @@ export function ThemeProvider({ children }) {
     }, [theme])
 
     return (
-        <ThemeContext.Provider value={{ theme, validMail, verification, resetPassword, authorize, validNum, setValidNum, setAuthorize, setResetPassword, setVerification, setValidMail, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme, validMail, verification, resetPassword, authorize, validNum, userLog, setUserLog, setValidNum, setAuthorize, setResetPassword, setVerification, setValidMail, toggleTheme }}>
             <div className={`theme-switcher ${theme}`}>
                 {children}
             </div>

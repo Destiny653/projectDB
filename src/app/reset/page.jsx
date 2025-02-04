@@ -5,9 +5,10 @@ import { ThemeContext } from '../../../context/ThemeContext';
 import { Reset, ValidatorMail, ValidatorOTP } from '../components/Validator/Validator';
 import styles from './reset.module.css'
 import { useRouter } from 'next/navigation';
+import { URL } from '../components/URL/URL';
 
 export default function page() {
-
+    const config =  URL
     const { verification, setVerification, validMail, authorize, setValidMail, validNum, setValidNum } = useContext(ThemeContext)
 
     const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ export default function page() {
         const email = localStorage.getItem('otpEmail')
         formData.email = email
         try {
-            const res = await fetch(`http://localhost:3000/api/client/reset-password`, {
+            const res = await fetch(`${config}/api/client/reset-password`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

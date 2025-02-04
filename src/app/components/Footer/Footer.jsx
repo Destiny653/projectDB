@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import './footer.css'
 import Link from 'next/link';
 import { BtnLoad } from '../Content/Content'
+import { URL } from '../URL/URL';
 
 export default function Footer() {
+    const config =  URL
     const [formData, setFormData] = useState({
         title: '',
         email: '',
@@ -16,7 +18,7 @@ export default function Footer() {
         e.preventDefault()
         setBtnLoader(true)
         try {
-            const res = await fetch(`http://localhost:3000/api/client/message`, {
+            const res = await fetch(`${config}/api/client/message`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

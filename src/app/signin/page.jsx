@@ -3,37 +3,48 @@ import Link from 'next/link';
 import styles from './singin.module.css'
 import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation';
+import { BtnLoad } from '../components/Content/Content'; 
+import { URL } from '../components/URL/URL';
 
 export default function page() {
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     const navigation = useRouter()
+    const [btnLoader, setBtnLoader] = useState(false);
+
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     })
+    const config = URL
+    console.log(config)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setBtnLoader(true)
         try {
-            const res = await fetch(`http://localhost:3000/api/client/login`, {
+            const res = await fetch(`${config}/api/client/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             })
-            const req = await res.json()
+            const req = await res.json()    
             if (!res.ok) {
                 e.target.reset();
-                alert(req.message) 
+                alert(req.message)
+                setBtnLoader(false)
                 return;
             }
+            localStorage.setItem('token', req.token)
+            localStorage.setItem('name', req.data.firstName +" "+ req.data.lastName)
             e.target.reset();
-            alert(req.message) 
+            setBtnLoader(false)
+            alert(req.message)
             navigation.push('/')
             return;
         } catch (error) {
             alert('Error: ' + error.message)
+            setBtnLoader(false)
             return;
         }
     }
@@ -43,11 +54,11 @@ export default function page() {
         setFormData(() => ({ ...formData, [name]: value }))
     }
 
-     useEffect(()=>{
+    useEffect(() => {
         const form = document.getElementById('loginForm');
         form.classList.remove('translate-x-full', 'opacity-0')
         form.classList.add('translate-x-0', 'opacity-100')
-     },[])
+    }, [])
 
     return (
         <section className='overflow-hidden'>
@@ -71,7 +82,9 @@ export default function page() {
                         <Link href={'/reset'}>
                             <p className='text-[13px] text-[blue] text-center hover:text-[gray] cursor-pointer' >Forgot password.</p>
                         </Link>
-                        <button type='submit'>Submit</button>
+                        <button type='submit'>
+                            {btnLoader ? <BtnLoad /> : 'Submit'}
+                        </button>
                         <p className='text-[13px] text-[blue] text-center'>Don't have an account? <Link href={'/signup'} className='hover:text-[gray]'>Sign Up</Link></p>
                     </form>
                 </div>

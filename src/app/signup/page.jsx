@@ -7,8 +7,11 @@ import 'react-phone-input-2/lib/style.css';
 import { ValidatorMail, ValidatorOTP } from '../components/Validator/Validator';
 import { ThemeContext } from '../../../context/ThemeContext';
 import { useRouter } from 'next/navigation';
+import { URL } from '../components/URL/URL';
 
 export default function page() {
+
+  const config =  URL
 
   const { validMail, verification, authorize, setAuthorize, setVerification, setValidMail } = useContext(ThemeContext)
 
@@ -48,7 +51,7 @@ export default function page() {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/client/register`, {
+      const res = await fetch(`${config}/api/client/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

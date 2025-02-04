@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './navbar.css';
 import { CiShoppingCart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
@@ -10,8 +10,16 @@ import { ThemeContext } from '../../../../context/ThemeContext';
 import Link from 'next/link';
 
 export default function Navbar() {
-    const { theme } = useContext(ThemeContext);
+    const { theme, userLog, setUserLog } = useContext(ThemeContext);
     const [displayNav, setDisplayNav] = useState(false)
+    useEffect(()=>{
+        setUserLog({
+            name: localStorage.getItem('name'),
+            email: localStorage.getItem('otpEmail')
+        })
+        return;
+    },[])
+    console.log(userLog)
     return (
         <div className='nav-con'>
             <div className='box-border nav-p'>
@@ -35,8 +43,8 @@ export default function Navbar() {
                             </section>
                             <section className='user-menu'>
                                 <ul className='text-[14px]'>
-                                    <li>Hello...</li>
-                                    <li>Sign in or Register</li>
+                                    <li>{userLog.name ? userLog.name : 'Hello...'}</li>
+                                    <li>{userLog.email ? userLog.email :'Sign in or Register'}</li>
                                 </ul>
                             </section>
                         </div>

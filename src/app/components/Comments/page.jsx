@@ -41,10 +41,6 @@ export default function Comments() {
         return () => clearInterval(timer)
     }, [index])
 
-    console.log('Index: ', index);
-
-
-
     return (
         <div className={`commentPa ${!comment && 'nullComment'}`} >
             <span className={``} style={{ display: !comment && 'none' }} onClick={() => setComment(false)} >x</span>
