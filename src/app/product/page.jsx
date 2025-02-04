@@ -6,7 +6,7 @@ import { CiShoppingBasket } from "react-icons/ci";
 import { Cloths, Valies, Shoes, Diaper, Nightware, Bath, Feeding } from '../components/Content/Content';
 
 export default function Page() {
-    const [contentV, setContentV] = useState(Bath)
+    const [contentV, setContentV] = useState(<Bath/>)
     const [bugC, setBugC] = useState(false)
 
 
@@ -50,31 +50,31 @@ export default function Page() {
                 </section>
                 <label htmlFor="item1">
                     <input type="radio" name="options" id="item1" />
-                    <li onClick={() => setContentV(Cloths)} >
+                    <li onClick={() => setContentV(<Cloths/>)} >
                         Cloths
                     </li>
                 </label>
                 <label htmlFor="item2">
                     <input type="radio" name="options" id="item2" />
-                    <li onClick={() => setContentV(Diaper)} >
+                    <li onClick={() => setContentV(<Diaper/>)} >
                         Diaper
                     </li>
                 </label>
                 <label htmlFor="item3">
                     <input type="radio" name="options" id="item3" />
-                    <li onClick={() => setContentV(Bath)}>
+                    <li onClick={() => setContentV(<Bath/>)}>
                         Bath
                     </li>
                 </label>
                 <label htmlFor="item4">
                     <input type="radio" name="options" id="item4" />
-                    <li onClick={() => setContentV(Valies)} >
+                    <li onClick={() => setContentV(<Valies/>)} >
                         Valies
                     </li>
                 </label>
                 <label htmlFor="item5">
                     <input type="radio" name="options" id="item5" />
-                    <li onClick={() => setContentV(Feeding)} >
+                    <li onClick={() => setContentV(<Feeding/>)} >
                         Feeding
                     </li>
                 </label>

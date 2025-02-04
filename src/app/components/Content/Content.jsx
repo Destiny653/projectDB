@@ -48,7 +48,7 @@ const valies = [
 
 const config = URL
 console.log(config)
-const Cloths = (Clothing) => {
+export const Cloths = (Clothing) => {
 
   const { handleAddToCart, fetchData, cartItems } = useContext(CartContext)
   const data = fetchData.filter((item) => item.category === Clothing)
@@ -56,7 +56,8 @@ const Cloths = (Clothing) => {
   return (
     <div className='box-border my-[20px] cloths-c'>
       {
-        data ?
+
+        data.length < 1 ?
           data.map((item, index) => {
             let position = data && data?.findIndex((value) => cartItems.some(cartitem => cartitem.product_id === value._id))
             let itemInCart = data && data[position]
@@ -110,7 +111,7 @@ const Cloths = (Clothing) => {
     </div>
   )
 }
-const Valies = (Valies) => {
+export const Valies = (Valies) => {
 
   const { handleAddToCart, fetchData, cartItems } = useContext(CartContext)
   const data = fetchData.filter((item) => item.category === Valies)
@@ -119,7 +120,8 @@ const Valies = (Valies) => {
     <div className='relative cart-valies-p'>
       <section className='cart-valies-con'>
         {
-          data ?
+
+          data.length < 1 ?
             data.map((item, i) => {
 
               let position = data && data?.findIndex((value) => cartItems.some(cartitem => cartitem.product_id === value._id))
@@ -167,7 +169,7 @@ const Valies = (Valies) => {
     </div>
   )
 }
-const Shoes = (Shoe) => {
+export const Shoes = (Shoe) => {
   const { handleAddToCart, fetchData, cartItems } = useContext(CartContext)
   const data = fetchData.filter((item) => item.category === Shoe)
 
@@ -201,7 +203,7 @@ const Shoes = (Shoe) => {
     </ul>
   )
 }
-const Feeding = (Feeding) => {
+export const Feeding = (Feeding) => {
 
   const { handleAddToCart, fetchData, cartItems } = useContext(CartContext)
   const data = fetchData.filter((item) => item.category === Feeding)
@@ -209,7 +211,8 @@ const Feeding = (Feeding) => {
   return (
     <ul className='feed-cart-list'>
       {
-        data ?
+
+        data.length < 1 ?
           data.map((item, i) => {
 
             let position = data && data?.findIndex((value) => cartItems.some(cartitem => cartitem.product_id === value._id))
@@ -255,7 +258,7 @@ const Feeding = (Feeding) => {
   )
 }
 
-const Diaper = (Underwear) => {
+export const Diaper = (Underwear) => {
   const { handleAddToCart, fetchData, cartItems } = useContext(CartContext)
   const data = fetchData.filter((item) => item.category === Underwear)
 
@@ -292,7 +295,7 @@ const Diaper = (Underwear) => {
   )
 }
 
-const NightWare = (Nightware) => {
+export const NightWare = (Nightware) => {
 
   const { handleAddToCart, fetchData, cartItems } = useContext(CartContext)
   const data = fetchData.filter((item) => item.category === Nightware)
@@ -331,16 +334,61 @@ const NightWare = (Nightware) => {
   )
 }
 
-const Bath = (Bath) => {
+export const Bath = (Bath) => {
 
   const { handleAddToCart, fetchData, cartItems } = useContext(CartContext)
   const data = fetchData.filter((item) => item.category === Bath)
+  console.log(data);
+
 
   return (
     <div className='bath-display'>
       <div className='cart-bath'>
         {
-          data ?
+
+          data.length < 1 ?
+            num.map(((item, i) => (
+              <section key={i} className={`bath-item-${i}`}>
+                {i == 3 || i == 6 ?
+                  (
+                    <div className='bath-visible'>
+                      <div className='bath-basin'>
+                        <section className='flex justify-between'>
+                          <div className='bg-[#a3a1a13a] rounded-[10px] w-[300px] h-[200px]'></div>
+                          <div className='flex flex-col gap-[10px]'>
+                            <h1 className='font-[500]'>Custom Basin</h1>
+                            <h3>$500</h3>
+                            <section className='border rounded-[6px] overflow-hidden'>
+                              <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'  >-</button>
+                              <span className='bg-[#80808048] px-[14px] py-[5px]'>2</span>
+                              <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]' >+</button>
+                            </section>
+                            <div className='flex justify-center items-center bg-[#66666633] bath-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
+                          </div>
+                        </section>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni architecto, illo quasi ratione c</p>
+                      </div>
+                    </div>
+                  )
+                  :
+                  <div className='flex flex-col justify-center items-center gap-[10px] bath-item'>
+                    <section className='bg-[#d3d1d141] rounded-full w-[80%] h-[55%]'></section>
+                    <section className='relative px-[10px] text-[14px]'>
+                      <h1 className='font-[500]'>Custom Basin</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                      <h3>$500</h3>
+                      <section className='bottom-[10px] feed-cart'>
+                        <div className='border w-fit feed-cart-btn'>
+                          <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'  >-</button><span className='bg-[#80808048] px-[14px] py-[6px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]' >+</button>
+                        </div>
+                        <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
+                      </section>
+                    </section>
+                  </div>
+                }
+              </section>
+            )))
+            :
             data?.map((item, i) => {
 
               let position = data && data?.findIndex((value) => cartItems.some(cartitem => cartitem.product_id === value._id))
@@ -389,48 +437,6 @@ const Bath = (Bath) => {
                   </section>
                 )
             })
-            :
-            num.map(((item, i) => (
-              <section key={i} className={`bath-item-${i}`}>
-                {i == 3 || i == 6 ?
-                  (
-                    <div className='bath-visible'>
-                      <div className='bath-basin'>
-                        <section className='flex justify-between'>
-                          <div className='bg-[#a3a1a13a] rounded-[10px] w-[300px] h-[200px]'></div>
-                          <div className='flex flex-col gap-[10px]'>
-                            <h1 className='font-[500]'>Custom Basin</h1>
-                            <h3>$500</h3>
-                            <section className='border rounded-[6px] overflow-hidden'>
-                              <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'  >-</button>
-                              <span className='bg-[#80808048] px-[14px] py-[5px]'>2</span>
-                              <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]' >+</button>
-                            </section>
-                            <div className='flex justify-center items-center bg-[#66666633] bath-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                          </div>
-                        </section>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni architecto, illo quasi ratione c</p>
-                      </div>
-                    </div>
-                  )
-                  :
-                  <div className='flex flex-col justify-center items-center gap-[10px] bath-item'>
-                    <section className='bg-[#d3d1d141] rounded-full w-[80%] h-[55%]'></section>
-                    <section className='relative px-[10px] text-[14px]'>
-                      <h1 className='font-[500]'>Custom Basin</h1>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                      <h3>$500</h3>
-                      <section className='bottom-[10px] feed-cart'>
-                        <div className='border w-fit feed-cart-btn'>
-                          <button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-r font-[600]'  >-</button><span className='bg-[#80808048] px-[14px] py-[6px]'>2</span><button className='hover:bg-[#e99f16f6] px-[14px] py-[5px] border-l font-[600]' >+</button>
-                        </div>
-                        <div className='flex justify-center items-center bg-[#66666633] feed-cart-i'><CiShoppingBasket className='text-[#6e6e6ed5]' size={"30"} /></div>
-                      </section>
-                    </section>
-                  </div>
-                }
-              </section>
-            )))
         }
       </div>
     </div>
@@ -445,7 +451,7 @@ const BtnLoad = () => {
   )
 }
 
-module.exports = { BtnLoad, Cloths, Valies, Shoes, Diaper, NightWare, Bath, Feeding }
+// module.exports = { BtnLoad, Cloths, Valies, Shoes, Diaper, NightWare, Bath, Feeding }
 
 
 
