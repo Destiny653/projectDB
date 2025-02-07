@@ -9,7 +9,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="z-50 bg-white/90 shadow-md backdrop-blur-sm w-full">
+    <nav className="z-[300] bg-white/90 shadow-md backdrop-blur-sm w-full">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">

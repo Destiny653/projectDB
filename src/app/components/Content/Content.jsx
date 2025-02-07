@@ -23,7 +23,7 @@ const BaseProductComponent = ({ items, filters, category }) => {
     } catch (error) {
       console.error('Error:', error);
       setError(error.message);
-    } finally { 
+    } finally {
       setLoading(false);
     }
   }; 
