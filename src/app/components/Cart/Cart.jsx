@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { ShoppingCart, X, Minus, Plus, Trash2 } from 'lucide-react';  
 import { CartContext } from '../../../../context/CartContext';
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../../../../components/ui/sheet'; 
-import Button from '../../../../components/ui/Button'; 
+import {Button} from '../../../../components/ui/Button'; 
 
 const Cart = () => {
   const { 

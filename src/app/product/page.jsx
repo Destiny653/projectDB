@@ -16,7 +16,7 @@ import {
 import { Bath, Cloths, Diaper, Feeding, Toy, Valies } from '../components/Content/Content';
 import Slider from '../../../components/ui/Slider';
 import Badge from '../../../components/ui/Badge';
-import Button from '../../../components/ui/Button';
+import {Button} from '../../../components/ui/Button';
 
 export default function Page() {
     // State declarations

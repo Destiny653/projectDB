@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Trash2 } from 'lucide-react';
 import { CartContext } from '../../../context/CartContext';
-import Button from '../../../components/ui/Button'; 
+import { Button } from '../../../components/ui/Button'; 
 
 export default function CartPage() {
   const { cartItems, handleAddToCart, emptyCart, fetchData } = useContext(CartContext);
