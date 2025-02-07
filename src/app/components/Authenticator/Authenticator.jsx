@@ -3,9 +3,11 @@ import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, User, Phone, ArrowLeft, Loader, CheckCircle } from 'lucide-react';
 import { URL } from '../URL/URL';
+import { useRouter } from 'next/navigation';
 
 const RegistrationForm = () => {
   const [step, setStep] = useState(1);
+  const navigation = useRouter()
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [formData, setFormData] = useState({
@@ -126,7 +128,7 @@ const RegistrationForm = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_URL}/api/client/register`, {
+      const res = await fetch(`${URL}/api/client/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -147,6 +149,7 @@ const RegistrationForm = () => {
       localStorage.removeItem('otp');
 
       alert('Registration successful!');
+      navigation.push('/login') // Redirect or handle success
       // Redirect or handle success
     } catch (error) {
       alert(error instanceof Error ? error.message : 'An error occurred');

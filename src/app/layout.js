@@ -6,6 +6,7 @@ import { ThemeProvider } from "../../context/ThemeContext";
 import Comments from "./components/Comments/page";
 import { CartProvider } from "../../context/CartContext";
 import Header from "./components/Header/Header";
+import { YourComponent } from "./components/Pop";
 
 
 const geistSans = localFont({
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <CartProvider>
           <ThemeProvider> 
             <Header/>
+            <YourComponent/>
             <Comments />
             {children}
             <Footer />

@@ -1,3 +1,3 @@
 import React from 'react'
 
-export const URL ='http://localhost:3000'
+export const URL ='https://geni-backend.onrender.com'

@@ -136,12 +136,66 @@
   border-left: 3px solid #000;
   animation: spin 0.5s infinite linear;
 }
-
+  
 @keyframes spin {
   0% {
       transform: rotate(0deg);
   }
   100% {
       transform: rotate(360deg);
+  }
+}
+
+/* Add these styles to your global CSS or create a new module */
+.notification-wrapper {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.notification-success {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.notification-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.notification-info {
+  background-color: #f5f3ff;
+  border: 1px solid #ddd6fe;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }
