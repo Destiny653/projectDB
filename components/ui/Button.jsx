@@ -1,6 +1,5 @@
-import React from 'react';
-
-export default Button = ({ 
+ 
+const Button = ({ 
   children, 
   variant = 'default', 
   size = 'default', 
@@ -33,4 +32,4 @@ export default Button = ({
   );
 };
 
-// export default Button;
+export default Button;
