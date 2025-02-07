@@ -1,130 +1,153 @@
-'use client';
+ 'use client';
 import React, { useContext, useEffect, useState } from 'react';
-import './cart.css';
-import Link from 'next/link'; 
-import { FaRegTrashAlt } from "react-icons/fa";
+import Link from 'next/link';
+import { Trash2 } from 'lucide-react';
 import { CartContext } from '../../../context/CartContext';
+import Button from '../../../components/ui/Button'; 
 
-export default function Page() {
+export default function CartPage() {
+  const { cartItems, handleAddToCart, emptyCart, fetchData } = useContext(CartContext);
+  const [isClient, setIsClient] = useState(false);
 
-    const { cartItems, handleAddToCart, emptyCart, fetchData } = useContext(CartContext)
+  const formatter = new Intl.NumberFormat('en-US', { 
+    style: 'currency', 
+    currency: 'USD' 
+  });
 
-    const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }); 
-    let totalPrice = 0;
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
-    // const [ignored, forceUpdate] = useReducer(x => x + 1, 0 )
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => {
+      const position = fetchData?.findIndex((value) => value._id === item.product_id);
+      const itemInCart = fetchData?.[position];
+      return total + (itemInCart?.price * item.quantity || 0);
+    }, 0);
+  };
 
-    // for (let i = 0; i < cartItems?.length; i++) {
-    //     const cart = cartItems[i]?.price;
-    //     console.log(cart);
+  const totalPrice = calculateTotalPrice();
 
-    // }
+  if (!isClient) return null;
 
-    // is client to ensure smooth running
+  return (
+    <div className='relative flex justify-center gap-7 m-10 ml-0 px-1 w-full'>
+      {/* Cart Items Table */}
+      <div className='w-3/4'>
+        <table className='w-full'>
+          <thead>
+            <tr className='border-b'>
+              <th className='p-4 text-left'>Image</th>
+              <th className='p-4 text-left'>Name</th>
+              <th className='p-4 text-left'>Unit Price</th>
+              <th className='p-4 text-left'>Quantity</th>
+              <th className='p-4 text-left'>Total</th>
+              <th className='p-4 text-left'>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cartItems?.length > 0 ? (
+              cartItems.map((item, index) => {
+                const position = fetchData?.findIndex((value) => value._id === item.product_id);
+                const itemInCart = fetchData?.[position];
+                const qtyInCart = item.quantity;
+                const price = itemInCart?.price;
 
-    const [isClient, setIsClient] = useState(false)
+                return (
+                  <tr key={index} className='border-b'>
+                    <td className='p-4'>
+                      <img 
+                        className='rounded-full w-24 h-24 object-cover' 
+                        src={itemInCart?.img} 
+                        alt={itemInCart?.title} 
+                      />
+                    </td>
+                    <td className='p-4'>{itemInCart?.title?.slice(0, 15)}</td>
+                    <td className='p-4'>{formatter.format(price)}</td>
+                    <td className='p-4'>
+                      <div className='flex items-center gap-2 p-1 border rounded-lg'>
+                        <button 
+                          className='hover:bg-gray-100 px-3 py-1 rounded'
+                          onClick={() => handleAddToCart(itemInCart, qtyInCart)}
+                        >
+                          -
+                        </button>
+                        <span className='px-3'>{qtyInCart}</span>
+                        <button 
+                          className='hover:bg-gray-100 px-3 py-1 rounded'
+                          onClick={() => handleAddToCart(itemInCart)}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </td>
+                    <td className='p-4'>{formatter.format(price * qtyInCart)}</td>
+                    <td className='p-4'>
+                      <button 
+                        onClick={() => handleAddToCart(itemInCart, qtyInCart, index)}
+                        className='text-red-600 hover:text-red-700'
+                      >
+                        <Trash2 size={24} />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })
+            ) : (
+              <tr>
+                <td colSpan={6} className='p-8 text-center text-gray-500 text-xl'>
+                  Your Cart is empty!
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        
+        <Button
+          variant="destructive"
+          className='mt-4'
+          onClick={emptyCart}
+        >
+          Reset Cart
+        </Button>
+      </div>
 
-    useEffect(() => {
-        setIsClient(true)
-        return;
-    })
+      {/* Cart Summary */}
+      <div className='w-1/4'>
+        <div className='top-24 sticky space-y-4 p-6 border rounded-lg'>
+          <h2 className='mb-4 font-bold text-center text-xl'>Cart Summary</h2>
+          
+          <div className='space-y-3'>
+            <div className='flex justify-between'>
+              <span>Subtotal</span>
+              <span>{formatter.format(totalPrice)}</span>
+            </div>
+            <div className='flex justify-between'>
+              <span>Shipping</span>
+              <span>Flat Rate</span>
+            </div>
+            <div className='flex justify-between'>
+              <span>Tax</span>
+              <span>{formatter.format(70)}</span>
+            </div>
+            <div className='pt-3 border-t'>
+              <div className='flex justify-between font-bold'>
+                <span>Total</span>
+                <span>{formatter.format(totalPrice + 70)}</span>
+              </div>
+            </div>
+          </div>
 
-
-    return (
-        <>
-            {isClient && <div className='relative box-border flex justify-center gap-7 m-10 ml-0 px-1 w-full cart-parent nav-obscure-view'>
-                <table className='box-border w-3/4 cart-table table1'>
-                    <thead>
-                        <tr>
-                            <th className='text-left'>Image</th>
-                            <th className='text-left cart-title'>Name</th>
-                            <th className='text-left'>unit</th>
-                            <th className='text-left'>Qty</th>
-                            <th className='text-left'>Sum</th>
-                            <th className='text-left'>Cut</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {!cartItems == [] ?
-                            cartItems?.map((item, index) => {
-
-                                let position = fetchData && fetchData?.findIndex((value) => value._id === item.product_id)
-                                let itemInCart = fetchData && fetchData[position]
-                                let qtyInCart = item.quantity
-                                // console.log(item.price);
-                                let price = itemInCart?.price
-                                // console.log(price);
-
-                                totalPrice += itemInCart?.price * qtyInCart
-
-
-                                return (
-                                    <tr key={index}>
-                                        <td>
-                                            <span className='pl-[12px]'>
-                                            <img className='rounded-full cart-img size-24' src={itemInCart?.img} alt='product' height={400} width={400} />
-                                            </span>
-                                        </td>
-                                        <td className='cart-title-name'>{itemInCart?.title.slice(0, 15)}</td>
-                                        <td>{formatter.format(price)}</td>
-                                        <td>
-                                            <div className='box-border hover:bg-[#610f0f] px-2 py-1 border w-fit text-black hover:text-white'>
-                                                <button className='bg-inherit' onClick={() => { handleAddToCart(itemInCart, qtyInCart); }}>- </button>
-                                                <span className='px-3 py-1 rounded-full'>{qtyInCart}</span>
-                                                <button className='bg-inherit' onClick={() => { handleAddToCart(itemInCart); }} >+</button>
-                                            </div>
-                                        </td>
-                                        <td>{(formatter.format(price * qtyInCart))}</td>
-                                        <td>
-                                            <button onClick={() => handleAddToCart(itemInCart, qtyInCart, index)} ><FaRegTrashAlt className='text-red-600' size={30} /></button>
-                                        </td>
-                                    </tr>
-                                )
-                            }
-                            ) :
-
-                            <h1 className='m-auto text-2xl text-center align-middle'>Your Cart is empty!</h1>
-                        }
-                    </tbody>
-                    <Link href='/cart'>
-                        <button className='bg-[#b40f0f] active:bg-[#610f0f] mt-3 px-4 py-2 rounded-xl text-white' onClick={() => emptyCart()}>Reset Cart</button>
-                    </Link>
-                </table>
-
-
-                <div className='box-border mr-4 w-1/5 cart-sum'>
-                    <table className='top-[10vh] left-0 box-border sticky m-0 px-[2px] p-5 border w-full h-96'>
-                        <thead>
-                            <tr>
-                                <th scope='col' colSpan={2}>CART TOTAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Subtotal</td>
-                                <td>{formatter.format(totalPrice)}</td>
-                            </tr>
-                            <tr>
-                                <td>Shipping</td>
-                                <td>Flat Rate</td>
-                            </tr>
-                            <tr>
-                                <td>Tax</td>
-                                <td>$70</td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td>{formatter.format(totalPrice + 70)}</td>
-                            </tr>
-                        </tbody>
-                        <Link href='/checkout'>
-                            <button className='bg-[#610f0f] mt-4 px-4 py-3 border rounded-lg w-full text-white self-center'>
-                                Checkout
-                            </button>
-                        </Link>
-                    </table>
-                </div>
-            </div>}
-        </>
-    )
+          <Button 
+            className='mt-6 w-full'
+            asChild
+          >
+            <Link href='/checkout'>
+              Proceed to Checkout
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
 }

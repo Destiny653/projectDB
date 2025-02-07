@@ -1,467 +1,284 @@
-'use client'
-import React, { useContext, useEffect, useState } from 'react';
-import './hero.css';
-import Image from 'next/image';
-import Geolocation from '../Geolocation/Geolocation';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { CiShoppingBasket } from "react-icons/ci";
-import { ThemeContext } from '../../../../context/ThemeContext';
-import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { Cloths, Valies, Shoes, Diaper, Nightware, Bath, Feeding } from '../Content/Content';
-import Link from 'next/link';
+ 'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  ChevronRight, 
+  Star, 
+  Shield, 
+  Truck, 
+  Gift, 
+  Clock, 
+  Award,
+  ThumbsUp,
+  Heart,
+  RefreshCcw,
+  CheckCircle,
+  HeartHandshake
+} from 'lucide-react';
 
-export default function Hero() {
+const Hero = () => {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
 
-  const { theme } = useContext(ThemeContext)
-  const [addClass, setAddClass] = useState(false)
-  const [bugC, setBugC] = useState(false)
-  const [currentInterval, setCurrentInterval] = useState(0)
-  const [contentV, setContentV] = useState(<Bath/>)
-  const [classN, setClassN] = useState('activeProduct')
-
-  const sliderSettings = {
-    infinite: true,
-    speed: 600,
-    slidesToShow: 4,
-    // centerPadding: '60px',
-    // centerMode: true,
-    slidesToScroll: 2,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    cssEase: 'linear',
-    responsive: [
-      {
-        breakpoint: 1824,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 2,
-          infinite: true, 
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          infinite: true, 
-        }
-      },
-      {
-        breakpoint: 700,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 1
-        }
-      },
-      {
-        breakpoint: 580,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
+  const staggerChildren = {
+    animate: {
+      transition: {
+        staggerChildren: 0.2
       }
-    ]
-  }
-
-  const slideSettings2 = {
-    infinite: true,
-    speed: 600,
-    slidesToShow: 3,
-    // centerMode: true,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    cssEase: 'linear',
-    responsive: [
-      {
-        breakpoint: 1000,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  }
-
-  const imgCollection = [
-    {
-      img: "/image/geni1-removebg-preview.png"
-    },
-    {
-      img: "/image/geni2-removebg-preview.png"
-    },
-    {
-      img: "/image/geni7.png"
-    },
-    {
-      img: "/image/geni4.png"
-    },
-    {
-      img: "https://i.pinimg.com/236x/51/49/77/514977b47170524aa96d3e4dc765e590.jpg"
-    },
-    {
-      img: "/image/geni8.png"
-    },
-    {
-      img: "/image/geni6.png"
-    },
-    {
-      img: "/image/geni7.png"
     }
-  ]
+  };
 
-  const premium = [
+  const testimonials = [
     {
-      img: "/image/prem1.png"
+      name: "Sarah Johnson",
+      role: "Happy Parent",
+      comment: "The quality and care put into every product is exceptional. My baby loves everything we've purchased!",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
     },
     {
-      img: "/image/prem2.png"
+      name: "Michael Chen",
+      role: "First-time Dad",
+      comment: "Outstanding customer service and the fastest shipping I've experienced. Will definitely shop here again!",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
     },
     {
-      img: "/image/prem5.png"
-    },
-    {
-      img: "/image/prem6.png"
-    },
-    {
-      img: "/image/prem3.png"
-    },
-    {
-      img: "/image/prem7.png"
-    },
-    {
-      img: "/image/prem8.png"
-    },
-    {
-      img: "/image/prem9.png"
-    },
-    {
-      img: "/image/prem10.png"
-    },
-  ]
-
-  const images = [
-    {
-      img: "https://i.pinimg.com/236x/4f/f0/b1/4ff0b16e288bcf6763b16bf1b68d791c.jpg"
-    },
-    {
-      img: "https://i.pinimg.com/236x/91/46/1c/91461cc0d8b44c7ad2ff762eb39a33df.jpg"
-    },
-    {
-      img: "https://i.pinimg.com/236x/de/ab/48/deab48adc7940d467ae607b9a474cf63.jpg"
-    },
-    {
-      img: "https://i.pinimg.com/236x/99/86/25/998625e94cf7c4aab341411a2ecbaaf8.jpg"
-    },
-    {
-      img: "https://i.pinimg.com/236x/d5/d5/e6/d5d5e6b0d1f341ae741a601a5f15f9c8.jpg"
-    },
-    {
-      img: "https://i.pinimg.com/236x/4f/13/51/4f1351f7957b9ecd8a6fa77ba5bb7a2a.jpg"
+      name: "Emma Williams",
+      role: "Mom of Twins",
+      comment: "The organic materials used in their clothing line give me peace of mind. Highly recommended!",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
     }
-  ]
+  ];
 
-
-  useEffect(() => {
-    const intervalid = setInterval(() => {
-      setCurrentInterval(prevIndex => (prevIndex + 1) % images.length)
-    }, 1500)
-    return () => clearInterval(intervalid)
-  }, [currentInterval])
-
-  const slideImge = {
-    width: '100%',
-    fontWeight: 'bold',
-    textShadow: '0px 0px 10px #000000',
-    position: 'absolute',
-    transition: 'all 5s ease-in-out'
-  }
-
-  const transformStyle = {
-    transform: `translateX(${currentInterval * -100}%)`
-  }
-
-
+  const guarantees = [
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "100% Satisfaction Guarantee",
+      description: "Love it or return it within 30 days for a full refund"
+    },
+    {
+      icon: <RefreshCcw className="w-8 h-8" />,
+      title: "Easy Returns",
+      description: "Hassle-free returns with prepaid shipping labels"
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "Quality Assurance",
+      description: "Every product meets strict safety standards"
+    },
+    {
+      icon: <HeartHandshake className="w-8 h-8" />,
+      title: "2-Year Warranty",
+      description: "Extended coverage for your peace of mind"
+    }
+  ];
 
   return (
-    <div className='flex flex-col gap-[25px]'>
-      <section className='w-full hero-p' >
-        <div className='hero-p-child'>
-          <h1>We are Geni-I local to modern day parenting</h1>
-          <p>
-            Welcome to Geni-I By-your gateway to the future of parenting. Discover cutting-edge baby gadgets designed to make your little one’s world smarter,
-            safer, and more connected.
-          </p>
-          {/* <button onClick={e => { console.log(e); }} className='z-10 bg-[#d4d4d4] mt-[10px] px-[23px] py-[8px] rounded-md text-white'>Shop Now</button> */}
-        </div>
-        <div className='heroImg'>
-          <Image className='w-[100]' src={'/image/gen-bg1.png'} alt='bg-image' width={6000} height={6000} />
-        </div>
-      </section>
-      {/* <div>
-        <Geolocation/>
-      </div> */}
-      <section className='relative bottom-[0px] box-border px-[2%]'>
-        <h1 className='z-10 pb-[3%] font-[600] text-center headerDetail'>Popular Categories</h1>
-        {/* add carousel here */}
-        <Slider {...sliderSettings} className='flex gap-3 category-con'>
-          {
-            premium.map((item, index) => (
-              <section className="category-i" key={index}>
-                <Image className='w-[100%] h-full' src={item.img} alt='premium' width={2000} height={2000} />
-              </section>
-            ))
-          }
-        </Slider>
-      </section>
-      <section>
-        <h1 className='mb-[30px] font-[600] text-[35px] text-center headerDetail'>Body care for your little one.</h1>
-        <div className='body-care-p'>
-          <section className='circle-d-p'>
-            <div className='circle-d' >
-              <section className="circle-formation">
-                <Image className='rounded-full w-[100%] h-full' src='https://i.pinimg.com/564x/ec/79/05/ec7905de7e26beda74e706120789bd4a.jpg' alt='body care' width={500} height={500} />
-              </section>
-              <span className=' '>Get the original dettol antibacterial bathing soap-instant cool 105g X 6 online at shed 240 Food Market</span>
-            </div>
-            <div className='circle-d'>
-              <section className="circle-formation">
-                <Image className='rounded-full w-[100%] h-full' src='https://i.pinimg.com/564x/75/b0/9a/75b09a01e4672507d688764311c6cc02.jpg' alt='body care' width={500} height={500} />
-              </section>
-              <span className=' '>Discover the magic of freshness with amzing Baby Powder for sensitive skin, absorbent powder is your go-to for a gentle and smooth touch.</span>
-            </div>
-          </section>
+    <div className="relative min-h-screen">
+      {/* Hero Background */}
+      <div 
+        className="top-0 left-0 z-0 fixed w-full h-screen"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1555252333-9f8e92e65df9")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-600/30 to-white/95" />
+      </div>
 
-          <section className='bg-[#9bfd6356] circle-img-c'>
-            <Image className='rounded-full circle-img-i' src='https://i.pinimg.com/564x/30/84/99/308499f70f0485de4bc51d36d78b99ac.jpg' alt='body care' width={500} height={500} />
-          </section>
+      {/* Content */}
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+        <motion.div 
+          className="mx-auto max-w-7xl"
+          variants={staggerChildren}
+          initial="initial"
+          animate="animate"
+        >
+          {/* Hero Section */}
+          <motion.div 
+            className="text-center"
+            variants={fadeIn}
+          >
+            <h1 className="mb-6 font-bold font-serif text-4xl text-white sm:text-7xl">
+              Welcome to <span className="font-dancing text-purple-600">BabyBliss</span>
+            </h1>
+            <p className="mb-4 font-light text-2xl text-gray-100">
+              Where Every Little Dream Comes True
+            </p>
+            <p className="mb-8 font-medium text-lg text-purple-200">
+              Trusted by Over 100,000 Happy Parents Worldwide
+            </p>
+            <div className="flex justify-center gap-4">
+              <motion.button 
+                className="flex items-center bg-purple-600 hover:bg-purple-700 px-8 py-3 rounded-full font-semibold text-lg text-white transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Explore Collection
+                <ChevronRight className="ml-2 w-5 h-5" />
+              </motion.button>
+              <motion.button 
+                className="flex items-center border-2 border-white/40 bg-white/20 hover:bg-white/30 backdrop-blur-sm px-8 py-3 rounded-full font-semibold text-lg text-white transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Learn More
+              </motion.button>
+            </div>
+          </motion.div>
 
-          <section className='circle-d-p'>
-            <div className='circle-d'>
-              <section className="circle-formation">
-                <Image className='rounded-full w-[100%] h-full' src='https://i.pinimg.com/564x/a1/c4/1c/a1c41c00f4a15c782735a2084e35a27a.jpg' alt='body care' width={500} height={500} />
-              </section>
-              <span className=''>Vasline protects and locks in moisture to help dru skin heal 100% pure petroleum jelly. Triple-purified.</span>
+          {/* Trust Badges */}
+          <motion.div
+            className="bg-white/90 shadow-xl backdrop-blur-sm mt-16 p-8 rounded-2xl"
+            variants={fadeIn}
+          >
+            <h2 className="mb-8 font-bold text-3xl text-center text-gray-800">Why Choose BabyBliss?</h2>
+            <div className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { icon: <ThumbsUp className="w-6 h-6" />, text: "100% Customer Satisfaction", subtext: "Over 50,000 Happy Reviews" },
+                { icon: <Shield className="w-6 h-6" />, text: "Safety First", subtext: "Certified Baby-Safe Products" },
+                { icon: <Clock className="w-6 h-6" />, text: "24/7 Support", subtext: "Always Here to Help" },
+                { icon: <Heart className="w-6 h-6" />, text: "Made with Love", subtext: "Carefully Curated Items" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="p-4 text-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="flex justify-center items-center bg-purple-100 mx-auto mb-4 rounded-full w-12 h-12 text-purple-600">
+                    {item.icon}
+                  </div>
+                  <h3 className="mb-1 font-semibold text-gray-800">{item.text}</h3>
+                  <p className="text-gray-600 text-sm">{item.subtext}</p>
+                </motion.div>
+              ))}
             </div>
-            <div className='circle-d'>
-              <section className="circle-formation">
-                <Image className='rounded-full w-[100%] h-full' src='https://i.pinimg.com/564x/e6/a0/17/e6a0175f502af4b4f53335d55dbed8a5.jpg' alt='body care' width={500} height={500} />
-              </section>
-              <span className=' '>Made with 100% cotton, these cotton buds have a supple paper shat that avoids using plastic.</span>
+          </motion.div>
+
+          {/* Guarantees Section */}
+          <motion.div
+            className="bg-gradient-to-r from-purple-50 to-indigo-50 shadow-xl mt-16 p-8 rounded-2xl"
+            variants={fadeIn}
+          >
+            <h2 className="mb-8 font-bold text-3xl text-center text-gray-800">Our Guarantees</h2>
+            <div className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+              {guarantees.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white shadow-md p-6 rounded-xl"
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="mb-4 text-purple-600">{item.icon}</div>
+                  <h3 className="mb-2 font-semibold text-gray-800 text-lg">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
+                </motion.div>
+              ))}
             </div>
-          </section>
-        </div>
-      </section>
-      <section className='box-borderpx'>
-        <h1 className='py-[8px] font-[600] text-[35px] text-center headerDetail'>Top Product</h1>
-        <div className='flex items-center mb-[20px] category-list-p'>
-          <div className={` flex justify-center items-center ${addClass && 'bearer'}`} onClick={() => addClass ? setAddClass(false) : setAddClass(true)}>
-            <MdKeyboardDoubleArrowLeft className='category-arrow' size={30} />
-          </div>
-          <ul className='flex gap-[10px] category-list'>
-            {/* <li>Categories:</li> */}
-            <label htmlFor="item1">
-              <input type="radio" name="options" id="item1" />
-              <li onClick={() => setContentV(<Cloths/>)} >
-                Cloths
-              </li>
-            </label>
-            <label htmlFor="item2">
-              <input type="radio" name="options" id="item2" />
-              <li onClick={() => setContentV(<Diaper/>)} >
-                Diaper
-              </li>
-            </label>
-            <label htmlFor="item3">
-              <input type="radio" name="options" id="item3" />
-              <li onClick={() => setContentV(<Bath/>)}>
-                Bath
-              </li>
-            </label>
-            <label htmlFor="item4">
-              <input type="radio" name="options" id="item4" />
-              <li onClick={() => setContentV(<Valies/>)} >
-                Valies
-              </li>
-            </label>
-            <label htmlFor="item5">
-              <input type="radio" name="options" id="item5" />
-              <li onClick={() => setContentV(<Feeding/>)} >
-                Feeding
-              </li>
-            </label>
-          </ul>
-        </div>
-        <div className='box-border px-[2%]'>
-          {contentV}
-        </div>
-      </section>
-      <section className='category-sec'>
-        <div className='category-sec1'>
-          <Image className='cate1-img' src={'https://i.pinimg.com/736x/6a/79/d4/6a79d4f6f8da46dc66d7836eb6e54ebf.jpg'} alt='diapar park' width={500} height={500} />
-        </div>
-        <div className='category-sec2'>
-          <section className='cate-sec-child'>
-            <div className='cate-img-box'>
-              <Image className='rounded-[20px] w-[100%] h-full' src={'https://i.pinimg.com/564x/7a/3c/35/7a3c3565172dd1ee2847a1e98295bd4a.jpg'} alt='diaper' width={500} height={500} />
+          </motion.div>
+
+          {/* Testimonials */}
+          <motion.div
+            className="mt-16"
+            variants={fadeIn}
+          >
+            <h2 className="mb-8 font-bold text-3xl text-center text-gray-800">What Parents Say</h2>
+            <div className="gap-8 grid grid-cols-1 md:grid-cols-3">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white shadow-lg p-6 rounded-xl"
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="mr-4 rounded-full w-12 h-12 object-cover"
+                    />
+                    <div>
+                      <h3 className="font-semibold text-gray-800">{testimonial.name}</h3>
+                      <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <div className="flex mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 italic">{testimonial.comment}</p>
+                </motion.div>
+              ))}
             </div>
-            <span>What keeps baby's skin healthy? A diaper that doesn't leave skin wet. That's why pampers swddlers are made to provide up to 100% leakproof skin protection.</span>
-          </section>
-          <section className='cate-sec-child'>
-            <div className='cate-img-box'>
-              <Image className='w-full h-full' src={'https://i.pinimg.com/736x/6a/79/d4/6a79d4f6f8da46dc66d7836eb6e54ebf.jpg'} alt='diaper' width={500} height={500} />
+          </motion.div>
+
+          {/* Newsletter Section */}
+          <motion.div
+            className="bg-purple-600 shadow-xl mt-16 p-8 rounded-2xl text-center text-white"
+            variants={fadeIn}
+          >
+            <h2 className="mb-4 font-bold text-3xl">Join Our Community</h2>
+            <p className="mb-6 text-purple-100">Subscribe for exclusive offers, parenting tips, and new arrivals</p>
+            <div className="flex gap-4 mx-auto max-w-md">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none"
+              />
+              <motion.button
+                className="bg-white hover:bg-purple-50 px-6 py-3 rounded-lg font-semibold text-purple-600"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Subscribe
+              </motion.button>
             </div>
-            <span>Pampers is the first line of defense for your baby's skin. It's a blend of creams, lotions, and body wash that helps maintain healthy skin, reduces irritation, and protects your baby's skin from sun, UV rays, and chemicals.</span>
-          </section>
-        </div>
-      </section>
-      <section className='bottom-slide'>
-        <p className='py-[12px] pt-[30px] pb-[3%] font-[500] text-[30px] text-center headerDetail'>Browse a list of items for your little one's comfort.</p>
-        <Slider {...slideSettings2} className='outfit-c'>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/736x/17/2b/64/172b64fe98f5c5d0f1f592ceb8c2e233.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/236x/1d/0d/8d/1d0d8dbea1be6ff5979b9fe9d99fe1f2.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/736x/52/01/74/520174c62b32a80a010b9da859dd0ede.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/736x/56/ee/b9/56eeb9bc18ea15ca50e401f713527ab8.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/236x/9f/9d/07/9f9d0768f5969c3d073423ec368677ee.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/736x/15/70/78/157078dd8464ff669d62a36cccc47713.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/236x/3f/52/3c/3f523cb15f77193fcb335305d4cdb1a0.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/236x/d1/30/a6/d130a6704995a741ef56ed22e31f3e99.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-          <section className="outfit-i">
-            <Image src={"https://i.pinimg.com/736x/4a/02/e5/4a02e554503df39e1e282a92e867c40b.jpg"} alt="baby and mom" width={1500} height={1500} className='w-full h-full' />
-          </section>
-        </Slider>
-      </section>
-      <section className='box-border flex flex-col items-center customer-tips'>
-        <h1 className='py-[12px] pt-[30px] pb-[3%] font-[500] text-[30px] text-center headerDetail'>Customer Guarantee</h1>
-        <ul className='customer-guarantee' >
-          <li>
-            <h1>Durability</h1>
-            <p>High efficiency and long lasting.</p>
-          </li>
-          <li>
-            <h1>Quality</h1>
-            <p>Available to your satisfactory rating.</p>
-          </li>
-          <li>
-            <h1>Efficiency</h1>
-            <p>Powerful and efficient features.</p>
-          </li>
-          <li>
-            <h1>Safety</h1>
-            <p>Safe and secure accessories.</p>
-          </li>
-          <li>
-            <h1>Convenience</h1>
-            <p>Easy to use and convenient.</p>
-          </li>
-          <li>
-            <h1>Customer Support</h1>
-            <p>24/7 customer support.</p>
-          </li>
-        </ul>
-      </section>
-      <section className='h-comments' >
-        <div className='h-comment-nar'>
-          <p className='headerDetail'>Here's what our happy clients our saying!</p>
-        </div>
-        <section className='comment-p'>
-          <div className='h-comment-child'>
-            <section className='h-comment-img-p'>
-              <div className='h-comment-img-c'>
-                <Link href={'/comment'}>
-                  <Image className='' src={"https://i.pinimg.com/236x/2c/ee/44/2cee4471b0215c3d69ecbec45249d727.jpg"} alt='woman' width={1500} height={1500} />
-                </Link>
-              </div>
-            </section>
-            <h1>Jeremy Dabrie</h1>
-            <p>
-              "Geni-I By-where the future of baby care begins. I have been using."
+            <p className="mt-4 text-purple-200 text-sm">
+              By subscribing, you agree to our Privacy Policy and Terms of Service
             </p>
-          </div>
-          <div className='h-comment-child'>
-            <section className='h-comment-img-p'>
-              <div className='h-comment-img-c'>
-                <Link href={'/comment'}>
-                  <Image className='' src={"https://i.pinimg.com/236x/2c/ee/44/2cee4471b0215c3d69ecbec45249d727.jpg"} alt='woman' width={1500} height={1500} />
-                </Link>
+          </motion.div>
+
+          {/* Footer Benefits */}
+          <motion.div
+            className="gap-8 grid grid-cols-1 md:grid-cols-3 mt-16"
+            variants={fadeIn}
+          >
+            {[
+              {
+                icon: <Truck className="w-8 h-8" />,
+                title: "Fast & Free Delivery",
+                description: "Free shipping on orders over $50"
+              },
+              {
+                icon: <Gift className="w-8 h-8" />,
+                title: "Special Gifts",
+                description: "Free gift wrapping on all orders"
+              },
+              {
+                icon: <CheckCircle className="w-8 h-8" />,
+                title: "Secure Shopping",
+                description: "100% secure payment"
+              }
+            ].map((benefit, index) => (
+              <div key={index} className="flex items-center bg-white/80 shadow-md backdrop-blur-sm p-6 rounded-xl">
+                <div className="mr-4 text-purple-600">{benefit.icon}</div>
+                <div>
+                  <h3 className="mb-1 font-semibold text-gray-800">{benefit.title}</h3>
+                  <p className="text-gray-600 text-sm">{benefit.description}</p>
+                </div>
               </div>
-            </section>
-            <h1>Jeremy Dabrie</h1>
-            <p>
-              "Geni-I By-where the future of baby care begins. I have been using."
-            </p>
-          </div>
-          <div className='h-comment-child'>
-            <section className='h-comment-img-p'>
-              <div className='h-comment-img-c'>
-                <Link href={'/comment'}>
-                  <Image className='' src={"https://i.pinimg.com/236x/56/17/9b/56179baaa4af59c5c78d6f87d0658e01.jpg"} alt='woman' width={1500} height={1500} />
-                </Link>
-              </div>
-            </section>
-            <h1>Stacy Bright</h1>
-            <p>
-              "Accessories from Geni-I are very affordable and long lasting."
-            </p>
-          </div>
-          <div className='h-comment-child'>
-            <section className='h-comment-img-p'>
-              <div className='h-comment-img-c'>
-                <Link href={'/comment'}>
-                  <Image className='' src={"https://i.pinimg.com/236x/56/17/9b/56179baaa4af59c5c78d6f87d0658e01.jpg"} alt='woman' width={1500} height={1500} />
-                </Link>
-              </div>
-            </section>
-            <h1>Stacy Bright</h1>
-            <p>
-              "Accessories from Geni-I are very affordable and long lasting."
-            </p>
-          </div>
-        </section>
-      </section>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default Hero;

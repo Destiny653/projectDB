@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import { ThemeProvider } from "../../context/ThemeContext";
 import Comments from "./components/Comments/page";
 import { CartProvider } from "../../context/CartContext";
+import Header from "./components/Header/Header";
 
 
 const geistSans = localFont({
@@ -28,8 +29,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <CartProvider>
-          <ThemeProvider>
-            <Navbar />
+          <ThemeProvider> 
+            <Header/>
             <Comments />
             {children}
             <Footer />

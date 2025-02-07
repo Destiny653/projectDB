@@ -18,6 +18,36 @@
   height: 80px;
 }
 
+/* Add to your global.css */
+.product-card {
+  @apply bg-white shadow-md rounded-lg hover:transform transition-transform duration-300 overflow-hidden hover:scale-105;
+}
+
+.product-image {
+  @apply relative h-64 overflow-hidden;
+}
+
+.price-badge {
+  @apply top-4 right-4 absolute bg-sky-600 px-3 py-1 rounded-full font-semibold text-sm text-white;
+}
+
+.product-details {
+  @apply p-4;
+}
+
+.product-title {
+  @apply mb-2 font-semibold text-lg text-sky-900;
+}
+
+.product-description {
+  @apply mb-4 text-sky-600 text-sm;
+}
+
+.add-to-cart-button {
+  @apply bg-sky-500 hover:bg-sky-600 py-2 rounded-md w-full text-white transition-colors duration-300;
+}
+
+
 .light {
   /* background: radial-gradient(  #edf9fd, #fff4fc) ;   */
   background-color: #fff;
